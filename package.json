@@ -1,0 +1,26 @@
+{
+  "name": "aspecter",
+  "version": "0.1.0",
+  "description": "blogging for the attribute-aware",
+  "scripts": {
+    "dist": "polypacker --preset NODE_APPLICATION --babelPreset react --env PRODUCTION",
+    "dock": "npm rebuild; npm start",
+    "start": "polypacker --preset NODE_APPLICATION --babelPreset react",
+    "watch": "polypacker --preset NODE_APPLICATION --babelPreset react --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michaeljosephrosenthal/aspecter.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/michaeljosephrosenthal/aspecter",
+  "dependencies": {
+    "bufflehead": "0.1.6",
+    "bufflehead-tcomb-relational": "0.0.1",
+    "tcomb": "^3.0.0"
+  },
+  "devDependencies": {
+    "polypacker": "0.1.5"
+  }
+}
+
