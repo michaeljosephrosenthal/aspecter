@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6" > <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7" > <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8" > <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9" > <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Bufflehead App</title>
+
+  
+  
+
+  
+  <link href="function (array) {
+        // if the other array is a falsy value, return
+        if (!array) {
+            return false;
+        }
+
+        // compare lengths - can save a lot of time 
+        if (this.length != array.length) {
+            return false;
+        }
+
+        for (var i = 0, l=this.length; i < l; i++) {
+            // Check if we have nested arrays
+            if (this[i] instanceof Array && array[i] instanceof Array) {
+                // recurse into the nested arrays
+                if (!this[i].equals(array[i])) {
+                    return false;       
+                }
+            } else if (this[i] != array[i]) { 
+                // Warning - two different object instances will never be equal: {x:20} != {x:20}
+                return false;   
+            }           
+        }       
+        return true;
+    }" rel="stylesheet">
+  
+
+  
+
+</head>
+<body>
+
+
+
+<div id="app"></div>
+
+
+
+
+
+<script>
+  
+    window['settings'] = {"db":{"name":"aspecter","uri":"http://127.0.0.1:5984","credentials":{"admin":{"name":"server","password":"server"}}}};
+  
+</script>
+
+
+
+<script src="/static/bundle.js"></script>
+
+
+
+
+
+</body>
+</html>

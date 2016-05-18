@@ -1,0 +1,1 @@
+export RelationDomain from './RelationDomain'

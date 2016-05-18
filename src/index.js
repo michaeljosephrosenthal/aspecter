@@ -1,7 +1,18 @@
 import 'babel-polyfill'
 import DomainDrivenFullstackApplication, * as bufflehead from 'polypack!bufflehead'
 
-import articles from './articles'
+import posts from './posts'
+
+import { Route } from 'react-router'
+import React from 'react'
+
+let root = new bufflehead.Domain({
+    name: 'root',
+    route: {
+        path: '/',
+        indexRedirect: '/posts',
+    }
+})
 
 const settings = bufflehead.settings({
     "db": {
@@ -18,7 +29,7 @@ const settings = bufflehead.settings({
 
 const app = new DomainDrivenFullstackApplication({
     title: 'Bufflehead • Aspecter',
-    domains: { articles }
+    domains: { root, posts, settings }
 })
 
 app.main()
