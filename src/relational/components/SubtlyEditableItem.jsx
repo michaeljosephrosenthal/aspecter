@@ -1,56 +1,65 @@
+import t from 'tcomb-form'
 import React, { PropTypes } from 'react'
 import TypedCommitableForm from './TypedCommitableForm'
 import EditButton from './EditButton'
 import EditableFieldGenerator from './EditableFieldGenerator'
 
-function toTcombFormTemplate(template){
-    return locals => template(locals.inputs)
+function toTcombFormTemplate(Template){
+    if(Template.constructor){
+        return locals => (<Template {...locals.inputs}/>)
+    } else {
+        return locals => Template(locals.inputs)
+    }
 }
-
 function generateSubtleOptions(type){
     return {
         fields: Object.keys(type.meta.props)
-        .reduce((fields, prop) => {
-            fields[prop] = EditableFieldGenerator;
-            return fields
-        }, {})
+            .reduce((fields, prop) => {
+                fields[prop] = {
+                    factory: EditableFieldGenerator
+                };
+                return fields
+            }, {})
     }
 }
 
-function optionsFromProps({type, template}){
+function optionsFromProps({type: {BaseType}, Template}){
     return {
-        template: toTcombFormTemplate(template),
-        ...generateSubtleOptions(type)
+        template: toTcombFormTemplate(Template),
+        ...generateSubtleOptions(BaseType)
     }
 }
 
 export default class ToggleableEditableSubtleForm extends React.Component {
-
-    state = {
-        editing: false,
-        options: optionsFromProps(this.props)
+    constructor(props) {
+        super(props)
+        let { location: { query: {editing = false} = {} } = {} } = props
+        this.state = {
+            editing,
+            options: optionsFromProps(this.props)
+        }
     }
 
     static propTypes = {
-        template: React.PropTypes.func.isRequired,
+        Template: React.PropTypes.func.isRequired,
         type: React.PropTypes.object,
         value: React.PropTypes.object
     }
 
     render(){
-        let {type: {name, Type, BaseType, serialize}, value, template} = this.props
-        let {editing, options} = this.state
+        let {type: {name, Type, BaseType, serialize}, value, Template} = this.props
+        let {editing, options } = this.state
         return (
             <div className={`${name.toLowerCase()} item-view`}>
                 <EditButton onClick={_=>this.setState({editing: !editing})} editing={editing != false}/>
                 {
                     editing ? (
-                        <t.Form ref="form"
+                        <t.form.Form ref="form"
                             type={BaseType}
                             options={options}
                             value={value} />
                         ) :
-                        template(value)
+                        <Template {...value}/>
                 }
             </div>
         )

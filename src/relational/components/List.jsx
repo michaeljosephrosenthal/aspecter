@@ -1,6 +1,10 @@
 import React from 'react'
 import { toTitle } from '../utils'
 
+function AddButton({singular}){
+    return ( <a href={`/${singular}/new?editing=true`}> Add </a>)
+}
+
 export default class List extends React.Component {
 
     static propTypes = {
@@ -12,8 +16,8 @@ export default class List extends React.Component {
     }
 
     render(){
-        let { listControls=[], items=[], ItemView, plural, ...controlProps } = this.props
-        return (
+        let { listControls=[AddButton], items=[], ItemView, plural, ...controlProps } = this.props
+        return this.props.children || (
             <div className={plural.toLowerCase()}>
                 <div className="col-xs-12">
                     <h1 className="col-xs-6">{toTitle(plural)}</h1>

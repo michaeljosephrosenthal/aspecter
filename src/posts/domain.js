@@ -1,4 +1,4 @@
-import { RelationDomain } from '../relational'
+import { RelationDomain, Typed } from '../relational'
 import Type from './type'
 import Post from './components'
 import { Domain, persister } from 'polypack!bufflehead'

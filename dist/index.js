@@ -160,7 +160,7 @@ module.exports =
 	
 	var _tcomb2 = _interopRequireDefault(_tcomb);
 	
-	var _slug = __webpack_require__(25);
+	var _slug = __webpack_require__(30);
 	
 	var _slug2 = _interopRequireDefault(_slug);
 	
@@ -236,7 +236,7 @@ module.exports =
 
 	'use strict';
 	
-	__webpack_require__(23);
+	__webpack_require__(27);
 	
 	var _polypackBufflehead = __webpack_require__(2);
 	
@@ -245,6 +245,10 @@ module.exports =
 	var _posts = __webpack_require__(13);
 	
 	var _posts2 = _interopRequireDefault(_posts);
+	
+	var _root = __webpack_require__(26);
+	
+	var _root2 = _interopRequireDefault(_root);
 	
 	var _reactRouter = __webpack_require__(6);
 	
@@ -256,13 +260,7 @@ module.exports =
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
-	var root = new bufflehead.Domain({
-	    name: 'root',
-	    route: {
-	        path: '/',
-	        indexRedirect: '/posts'
-	    }
-	});
+	var root = (0, _root2.default)({ posts: _posts2.default });
 	
 	var settings = bufflehead.settings({
 	    "db": {
@@ -658,7 +656,8 @@ module.exports =
 	            var _props = this.props;
 	            var _props$listControls = _props.listControls;
 	            var listControls = _props$listControls === undefined ? [] : _props$listControls;
-	            var items = _props.items;
+	            var _props$items = _props.items;
+	            var items = _props$items === undefined ? [] : _props$items;
 	            var ItemView = _props.ItemView;
 	            var plural = _props.plural;
 	
@@ -703,7 +702,7 @@ module.exports =
 	
 	List.propTypes = {
 	    ItemView: _react2.default.PropTypes.func.isRequired,
-	    type: _react2.default.PropTypes.func.isRequired,
+	    type: _react2.default.PropTypes.object.isRequired,
 	    plural: _react2.default.PropTypes.string,
 	    listControls: _react2.default.PropTypes.array,
 	    items: _react2.default.PropTypes.array
@@ -853,7 +852,7 @@ module.exports =
 	
 	var _tcombForm2 = _interopRequireDefault(_tcombForm);
 	
-	var _deepEqual = __webpack_require__(24);
+	var _deepEqual = __webpack_require__(28);
 	
 	var _deepEqual2 = _interopRequireDefault(_deepEqual);
 	
@@ -1006,9 +1005,9 @@ module.exports =
 
 /***/ },
 /* 20 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -1017,12 +1016,19 @@ module.exports =
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
 	exports.default = shadowParent;
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	function shadowParent(_ref) {
-	    var child = _ref.child;
+	    var Child = _ref.child;
 	    var shadowProps = _ref.props;
 	
 	    return function (props) {
-	        return React.createElement("child", _extends({}, props, shadowProps));
+	        return _react2.default.createElement(Child, _extends({}, props, shadowProps));
 	    };
 	}
 
@@ -1095,18 +1101,212 @@ module.exports =
 
 /***/ },
 /* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Nav = function (_React$Component) {
+	    _inherits(Nav, _React$Component);
+	
+	    function Nav() {
+	        _classCallCheck(this, Nav);
+	
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Nav).apply(this, arguments));
+	    }
+	
+	    _createClass(Nav, [{
+	        key: "render",
+	        value: function render() {
+	            var _props = this.props;
+	            var paths = _props.paths;
+	
+	            var props = _objectWithoutProperties(_props, ["paths"]);
+	
+	            return _react2.default.createElement(
+	                "nav",
+	                props,
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "container" },
+	                    _react2.default.createElement(
+	                        "ul",
+	                        null,
+	                        paths.map(function (path) {
+	                            return _react2.default.createElement(
+	                                "li",
+	                                { key: path },
+	                                _react2.default.createElement(
+	                                    "a",
+	                                    { href: path },
+	                                    path
+	                                )
+	                            );
+	                        })
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Nav;
+	}(_react2.default.Component);
+	
+	exports.default = Nav;
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = generateDomain;
+	
+	var _polypackBufflehead = __webpack_require__(2);
+	
+	var _polypackDomainDrivenReduxReact = __webpack_require__(29);
+	
+	var _generateRoot = __webpack_require__(25);
+	
+	var _generateRoot2 = _interopRequireDefault(_generateRoot);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function generateDomain(domains) {
+	    return new _polypackBufflehead.Domain({
+	        name: 'root',
+	        route: {
+	            path: '/',
+	            component: (0, _generateRoot2.default)({ paths: _polypackDomainDrivenReduxReact.utils.filterDomainsForType(domains, 'route').map(_polypackDomainDrivenReduxReact.utils.extractPath) })
+	        }
+	    });
+	}
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	exports.default = generateRoot;
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Nav = __webpack_require__(23);
+	
+	var _Nav2 = _interopRequireDefault(_Nav);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	if (false) require('./root.scss');
+	
+	function generateRoot(_ref) {
+	    var paths = _ref.paths;
+	
+	    return function (_React$Component) {
+	        _inherits(Root, _React$Component);
+	
+	        function Root() {
+	            _classCallCheck(this, Root);
+	
+	            return _possibleConstructorReturn(this, Object.getPrototypeOf(Root).apply(this, arguments));
+	        }
+	
+	        _createClass(Root, [{
+	            key: 'render',
+	            value: function render() {
+	                return _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement(_Nav2.default, { paths: paths }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'container' },
+	                        this.props.children
+	                    )
+	                );
+	            }
+	        }]);
+	
+	        return Root;
+	    }(_react2.default.Component);
+	}
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+	
+	var _generateDomain = __webpack_require__(24);
+	
+	var _generateDomain2 = _interopRequireDefault(_generateDomain);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _generateDomain2.default;
+
+/***/ },
+/* 27 */
 /***/ function(module, exports) {
 
 	module.exports = require("babel-polyfill");
 
 /***/ },
-/* 24 */
+/* 28 */
 /***/ function(module, exports) {
 
 	module.exports = require("deep-equal");
 
 /***/ },
-/* 25 */
+/* 29 */
+/***/ function(module, exports) {
+
+	module.exports = require("domain-driven-redux-react/dist/for/node_development");
+
+/***/ },
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = require("slug");

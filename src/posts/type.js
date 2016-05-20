@@ -7,4 +7,3 @@ export default t.struct({
     //articles: t.dict(t.String, t.String),
     //snippets: t.dict(t.String, t.String)
 })
-

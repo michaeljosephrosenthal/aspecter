@@ -9,17 +9,17 @@ export default function relationRoute({
 }){
     let pluralComponent = shadowParent({ 
         child: SetWrapper,
-        props: {type, plural, ItemView: SetView}
+        props: {type, plural, singular, ItemView: SetView}
     })
     let singularComponent = shadowParent({
         child: ItemWrapper,
-        props: {type, singular, template: ItemView}
+        props: {type, singular, plural, Template: ItemView}
     })
     return {
         path: plural,
         route: (
             <Route path={`${plural}`} component={pluralComponent}>
-                <Route path={`/${singular}/:${singular}Id`} component={singularComponent}/>
+                <Route path={`/${singular}/:${singular}id`} component={singularComponent}/>
             </Route>
         )
     }
