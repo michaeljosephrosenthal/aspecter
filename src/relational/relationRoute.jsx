@@ -7,10 +7,16 @@ export default function relationRoute({
     ItemView, ItemWrapper,
     SetView,  SetWrapper
 }){
+    function singularProps({items, singularId, ...props}){
+        let [value = undefined] = items.filter(item => item._id == `${singular}/${singularId}`)
+        return { value, ...props }
+    }
+
     let pluralComponent = shadowParent({ 
         child: SetWrapper,
-        props: {type, plural, singular, ItemView: SetView}
+        props: {type, plural, singular, singularProps, ItemView: SetView}
     })
+
     let singularComponent = shadowParent({
         child: ItemWrapper,
         props: {type, singular, plural, Template: ItemView}
@@ -19,7 +25,7 @@ export default function relationRoute({
         path: plural,
         route: (
             <Route path={`${plural}`} component={pluralComponent}>
-                <Route path={`/${singular}/:${singular}id`} component={singularComponent}/>
+                <Route path={`/${singular}/:singularId`} component={singularComponent}/>
             </Route>
         )
     }

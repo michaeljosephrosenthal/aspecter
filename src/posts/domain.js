@@ -17,4 +17,3 @@ export default new RelationDomain({
         ItemView: Post,
     }
 })
-

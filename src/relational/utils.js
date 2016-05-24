@@ -20,15 +20,16 @@ export function Persistable(BaseType, name){
 }
 
 export function serializer(Type, type, fields, sluggify){
-    sluggify = sluggify || (doc => fields.map(f => slug(doc[f].toString().toLowerCase())).join('&'))
-    return (doc) => Type(Object.assign({}, doc, {_id: `${type}/${sluggify(doc)}`}))
+    sluggify = sluggify || (doc => `${type.toLowerCase()}/${fields.map(f => slug(doc[f].toString().toLowerCase())).join('&')}`)
+    return (doc) => Type(Object.assign({}, doc, {_id: sluggify(doc)}))
 }
 
 export function expandType({Type, name, serialize: { fields = ['id'], sluggify } = {}}){
+    let persistable = Persistable(Type, name)
     return {
         name,
         BaseType: Type,
-        Type: Persistable(Type, name),
-        serialize: serializer(Type, name, fields, sluggify)
+        Persistable: persistable,
+        serialize: serializer(persistable, name, fields, sluggify)
     }
 }

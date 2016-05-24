@@ -23,13 +23,14 @@ export default class EditableFieldGenerator {
       }
 
       getTemplate() {
-        let editing = this.state.editing
+        let { editing } = this.state
+        const template = super.getTemplate()
         return (locals) => {
           return (
             <div>
               <EditButton onClick={this.toggle.bind(this)} editing={editing} />
               <div className="corner-border top left"/>
-              <a href="#" style={{ color: locals.hasError ? '#a94442' : 'normal' }} onClick={this.toggle.bind(this)}>
+              <a href="#" style={{ color: locals.hasError ? '#a94442' : 'normal' }} >
                   { editing ? template(locals) : locals.value || '...' }
               </a>
             </div>

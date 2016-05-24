@@ -45,7 +45,7 @@ module.exports =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(9);
+	module.exports = __webpack_require__(10);
 
 
 /***/ },
@@ -62,6 +62,12 @@ module.exports =
 
 /***/ },
 /* 3 */
+/***/ function(module, exports) {
+
+	module.exports = require("tcomb-form");
+
+/***/ },
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -92,9 +98,7 @@ module.exports =
 	
 	    propTypes: {
 	        editing: _react.PropTypes.bool.isRequired,
-	
 	        onClick: _react.PropTypes.func
-	
 	    },
 	    render: function render() {
 	        var _props = this.props;
@@ -108,13 +112,14 @@ module.exports =
 	            'button',
 	            _extends({}, actions, {
 	                className: 'circular ui icon button top left corner edit', type: 'button' }),
-	            _react2.default.createElement('i', { className: "icon " + (editing ? editingIcon : icon) })
+	            _react2.default.createElement('i', { className: "icon " + (editing ? editingIcon : icon) }),
+	            'edit'
 	        );
 	    }
 	});
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -124,15 +129,15 @@ module.exports =
 	});
 	exports.shadowParent = exports.SubtlyEditableItem = exports.List = undefined;
 	
-	var _List2 = __webpack_require__(17);
+	var _List2 = __webpack_require__(18);
 	
 	var _List3 = _interopRequireDefault(_List2);
 	
-	var _SubtlyEditableItem2 = __webpack_require__(18);
+	var _SubtlyEditableItem2 = __webpack_require__(19);
 	
 	var _SubtlyEditableItem3 = _interopRequireDefault(_SubtlyEditableItem2);
 	
-	var _shadowParent2 = __webpack_require__(20);
+	var _shadowParent2 = __webpack_require__(21);
 	
 	var _shadowParent3 = _interopRequireDefault(_shadowParent2);
 	
@@ -143,7 +148,7 @@ module.exports =
 	exports.shadowParent = _shadowParent3.default;
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -156,7 +161,7 @@ module.exports =
 	exports.serializer = serializer;
 	exports.expandType = expandType;
 	
-	var _tcomb = __webpack_require__(7);
+	var _tcomb = __webpack_require__(9);
 	
 	var _tcomb2 = _interopRequireDefault(_tcomb);
 	
@@ -204,53 +209,54 @@ module.exports =
 	    var fields = _ref$serialize$fields === undefined ? ['id'] : _ref$serialize$fields;
 	    var sluggify = _ref$serialize.sluggify;
 	
+	    var persistable = Persistable(Type, name);
 	    return {
 	        name: name,
 	        BaseType: Type,
-	        Type: Persistable(Type, name),
-	        serialize: serializer(Type, name, fields, sluggify)
+	        Persistable: persistable,
+	        serialize: serializer(persistable, name, fields, sluggify)
 	    };
 	}
-
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-	module.exports = require("react-router");
 
 /***/ },
 /* 7 */
 /***/ function(module, exports) {
 
-	module.exports = require("tcomb");
+	module.exports = require("deep-equal");
 
 /***/ },
 /* 8 */
 /***/ function(module, exports) {
 
-	module.exports = require("tcomb-form");
+	module.exports = require("react-router");
 
 /***/ },
 /* 9 */
+/***/ function(module, exports) {
+
+	module.exports = require("tcomb");
+
+/***/ },
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(27);
+	__webpack_require__(28);
 	
 	var _polypackBufflehead = __webpack_require__(2);
 	
 	var bufflehead = _interopRequireWildcard(_polypackBufflehead);
 	
-	var _posts = __webpack_require__(13);
+	var _posts = __webpack_require__(14);
 	
 	var _posts2 = _interopRequireDefault(_posts);
 	
-	var _root = __webpack_require__(26);
+	var _root = __webpack_require__(27);
 	
 	var _root2 = _interopRequireDefault(_root);
 	
-	var _reactRouter = __webpack_require__(6);
+	var _reactRouter = __webpack_require__(8);
 	
 	var _react = __webpack_require__(1);
 	
@@ -283,7 +289,7 @@ module.exports =
 	app.main();
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -333,11 +339,7 @@ module.exports =
 	                _react2.default.createElement(
 	                    "div",
 	                    { className: "description" },
-	                    _react2.default.createElement(
-	                        "p",
-	                        null,
-	                        text
-	                    )
+	                    text
 	                )
 	            );
 	        }
@@ -349,7 +351,7 @@ module.exports =
 	exports.default = Post;
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -359,7 +361,7 @@ module.exports =
 	});
 	exports.default = undefined;
 	
-	var _Post = __webpack_require__(10);
+	var _Post = __webpack_require__(11);
 	
 	var _Post2 = _interopRequireDefault(_Post);
 	
@@ -368,7 +370,7 @@ module.exports =
 	exports.default = _Post2.default;
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -377,13 +379,13 @@ module.exports =
 	    value: true
 	});
 	
-	var _relational = __webpack_require__(21);
+	var _relational = __webpack_require__(22);
 	
-	var _type = __webpack_require__(14);
+	var _type = __webpack_require__(15);
 	
 	var _type2 = _interopRequireDefault(_type);
 	
-	var _components = __webpack_require__(11);
+	var _components = __webpack_require__(12);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -406,7 +408,7 @@ module.exports =
 	});
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -416,34 +418,13 @@ module.exports =
 	});
 	exports.default = undefined;
 	
-	var _domain = __webpack_require__(12);
+	var _domain = __webpack_require__(13);
 	
 	var _domain2 = _interopRequireDefault(_domain);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = _domain2.default;
-
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _tcomb = __webpack_require__(7);
-	
-	var _tcomb2 = _interopRequireDefault(_tcomb);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _tcomb2.default.struct({
-	    title: _tcomb2.default.String,
-	    text: _tcomb2.default.String
-	});
 
 /***/ },
 /* 15 */
@@ -455,15 +436,36 @@ module.exports =
 	    value: true
 	});
 	
+	var _tcomb = __webpack_require__(9);
+	
+	var _tcomb2 = _interopRequireDefault(_tcomb);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _tcomb2.default.struct({
+	    title: _tcomb2.default.String,
+	    text: _tcomb2.default.String
+	});
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
 	var _polypackBufflehead = __webpack_require__(2);
 	
-	var _utils = __webpack_require__(5);
+	var _utils = __webpack_require__(6);
 	
-	var _relationRoute = __webpack_require__(22);
+	var _relationRoute = __webpack_require__(23);
 	
 	var _relationRoute2 = _interopRequireDefault(_relationRoute);
 	
-	var _components = __webpack_require__(4);
+	var _components = __webpack_require__(5);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -473,6 +475,15 @@ module.exports =
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	var ddataFlows = Object.assign({}, _polypackBufflehead.persister.defaultDataFlows, {
+	    UPDATE: function UPDATE(state, payload) {
+	        console.log(payload);
+	        return state.map(function (doc) {
+	            return doc._id == payload._id ? payload : doc;
+	        });
+	    }
+	});
+	
 	var RelationDomain = function (_Domain) {
 	    _inherits(RelationDomain, _Domain);
 	
@@ -481,7 +492,7 @@ module.exports =
 	        var singular = _ref.singular;
 	        var plural = _ref.plural;
 	        var _ref$dataFlows = _ref.dataFlows;
-	        var dataFlows = _ref$dataFlows === undefined ? _polypackBufflehead.persister.defaultDataFlows : _ref$dataFlows;
+	        var dataFlows = _ref$dataFlows === undefined ? ddataFlows : _ref$dataFlows;
 	        var _ref$components = _ref.components;
 	        var ItemView = _ref$components.ItemView;
 	        var _ref$components$ItemW = _ref$components.ItemWrapper;
@@ -514,7 +525,7 @@ module.exports =
 	exports.default = RelationDomain;
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -525,17 +536,19 @@ module.exports =
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
+	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _tcombForm = __webpack_require__(8);
+	var _tcombForm = __webpack_require__(3);
 	
 	var _tcombForm2 = _interopRequireDefault(_tcombForm);
 	
-	var _EditButton = __webpack_require__(3);
+	var _EditButton = __webpack_require__(4);
 	
 	var _EditButton2 = _interopRequireDefault(_EditButton);
 	
@@ -589,6 +602,8 @@ module.exports =
 	        var _this2 = this;
 	
 	        var editing = this.state.editing;
+	
+	        var template = _get(Object.getPrototypeOf(Inliner.prototype), 'getTemplate', this).call(this);
 	        return function (locals) {
 	          return _react2.default.createElement(
 	            'div',
@@ -597,7 +612,7 @@ module.exports =
 	            _react2.default.createElement('div', { className: 'corner-border top left' }),
 	            _react2.default.createElement(
 	              'a',
-	              { href: '#', style: { color: locals.hasError ? '#a94442' : 'normal' }, onClick: _this2.toggle.bind(_this2) },
+	              { href: '#', style: { color: locals.hasError ? '#a94442' : 'normal' } },
 	              editing ? template(locals) : locals.value || '...'
 	            )
 	          );
@@ -614,7 +629,7 @@ module.exports =
 	exports.default = EditableFieldGenerator;
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -623,13 +638,15 @@ module.exports =
 	    value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _utils = __webpack_require__(5);
+	var _utils = __webpack_require__(6);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -640,6 +657,16 @@ module.exports =
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	function AddButton(_ref) {
+	    var singular = _ref.singular;
+	
+	    return _react2.default.createElement(
+	        'a',
+	        { className: 'add-new', href: '/' + singular + '/new?editing=true' },
+	        ' Add '
+	    );
+	}
 	
 	var List = function (_React$Component) {
 	    _inherits(List, _React$Component);
@@ -655,40 +682,42 @@ module.exports =
 	        value: function render() {
 	            var _props = this.props;
 	            var _props$listControls = _props.listControls;
-	            var listControls = _props$listControls === undefined ? [] : _props$listControls;
+	            var listControls = _props$listControls === undefined ? [AddButton] : _props$listControls;
 	            var _props$items = _props.items;
 	            var items = _props$items === undefined ? [] : _props$items;
 	            var ItemView = _props.ItemView;
 	            var plural = _props.plural;
+	            var children = _props.children;
+	            var actions = _props.actions;
 	
-	            var controlProps = _objectWithoutProperties(_props, ['listControls', 'items', 'ItemView', 'plural']);
+	            var controlProps = _objectWithoutProperties(_props, ['listControls', 'items', 'ItemView', 'plural', 'children', 'actions']);
 	
-	            return _react2.default.createElement(
+	            return children ? _react2.default.cloneElement(children, { actions: actions }) : _react2.default.createElement(
 	                'div',
-	                { className: plural.toLowerCase() },
+	                { className: plural.toLowerCase() + ' relational list' },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'col-xs-12' },
+	                    { className: 'header' },
 	                    _react2.default.createElement(
 	                        'h1',
-	                        { className: 'col-xs-6' },
+	                        { className: 'title' },
 	                        (0, _utils.toTitle)(plural)
 	                    ),
 	                    _react2.default.createElement(
 	                        'div',
-	                        null,
+	                        { className: 'controls' },
 	                        listControls.map(function (Control) {
-	                            return _react2.default.createElement(Control, controlProps);
+	                            return _react2.default.createElement(Control, _extends({ key: Control.name, actions: actions }, controlProps));
 	                        })
 	                    )
 	                ),
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'col-xs-12' },
+	                    { className: 'items' },
 	                    items.map(function (i) {
 	                        return _react2.default.createElement(
 	                            'div',
-	                            { key: i._id, className: 'col-xs-12' },
+	                            { key: i._id, className: singular.toLowerCase() + ' item' },
 	                            _react2.default.createElement(ItemView, i)
 	                        );
 	                    })
@@ -710,7 +739,7 @@ module.exports =
 	exports.default = List;
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -723,23 +752,33 @@ module.exports =
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
+	var _tcombForm = __webpack_require__(3);
+	
+	var _tcombForm2 = _interopRequireDefault(_tcombForm);
+	
+	var _deepEqual = __webpack_require__(7);
+	
+	var _deepEqual2 = _interopRequireDefault(_deepEqual);
+	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _TypedCommitableForm = __webpack_require__(19);
+	var _TypedCommitableForm = __webpack_require__(20);
 	
 	var _TypedCommitableForm2 = _interopRequireDefault(_TypedCommitableForm);
 	
-	var _EditButton = __webpack_require__(3);
+	var _EditButton = __webpack_require__(4);
 	
 	var _EditButton2 = _interopRequireDefault(_EditButton);
 	
-	var _EditableFieldGenerator = __webpack_require__(16);
+	var _EditableFieldGenerator = __webpack_require__(17);
 	
 	var _EditableFieldGenerator2 = _interopRequireDefault(_EditableFieldGenerator);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -747,48 +786,89 @@ module.exports =
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	function toTcombFormTemplate(template) {
-	    return function (locals) {
-	        return template(locals.inputs);
-	    };
+	function toTcombFormTemplate(Template) {
+	    if (Template.constructor) {
+	        return function (locals) {
+	            return _react2.default.createElement(Template, locals.inputs);
+	        };
+	    } else {
+	        return function (locals) {
+	            return Template(locals.inputs);
+	        };
+	    }
 	}
 	
 	function generateSubtleOptions(type) {
 	    return {
 	        fields: Object.keys(type.meta.props).reduce(function (fields, prop) {
-	            fields[prop] = _EditableFieldGenerator2.default;
+	            fields[prop] = {
+	                factory: _EditableFieldGenerator2.default
+	            };
 	            return fields;
 	        }, {})
 	    };
 	}
 	
 	function optionsFromProps(_ref) {
-	    var type = _ref.type;
-	    var template = _ref.template;
+	    var BaseType = _ref.type.BaseType;
+	    var Template = _ref.Template;
 	
 	    return _extends({
-	        template: toTcombFormTemplate(template)
-	    }, generateSubtleOptions(type));
+	        template: toTcombFormTemplate(Template)
+	    }, generateSubtleOptions(BaseType));
 	}
 	
 	var ToggleableEditableSubtleForm = function (_React$Component) {
 	    _inherits(ToggleableEditableSubtleForm, _React$Component);
 	
-	    function ToggleableEditableSubtleForm() {
-	        var _Object$getPrototypeO;
-	
-	        var _temp, _this, _ret;
-	
+	    function ToggleableEditableSubtleForm(props) {
 	        _classCallCheck(this, ToggleableEditableSubtleForm);
 	
-	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	            args[_key] = arguments[_key];
-	        }
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ToggleableEditableSubtleForm).call(this, props));
 	
-	        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(ToggleableEditableSubtleForm)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
-	            editing: false,
+	        _this.componentWillReceiveProps = function (_ref2) {
+	            var value = _ref2.value;
+	
+	            if (!(0, _deepEqual2.default)(value, _this.state.value)) _this.setState({ value: value });
+	        };
+	
+	        _this.save = function (event) {
+	            var _this$props = _this.props;
+	            var value = _this$props.value;
+	            var _this$props$type = _this$props.type;
+	            var serialize = _this$props$type.serialize;
+	
+	            var rest = _objectWithoutProperties(_this$props$type, ['serialize']);
+	
+	            var _this$props$actions = _this$props.actions;
+	            _this$props$actions = _this$props$actions === undefined ? {} : _this$props$actions;
+	            var update = _this$props$actions.update;
+	
+	            event.preventDefault();
+	            var formValue = _this.refs.form.getValue();
+	            if (formValue) {
+	                update(serialize(Object.assign({}, value, formValue)));
+	                _this.setState({ editing: false });
+	            }
+	        };
+	
+	        _this.onChange = function (value) {
+	            return _this.setState({ value: value });
+	        };
+	
+	        var _props$location = props.location;
+	        _props$location = _props$location === undefined ? {} : _props$location;
+	        var _props$location$query = _props$location.query;
+	        _props$location$query = _props$location$query === undefined ? {} : _props$location$query;
+	        var _props$location$query2 = _props$location$query.editing;
+	        var editing = _props$location$query2 === undefined ? false : _props$location$query2;
+	
+	        _this.state = {
+	            editing: editing,
+	            value: _this.props.value,
 	            options: optionsFromProps(_this.props)
-	        }, _temp), _possibleConstructorReturn(_this, _ret);
+	        };
+	        return _this;
 	    }
 	
 	    _createClass(ToggleableEditableSubtleForm, [{
@@ -802,11 +882,15 @@ module.exports =
 	            var Type = _props$type.Type;
 	            var BaseType = _props$type.BaseType;
 	            var serialize = _props$type.serialize;
-	            var value = _props.value;
-	            var template = _props.template;
+	            var Template = _props.Template;
+	            var _props$actions = _props.actions;
+	            _props$actions = _props$actions === undefined ? {} : _props$actions;
+	            var remove = _props$actions.remove;
 	            var _state = this.state;
 	            var editing = _state.editing;
 	            var options = _state.options;
+	            var deleting = _state.deleting;
+	            var value = _state.value;
 	
 	            return _react2.default.createElement(
 	                'div',
@@ -814,10 +898,62 @@ module.exports =
 	                _react2.default.createElement(_EditButton2.default, { onClick: function onClick(_) {
 	                        return _this2.setState({ editing: !editing });
 	                    }, editing: editing != false }),
-	                editing ? _react2.default.createElement(t.Form, { ref: 'form',
+	                editing ? _react2.default.createElement(_tcombForm2.default.form.Form, { ref: 'form',
+	                    onChange: this.onChange,
 	                    type: BaseType,
 	                    options: options,
-	                    value: value }) : template(value)
+	                    value: value }) : _react2.default.createElement(Template, value),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'actions' },
+	                    deleting && remove ? _react2.default.createElement(
+	                        'div',
+	                        { className: 'deleting group' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'alert deleting', role: 'alert' },
+	                            'Are you sure you want to delete this ',
+	                            name,
+	                            '?'
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { onClick: function onClick(_) {
+	                                    return remove(value);
+	                                }, className: 'delete' },
+	                            ' Yes, Delete '
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { onClick: function onClick(_) {
+	                                    return isDeleting(false);
+	                                }, className: 'cancel' },
+	                            ' Cancel '
+	                        )
+	                    ) : _react2.default.createElement(
+	                        'div',
+	                        { className: 'default group' },
+	                        _react2.default.createElement(
+	                            'button',
+	                            { className: 'save', onClick: this.save },
+	                            'Save'
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { onClick: function onClick(_) {
+	                                    return _this2.setState({ editing: false });
+	                                }, className: 'cancel' },
+	                            'Cancel'
+	                        ),
+	                        remove && _react2.default.createElement(
+	                            'a',
+	                            { onClick: function onClick(_) {
+	                                    return isDeleting(true);
+	                                }, className: 'delete' },
+	                            'delete'
+	                        )
+	                    )
+	                )
 	            );
 	        }
 	    }]);
@@ -826,14 +962,14 @@ module.exports =
 	}(_react2.default.Component);
 	
 	ToggleableEditableSubtleForm.propTypes = {
-	    template: _react2.default.PropTypes.func.isRequired,
+	    Template: _react2.default.PropTypes.func.isRequired,
 	    type: _react2.default.PropTypes.object,
 	    value: _react2.default.PropTypes.object
 	};
 	exports.default = ToggleableEditableSubtleForm;
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -848,11 +984,11 @@ module.exports =
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _tcombForm = __webpack_require__(8);
+	var _tcombForm = __webpack_require__(3);
 	
 	var _tcombForm2 = _interopRequireDefault(_tcombForm);
 	
-	var _deepEqual = __webpack_require__(28);
+	var _deepEqual = __webpack_require__(7);
 	
 	var _deepEqual2 = _interopRequireDefault(_deepEqual);
 	
@@ -1004,7 +1140,7 @@ module.exports =
 	exports.default = TypedCommitableForm;
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1033,7 +1169,7 @@ module.exports =
 	}
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1043,7 +1179,7 @@ module.exports =
 	});
 	exports.RelationDomain = undefined;
 	
-	var _RelationDomain2 = __webpack_require__(15);
+	var _RelationDomain2 = __webpack_require__(16);
 	
 	var _RelationDomain3 = _interopRequireDefault(_RelationDomain2);
 	
@@ -1052,7 +1188,7 @@ module.exports =
 	exports.RelationDomain = _RelationDomain3.default;
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1066,9 +1202,9 @@ module.exports =
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactRouter = __webpack_require__(6);
+	var _reactRouter = __webpack_require__(8);
 	
-	var _components = __webpack_require__(4);
+	var _components = __webpack_require__(5);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -1083,24 +1219,24 @@ module.exports =
 	
 	    var pluralComponent = (0, _components.shadowParent)({
 	        child: SetWrapper,
-	        props: { type: type, plural: plural, ItemView: SetView }
+	        props: { type: type, plural: plural, singular: singular, ItemView: SetView }
 	    });
 	    var singularComponent = (0, _components.shadowParent)({
 	        child: ItemWrapper,
-	        props: { type: type, singular: singular, template: ItemView }
+	        props: { type: type, singular: singular, plural: plural, Template: ItemView }
 	    });
 	    return {
 	        path: plural,
 	        route: _react2.default.createElement(
 	            _reactRouter.Route,
 	            { path: '' + plural, component: pluralComponent },
-	            _react2.default.createElement(_reactRouter.Route, { path: '/' + singular + '/:' + singular + 'Id', component: singularComponent })
+	            _react2.default.createElement(_reactRouter.Route, { path: '/' + singular + '/:' + singular + 'id', component: singularComponent })
 	        )
 	    };
 	}
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1138,9 +1274,10 @@ module.exports =
 	        key: "render",
 	        value: function render() {
 	            var _props = this.props;
+	            var brand = _props.brand;
 	            var paths = _props.paths;
 	
-	            var props = _objectWithoutProperties(_props, ["paths"]);
+	            var props = _objectWithoutProperties(_props, ["brand", "paths"]);
 	
 	            return _react2.default.createElement(
 	                "nav",
@@ -1149,8 +1286,15 @@ module.exports =
 	                    "div",
 	                    { className: "container" },
 	                    _react2.default.createElement(
+	                        "a",
+	                        { className: "brand", href: "/" },
+	                        " ",
+	                        brand,
+	                        " "
+	                    ),
+	                    _react2.default.createElement(
 	                        "ul",
-	                        null,
+	                        { className: "nav items" },
 	                        paths.map(function (path) {
 	                            return _react2.default.createElement(
 	                                "li",
@@ -1174,7 +1318,7 @@ module.exports =
 	exports.default = Nav;
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1188,7 +1332,7 @@ module.exports =
 	
 	var _polypackDomainDrivenReduxReact = __webpack_require__(29);
 	
-	var _generateRoot = __webpack_require__(25);
+	var _generateRoot = __webpack_require__(26);
 	
 	var _generateRoot2 = _interopRequireDefault(_generateRoot);
 	
@@ -1205,7 +1349,7 @@ module.exports =
 	}
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1222,7 +1366,7 @@ module.exports =
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Nav = __webpack_require__(23);
+	var _Nav = __webpack_require__(24);
 	
 	var _Nav2 = _interopRequireDefault(_Nav);
 	
@@ -1269,7 +1413,7 @@ module.exports =
 	}
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1279,7 +1423,7 @@ module.exports =
 	});
 	exports.default = undefined;
 	
-	var _generateDomain = __webpack_require__(24);
+	var _generateDomain = __webpack_require__(25);
 	
 	var _generateDomain2 = _interopRequireDefault(_generateDomain);
 	
@@ -1288,16 +1432,10 @@ module.exports =
 	exports.default = _generateDomain2.default;
 
 /***/ },
-/* 27 */
-/***/ function(module, exports) {
-
-	module.exports = require("babel-polyfill");
-
-/***/ },
 /* 28 */
 /***/ function(module, exports) {
 
-	module.exports = require("deep-equal");
+	module.exports = require("babel-polyfill");
 
 /***/ },
 /* 29 */
