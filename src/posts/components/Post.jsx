@@ -1,5 +1,8 @@
 import React from 'react'
 
+if($ES.CONTEXT == 'BROWSER')
+    require('./post.scss');
+
 export default class Post extends React.Component {
     render(){
         let {title, text} = this.props

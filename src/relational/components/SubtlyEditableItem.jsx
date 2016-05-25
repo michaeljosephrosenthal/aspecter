@@ -1,9 +1,19 @@
-import t from 'tcomb-form'
 import equal from 'deep-equal'
 import React, { PropTypes } from 'react'
 import TypedCommitableForm from './TypedCommitableForm'
 import EditButton from './EditButton'
 import EditableFieldGenerator from './EditableFieldGenerator'
+
+import t from 'tcomb-form/lib'
+import en from 'tcomb-form/lib/i18n/en'
+import templates from './subtleTcombTemplates'
+
+t.form.Form.i18n = en
+t.form.Form.templates = templates
+
+if($ES.CONTEXT == 'BROWSER')
+    require('./subtleFormTemplates.scss');
+
 
 function toTcombFormTemplate(Template){
     if(Template.constructor){
@@ -28,6 +38,7 @@ function generateSubtleOptions(type){
 function optionsFromProps({type: {BaseType}, Template}){
     return {
         template: toTcombFormTemplate(Template),
+        auto: 'none',
         ...generateSubtleOptions(BaseType)
     }
 }
@@ -35,7 +46,6 @@ function optionsFromProps({type: {BaseType}, Template}){
 export default class ToggleableEditableSubtleForm extends React.Component {
     constructor(props) {
         super(props)
-        console.log(props)
         let { location: { query: {editing = false} = {} } = {} } = props
         this.state = {
             editing,
@@ -55,14 +65,23 @@ export default class ToggleableEditableSubtleForm extends React.Component {
             this.setState({value});
     }
 
-    save = event => {
-        let {value, type: {serialize, ...rest}, actions: {insert} = {}} = this.props
-        event.preventDefault()
+    save = _ => {
+        let {value, type: {serialize, ...rest}, actions: {insert, update} = {}} = this.props
         const formValue = this.refs.form.getValue()
-        if (formValue) {
-            insert( serialize(Object.assign({}, value, formValue)) )
-            this.setState({editing: false})
+        if (formValue){ 
+            let serialized = serialize(Object.assign({}, value, formValue)) 
+            if (serialized._rev){
+                update(serialized);
+            } else {
+                insert(serialized);
+            }
         }
+        this.setState({editing: false})
+    }
+
+    editToggle = event => {
+        event.preventDefault()
+        this.state.editing ? this.save() : this.setState({editing: true})
     }
 
     onChange = value => this.setState({value})
@@ -71,8 +90,20 @@ export default class ToggleableEditableSubtleForm extends React.Component {
         let {type: {name, Type, BaseType, serialize}, Template, actions: {remove} = {}} = this.props
         let {editing, options, deleting, value } = this.state
         return (
-            <div className={`${name.toLowerCase()} item-view`}>
-                <EditButton onClick={_=>this.setState({editing: !editing})} editing={editing != false}/>
+            <div className={`${name.toLowerCase()} item-view inline-editable ${deleting ? 'deleting' : ''} ${editing ? 'editing' : ''}`}>
+                { deleting && remove ? (
+                    <div className="deleting top actions">
+                        <div className="alert deleting" role="alert">Are you sure you want to delete this {name}?</div>
+                        <button onClick={_ => remove(value)} className="delete text"><i/> Yes, Delete </button>
+                        <button onClick={_ => this.setState({deleting: false})} className="cancel text"><i/> Cancel </button>
+                    </div>
+                ) : (
+                    <div className="top actions">
+                        <EditButton onClick={this.editToggle} editing={editing != false}/>
+                        { editing && <button onClick={_ => this.setState({editing: false})} className="cancel"><i/></button> }
+                        { editing && remove && <button onClick={_ => this.setState({deleting: true})} className="delete"><i/></button> }
+                    </div>
+                ) }
                 {
                     editing ? (
                         <t.form.Form ref="form"
@@ -83,21 +114,6 @@ export default class ToggleableEditableSubtleForm extends React.Component {
                         ) :
                         <Template {...value}/>
                 }
-                <div className="actions">
-                    { deleting && remove ? (
-                        <div className="deleting group">
-                            <div className="alert deleting" role="alert">Are you sure you want to delete this {name}?</div>
-                            <a onClick={_ => remove(value)} className="delete"> Yes, Delete </a>
-                            <a onClick={_ => isDeleting(false)} className="cancel"> Cancel </a>
-                        </div>
-                    ) : (
-                        <div className="default group">
-                            <button className="save" onClick={this.save} >Save</button>
-                            <a onClick={_ => this.setState({editing: false})} className="cancel">Cancel</a>
-                            { remove && <a onClick={_ => isDeleting(true)} className="delete">delete</a> }
-                        </div> 
-                    )}
-                </div>
             </div>
         )
     }

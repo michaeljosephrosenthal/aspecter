@@ -1,0 +1,96 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+.inline-editable {
+    position: relative;
+    * { white-space: pre-wrap; }
+
+    &, textarea.subtle, .form-group {
+        line-height: inherit;
+        font-size: inherit;
+        text-transform: inherit;
+        color: inherit;
+        background-color: inherit;
+        box-shadow: none;
+        display: block;
+        border: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        transition: border-width 0.25s ease-out,
+                    padding      0.25s ease-out;
+        border-left: 0px solid $gray-lighter;
+    }
+
+    &.editing {
+        border-left: 3px solid $brand-success;
+        textarea.subtle { padding-left: 3px; }
+    }
+    &.deleting {
+        border-left-color: $brand-danger;
+    }
+
+    textarea.subtle {
+        resize: none;
+
+        &, &:focus {
+            outline:0;
+        }
+
+        &:not([rows]) {
+            min-height: auto;
+            max-height: auto;
+        }
+    }
+
+    .actions {
+        position: absolute;
+        top: 0rem;
+        left: 0rem;
+        padding-left: 3px;
+        &:not(.top) {
+            left: -2.5rem;
+        }
+        button {
+            padding-left: 0;
+            float: left;
+            margin-right: 0.5em;
+            font-size: 1.25rem;
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 0%;
+            border: none;
+            background: transparent;
+
+            i {
+                @extend .glyphicon;
+                transition: transform 0.1s cubic-bezier(0, 1.5, 1, 1.5);
+            }
+            &:hover i {
+                transform: scale(2);
+            }
+            &.edit:not(.editing) {
+                color: $gray;
+                i { @extend .glyphicon-pencil; }
+            }
+            &.edit.editing {
+                color: $brand-success;
+                i { @extend .glyphicon-ok; }
+            }
+            &.cancel {
+                color: $brand-warning;
+                i { @extend .glyphicon-remove; }
+            }
+            &.delete {
+                color: $brand-danger;
+                i { @extend .glyphicon-trash; }
+            }
+            &.text { width: auto; }
+        }
+        .alert {
+            font-weight: bold;
+            color: $gray;
+            float: left;
+            padding: 0;
+        }
+    }
+}

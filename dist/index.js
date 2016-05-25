@@ -45,7 +45,7 @@ module.exports =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(10);
+	module.exports = __webpack_require__(12);
 
 
 /***/ },
@@ -62,12 +62,6 @@ module.exports =
 
 /***/ },
 /* 3 */
-/***/ function(module, exports) {
-
-	module.exports = require("tcomb-form");
-
-/***/ },
-/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -119,7 +113,7 @@ module.exports =
 	});
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -129,15 +123,15 @@ module.exports =
 	});
 	exports.shadowParent = exports.SubtlyEditableItem = exports.List = undefined;
 	
-	var _List2 = __webpack_require__(18);
+	var _List2 = __webpack_require__(20);
 	
 	var _List3 = _interopRequireDefault(_List2);
 	
-	var _SubtlyEditableItem2 = __webpack_require__(19);
+	var _SubtlyEditableItem2 = __webpack_require__(21);
 	
 	var _SubtlyEditableItem3 = _interopRequireDefault(_SubtlyEditableItem2);
 	
-	var _shadowParent2 = __webpack_require__(21);
+	var _shadowParent2 = __webpack_require__(23);
 	
 	var _shadowParent3 = _interopRequireDefault(_shadowParent2);
 	
@@ -146,6 +140,62 @@ module.exports =
 	exports.List = _List3.default;
 	exports.SubtlyEditableItem = _SubtlyEditableItem3.default;
 	exports.shadowParent = _shadowParent3.default;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _tcombFormTemplatesBootstrap = __webpack_require__(35);
+	
+	var _tcombFormTemplatesBootstrap2 = _interopRequireDefault(_tcombFormTemplatesBootstrap);
+	
+	var _reactTextareaAutosize = __webpack_require__(32);
+	
+	var _reactTextareaAutosize2 = _interopRequireDefault(_reactTextareaAutosize);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	var textbox = _tcombFormTemplatesBootstrap2.default.textbox.clone({
+	    renderTextarea: function renderTextarea(_ref) {
+	        var _ref$attrs = _ref.attrs;
+	        var _ref$attrs$className = _ref$attrs.className;
+	        var className = _ref$attrs$className === undefined ? '' : _ref$attrs$className;
+	        var placeholder = _ref$attrs.placeholder;
+	
+	        var attrs = _objectWithoutProperties(_ref$attrs, ['className', 'placeholder']);
+	
+	        return console.log(placeholder, attrs) || _react2.default.createElement(_reactTextareaAutosize2.default, _extends({ className: 'subtle ' + className,
+	            placeholder: placeholder || (attrs.name || '') + '...'
+	        }, attrs));
+	    },
+	
+	    renderTextbox: function renderTextbox(locals) {
+	        if (locals.type === 'static') {
+	            return textbox.renderStatic(locals);
+	        }
+	        var ret = locals.type !== 'input' ? textbox.renderTextarea(locals) : textbox.renderInput(locals);
+	        if (locals.config.addonBefore || locals.config.addonAfter || locals.config.buttonBefore || locals.config.buttonAfter) {
+	            ret = textbox.renderInputGroup(ret, locals);
+	        }
+	        return ret;
+	    }
+	});
+	
+	exports.default = Object.assign({}, _tcombFormTemplatesBootstrap2.default, { textbox: textbox });
 
 /***/ },
 /* 6 */
@@ -165,7 +215,7 @@ module.exports =
 	
 	var _tcomb2 = _interopRequireDefault(_tcomb);
 	
-	var _slug = __webpack_require__(30);
+	var _slug = __webpack_require__(33);
 	
 	var _slug2 = _interopRequireDefault(_slug);
 	
@@ -191,12 +241,12 @@ module.exports =
 	
 	function serializer(Type, type, fields, sluggify) {
 	    sluggify = sluggify || function (doc) {
-	        return fields.map(function (f) {
+	        return type.toLowerCase() + '/' + fields.map(function (f) {
 	            return (0, _slug2.default)(doc[f].toString().toLowerCase());
 	        }).join('&');
 	    };
 	    return function (doc) {
-	        return Type(Object.assign({}, doc, { _id: type + '/' + sluggify(doc) }));
+	        return Type(Object.assign({}, doc, { _id: sluggify(doc) }));
 	    };
 	}
 	
@@ -238,21 +288,33 @@ module.exports =
 
 /***/ },
 /* 10 */
+/***/ function(module, exports) {
+
+	module.exports = require("tcomb-form/lib");
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	module.exports = require("tcomb-form/lib/i18n/en");
+
+/***/ },
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(28);
+	__webpack_require__(30);
 	
 	var _polypackBufflehead = __webpack_require__(2);
 	
 	var bufflehead = _interopRequireWildcard(_polypackBufflehead);
 	
-	var _posts = __webpack_require__(14);
+	var _posts = __webpack_require__(16);
 	
 	var _posts2 = _interopRequireDefault(_posts);
 	
-	var _root = __webpack_require__(27);
+	var _root = __webpack_require__(29);
 	
 	var _root2 = _interopRequireDefault(_root);
 	
@@ -289,7 +351,7 @@ module.exports =
 	app.main();
 
 /***/ },
-/* 11 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -351,7 +413,7 @@ module.exports =
 	exports.default = Post;
 
 /***/ },
-/* 12 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -361,7 +423,7 @@ module.exports =
 	});
 	exports.default = undefined;
 	
-	var _Post = __webpack_require__(11);
+	var _Post = __webpack_require__(13);
 	
 	var _Post2 = _interopRequireDefault(_Post);
 	
@@ -370,7 +432,7 @@ module.exports =
 	exports.default = _Post2.default;
 
 /***/ },
-/* 13 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -379,13 +441,13 @@ module.exports =
 	    value: true
 	});
 	
-	var _relational = __webpack_require__(22);
+	var _relational = __webpack_require__(24);
 	
-	var _type = __webpack_require__(15);
+	var _type = __webpack_require__(17);
 	
 	var _type2 = _interopRequireDefault(_type);
 	
-	var _components = __webpack_require__(12);
+	var _components = __webpack_require__(14);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -408,7 +470,7 @@ module.exports =
 	});
 
 /***/ },
-/* 14 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -418,7 +480,7 @@ module.exports =
 	});
 	exports.default = undefined;
 	
-	var _domain = __webpack_require__(13);
+	var _domain = __webpack_require__(15);
 	
 	var _domain2 = _interopRequireDefault(_domain);
 	
@@ -427,7 +489,7 @@ module.exports =
 	exports.default = _domain2.default;
 
 /***/ },
-/* 15 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -448,7 +510,7 @@ module.exports =
 	});
 
 /***/ },
-/* 16 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -461,11 +523,11 @@ module.exports =
 	
 	var _utils = __webpack_require__(6);
 	
-	var _relationRoute = __webpack_require__(23);
+	var _relationRoute = __webpack_require__(25);
 	
 	var _relationRoute2 = _interopRequireDefault(_relationRoute);
 	
-	var _components = __webpack_require__(5);
+	var _components = __webpack_require__(4);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -475,15 +537,6 @@ module.exports =
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var ddataFlows = Object.assign({}, _polypackBufflehead.persister.defaultDataFlows, {
-	    UPDATE: function UPDATE(state, payload) {
-	        console.log(payload);
-	        return state.map(function (doc) {
-	            return doc._id == payload._id ? payload : doc;
-	        });
-	    }
-	});
-	
 	var RelationDomain = function (_Domain) {
 	    _inherits(RelationDomain, _Domain);
 	
@@ -492,7 +545,7 @@ module.exports =
 	        var singular = _ref.singular;
 	        var plural = _ref.plural;
 	        var _ref$dataFlows = _ref.dataFlows;
-	        var dataFlows = _ref$dataFlows === undefined ? ddataFlows : _ref$dataFlows;
+	        var dataFlows = _ref$dataFlows === undefined ? _polypackBufflehead.persister.defaultDataFlows : _ref$dataFlows;
 	        var _ref$components = _ref.components;
 	        var ItemView = _ref$components.ItemView;
 	        var _ref$components$ItemW = _ref$components.ItemWrapper;
@@ -500,12 +553,13 @@ module.exports =
 	        var SetView = _ref$components.SetView;
 	        var _ref$components$SetWr = _ref$components.SetWrapper;
 	        var SetWrapper = _ref$components$SetWr === undefined ? _components.List : _ref$components$SetWr;
+	        var route = _ref.route;
 	
 	        _classCallCheck(this, RelationDomain);
 	
 	        SetView = SetView || ItemView;
 	        type = (0, _utils.expandType)(Object.assign({ name: (0, _utils.toTitle)(singular) }, type));
-	        var route = (0, _relationRoute2.default)({
+	        route = route || (0, _relationRoute2.default)({
 	            type: type, singular: singular, plural: plural,
 	            ItemView: ItemView, SetView: SetView,
 	            ItemWrapper: ItemWrapper, SetWrapper: SetWrapper
@@ -525,7 +579,7 @@ module.exports =
 	exports.default = RelationDomain;
 
 /***/ },
-/* 17 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -544,11 +598,19 @@ module.exports =
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _tcombForm = __webpack_require__(3);
+	var _lib = __webpack_require__(10);
 	
-	var _tcombForm2 = _interopRequireDefault(_tcombForm);
+	var _lib2 = _interopRequireDefault(_lib);
 	
-	var _EditButton = __webpack_require__(4);
+	var _en = __webpack_require__(11);
+	
+	var _en2 = _interopRequireDefault(_en);
+	
+	var _subtleTcombTemplates = __webpack_require__(5);
+	
+	var _subtleTcombTemplates2 = _interopRequireDefault(_subtleTcombTemplates);
+	
+	var _EditButton = __webpack_require__(3);
 	
 	var _EditButton2 = _interopRequireDefault(_EditButton);
 	
@@ -559,6 +621,9 @@ module.exports =
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	_lib2.default.form.Form.i18n = _en2.default;
+	_lib2.default.form.Form.templates = _subtleTcombTemplates2.default;
 	
 	var EditableFieldGenerator = function EditableFieldGenerator() {
 	  _classCallCheck(this, EditableFieldGenerator);
@@ -597,6 +662,11 @@ module.exports =
 	        this.forceUpdate(); // overrides the default shouldComponentUpdate
 	      }
 	    }, {
+	      key: 'componentShouldUpdate',
+	      value: function componentShouldUpdate(nextProps, nextState) {
+	        return _get(Object.getPrototypeOf(Inliner.prototype), 'componentShouldUpdate', this).call(this, nextProps, nextState) || next.Props.value != this.props.value;
+	      }
+	    }, {
 	      key: 'getTemplate',
 	      value: function getTemplate() {
 	        var _this2 = this;
@@ -605,6 +675,7 @@ module.exports =
 	
 	        var template = _get(Object.getPrototypeOf(Inliner.prototype), 'getTemplate', this).call(this);
 	        return function (locals) {
+	          console.log(locals);
 	          return _react2.default.createElement(
 	            'div',
 	            null,
@@ -621,7 +692,7 @@ module.exports =
 	    }]);
 	
 	    return Inliner;
-	  }(_tcombForm2.default.form.getComponent(props.type, options));
+	  }(_lib2.default.form.getComponent(props.type, options));
 	
 	  return new (Function.prototype.bind.apply(Inliner, [null].concat(args)))();
 	};
@@ -629,7 +700,7 @@ module.exports =
 	exports.default = EditableFieldGenerator;
 
 /***/ },
-/* 18 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -683,16 +754,19 @@ module.exports =
 	            var _props = this.props;
 	            var _props$listControls = _props.listControls;
 	            var listControls = _props$listControls === undefined ? [AddButton] : _props$listControls;
-	            var _props$items = _props.items;
-	            var items = _props$items === undefined ? [] : _props$items;
 	            var ItemView = _props.ItemView;
 	            var plural = _props.plural;
+	            var singular = _props.singular;
 	            var children = _props.children;
 	            var actions = _props.actions;
+	            var singularPropSelector = _props.singularPropSelector;
 	
-	            var controlProps = _objectWithoutProperties(_props, ['listControls', 'items', 'ItemView', 'plural', 'children', 'actions']);
+	            var controlProps = _objectWithoutProperties(_props, ['listControls', 'ItemView', 'plural', 'singular', 'children', 'actions', 'singularPropSelector']);
 	
-	            return children ? _react2.default.cloneElement(children, { actions: actions }) : _react2.default.createElement(
+	            var singularId = this.props.params.singularId;
+	
+	            var items = this.props[plural];
+	            return children ? _react2.default.cloneElement(children, singularPropSelector({ items: items, actions: actions, singularId: singularId })) : _react2.default.createElement(
 	                'div',
 	                { className: plural.toLowerCase() + ' relational list' },
 	                _react2.default.createElement(
@@ -707,7 +781,7 @@ module.exports =
 	                        'div',
 	                        { className: 'controls' },
 	                        listControls.map(function (Control) {
-	                            return _react2.default.createElement(Control, _extends({ key: Control.name, actions: actions }, controlProps));
+	                            return _react2.default.createElement(Control, _extends({ key: Control.name, actions: actions, singular: singular }, controlProps));
 	                        })
 	                    )
 	                ),
@@ -716,8 +790,8 @@ module.exports =
 	                    { className: 'items' },
 	                    items.map(function (i) {
 	                        return _react2.default.createElement(
-	                            'div',
-	                            { key: i._id, className: singular.toLowerCase() + ' item' },
+	                            'a',
+	                            { key: i._id, className: singular.toLowerCase() + ' item', href: '/' + i._id },
 	                            _react2.default.createElement(ItemView, i)
 	                        );
 	                    })
@@ -733,13 +807,14 @@ module.exports =
 	    ItemView: _react2.default.PropTypes.func.isRequired,
 	    type: _react2.default.PropTypes.object.isRequired,
 	    plural: _react2.default.PropTypes.string,
+	    singular: _react2.default.PropTypes.string,
 	    listControls: _react2.default.PropTypes.array,
-	    items: _react2.default.PropTypes.array
+	    singularPropSelector: _react2.default.PropTypes.func
 	};
 	exports.default = List;
 
 /***/ },
-/* 19 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -752,10 +827,6 @@ module.exports =
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _tcombForm = __webpack_require__(3);
-	
-	var _tcombForm2 = _interopRequireDefault(_tcombForm);
-	
 	var _deepEqual = __webpack_require__(7);
 	
 	var _deepEqual2 = _interopRequireDefault(_deepEqual);
@@ -764,17 +835,29 @@ module.exports =
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _TypedCommitableForm = __webpack_require__(20);
+	var _TypedCommitableForm = __webpack_require__(22);
 	
 	var _TypedCommitableForm2 = _interopRequireDefault(_TypedCommitableForm);
 	
-	var _EditButton = __webpack_require__(4);
+	var _EditButton = __webpack_require__(3);
 	
 	var _EditButton2 = _interopRequireDefault(_EditButton);
 	
-	var _EditableFieldGenerator = __webpack_require__(17);
+	var _EditableFieldGenerator = __webpack_require__(19);
 	
 	var _EditableFieldGenerator2 = _interopRequireDefault(_EditableFieldGenerator);
+	
+	var _lib = __webpack_require__(10);
+	
+	var _lib2 = _interopRequireDefault(_lib);
+	
+	var _en = __webpack_require__(11);
+	
+	var _en2 = _interopRequireDefault(_en);
+	
+	var _subtleTcombTemplates = __webpack_require__(5);
+	
+	var _subtleTcombTemplates2 = _interopRequireDefault(_subtleTcombTemplates);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -785,6 +868,11 @@ module.exports =
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	_lib2.default.form.Form.i18n = _en2.default;
+	_lib2.default.form.Form.templates = _subtleTcombTemplates2.default;
+	
+	if (false) require('./subtleFormTemplates.scss');
 	
 	function toTcombFormTemplate(Template) {
 	    if (Template.constructor) {
@@ -814,7 +902,8 @@ module.exports =
 	    var Template = _ref.Template;
 	
 	    return _extends({
-	        template: toTcombFormTemplate(Template)
+	        template: toTcombFormTemplate(Template),
+	        auto: 'none'
 	    }, generateSubtleOptions(BaseType));
 	}
 	
@@ -842,12 +931,12 @@ module.exports =
 	
 	            var _this$props$actions = _this$props.actions;
 	            _this$props$actions = _this$props$actions === undefined ? {} : _this$props$actions;
-	            var update = _this$props$actions.update;
+	            var insert = _this$props$actions.insert;
 	
 	            event.preventDefault();
 	            var formValue = _this.refs.form.getValue();
 	            if (formValue) {
-	                update(serialize(Object.assign({}, value, formValue)));
+	                insert(serialize(Object.assign({}, value, formValue)));
 	                _this.setState({ editing: false });
 	            }
 	        };
@@ -898,7 +987,7 @@ module.exports =
 	                _react2.default.createElement(_EditButton2.default, { onClick: function onClick(_) {
 	                        return _this2.setState({ editing: !editing });
 	                    }, editing: editing != false }),
-	                editing ? _react2.default.createElement(_tcombForm2.default.form.Form, { ref: 'form',
+	                editing ? _react2.default.createElement(_lib2.default.form.Form, { ref: 'form',
 	                    onChange: this.onChange,
 	                    type: BaseType,
 	                    options: options,
@@ -969,7 +1058,7 @@ module.exports =
 	exports.default = ToggleableEditableSubtleForm;
 
 /***/ },
-/* 20 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -984,7 +1073,7 @@ module.exports =
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _tcombForm = __webpack_require__(3);
+	var _tcombForm = __webpack_require__(34);
 	
 	var _tcombForm2 = _interopRequireDefault(_tcombForm);
 	
@@ -1140,7 +1229,7 @@ module.exports =
 	exports.default = TypedCommitableForm;
 
 /***/ },
-/* 21 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1169,7 +1258,7 @@ module.exports =
 	}
 
 /***/ },
-/* 22 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1179,7 +1268,7 @@ module.exports =
 	});
 	exports.RelationDomain = undefined;
 	
-	var _RelationDomain2 = __webpack_require__(16);
+	var _RelationDomain2 = __webpack_require__(18);
 	
 	var _RelationDomain3 = _interopRequireDefault(_RelationDomain2);
 	
@@ -1188,7 +1277,7 @@ module.exports =
 	exports.RelationDomain = _RelationDomain3.default;
 
 /***/ },
-/* 23 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1196,6 +1285,11 @@ module.exports =
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+	
 	exports.default = relationRoute;
 	
 	var _react = __webpack_require__(1);
@@ -1204,23 +1298,51 @@ module.exports =
 	
 	var _reactRouter = __webpack_require__(8);
 	
-	var _components = __webpack_require__(5);
+	var _components = __webpack_require__(4);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function relationRoute(_ref) {
-	    var type = _ref.type;
-	    var singular = _ref.singular;
-	    var plural = _ref.plural;
-	    var ItemView = _ref.ItemView;
-	    var ItemWrapper = _ref.ItemWrapper;
-	    var SetView = _ref.SetView;
-	    var SetWrapper = _ref.SetWrapper;
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 	
+	function defaultSingularPropSelector(_ref) {
+	    var singular = _ref.singular;
+	
+	    function select(_ref2) {
+	        var items = _ref2.items;
+	        var singularId = _ref2.singularId;
+	
+	        var props = _objectWithoutProperties(_ref2, ['items', 'singularId']);
+	
+	        var _items$filter = items.filter(function (item) {
+	            return item._id == singular + '/' + singularId;
+	        });
+	
+	        var _items$filter2 = _slicedToArray(_items$filter, 1);
+	
+	        var _items$filter2$ = _items$filter2[0];
+	        var value = _items$filter2$ === undefined ? undefined : _items$filter2$;
+	
+	        return _extends({ value: value }, props);
+	    }
+	    return select;
+	}
+	
+	function relationRoute(_ref3) {
+	    var type = _ref3.type;
+	    var singular = _ref3.singular;
+	    var plural = _ref3.plural;
+	    var ItemView = _ref3.ItemView;
+	    var ItemWrapper = _ref3.ItemWrapper;
+	    var SetView = _ref3.SetView;
+	    var SetWrapper = _ref3.SetWrapper;
+	    var singularPropSelector = _ref3.singularPropSelector;
+	
+	    singularPropSelector = singularPropSelector || defaultSingularPropSelector({ singular: singular });
 	    var pluralComponent = (0, _components.shadowParent)({
 	        child: SetWrapper,
-	        props: { type: type, plural: plural, singular: singular, ItemView: SetView }
+	        props: { type: type, plural: plural, singular: singular, singularPropSelector: singularPropSelector, ItemView: SetView }
 	    });
+	
 	    var singularComponent = (0, _components.shadowParent)({
 	        child: ItemWrapper,
 	        props: { type: type, singular: singular, plural: plural, Template: ItemView }
@@ -1230,16 +1352,16 @@ module.exports =
 	        route: _react2.default.createElement(
 	            _reactRouter.Route,
 	            { path: '' + plural, component: pluralComponent },
-	            _react2.default.createElement(_reactRouter.Route, { path: '/' + singular + '/:' + singular + 'id', component: singularComponent })
+	            _react2.default.createElement(_reactRouter.Route, { path: '/' + singular + '/:singularId', component: singularComponent })
 	        )
 	    };
 	}
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -1261,6 +1383,16 @@ module.exports =
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	function toTitle(str) {
+	    return str.replace(/([a-z][A-Z])/g, function (g) {
+	        return g[0] + ' ' + g[1];
+	    }).replace(/^\//, function (g) {
+	        return '';
+	    }).replace(/^([a-zA-Z])| ([a-zA-Z])/g, function (g) {
+	        return g.toUpperCase();
+	    });
+	}
+	
 	var Nav = function (_React$Component) {
 	    _inherits(Nav, _React$Component);
 	
@@ -1271,38 +1403,38 @@ module.exports =
 	    }
 	
 	    _createClass(Nav, [{
-	        key: "render",
+	        key: 'render',
 	        value: function render() {
 	            var _props = this.props;
 	            var brand = _props.brand;
 	            var paths = _props.paths;
 	
-	            var props = _objectWithoutProperties(_props, ["brand", "paths"]);
+	            var props = _objectWithoutProperties(_props, ['brand', 'paths']);
 	
 	            return _react2.default.createElement(
-	                "nav",
+	                'nav',
 	                props,
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "container" },
+	                    'div',
+	                    { className: 'container' },
 	                    _react2.default.createElement(
-	                        "a",
-	                        { className: "brand", href: "/" },
-	                        " ",
+	                        'a',
+	                        { className: 'brand', href: '/' },
+	                        ' ',
 	                        brand,
-	                        " "
+	                        ' '
 	                    ),
 	                    _react2.default.createElement(
-	                        "ul",
-	                        { className: "nav items" },
+	                        'ul',
+	                        { className: 'nav items' },
 	                        paths.map(function (path) {
 	                            return _react2.default.createElement(
-	                                "li",
+	                                'li',
 	                                { key: path },
 	                                _react2.default.createElement(
-	                                    "a",
+	                                    'a',
 	                                    { href: path },
-	                                    path
+	                                    toTitle(path)
 	                                )
 	                            );
 	                        })
@@ -1318,7 +1450,7 @@ module.exports =
 	exports.default = Nav;
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1330,9 +1462,9 @@ module.exports =
 	
 	var _polypackBufflehead = __webpack_require__(2);
 	
-	var _polypackDomainDrivenReduxReact = __webpack_require__(29);
+	var _polypackDomainDrivenReduxReact = __webpack_require__(31);
 	
-	var _generateRoot = __webpack_require__(26);
+	var _generateRoot = __webpack_require__(28);
 	
 	var _generateRoot2 = _interopRequireDefault(_generateRoot);
 	
@@ -1349,7 +1481,7 @@ module.exports =
 	}
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1366,7 +1498,7 @@ module.exports =
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Nav = __webpack_require__(24);
+	var _Nav = __webpack_require__(26);
 	
 	var _Nav2 = _interopRequireDefault(_Nav);
 	
@@ -1413,7 +1545,7 @@ module.exports =
 	}
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1423,7 +1555,7 @@ module.exports =
 	});
 	exports.default = undefined;
 	
-	var _generateDomain = __webpack_require__(25);
+	var _generateDomain = __webpack_require__(27);
 	
 	var _generateDomain2 = _interopRequireDefault(_generateDomain);
 	
@@ -1432,22 +1564,40 @@ module.exports =
 	exports.default = _generateDomain2.default;
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = require("babel-polyfill");
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
 	module.exports = require("domain-driven-redux-react/dist/for/node_development");
 
 /***/ },
-/* 30 */
+/* 32 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-textarea-autosize");
+
+/***/ },
+/* 33 */
 /***/ function(module, exports) {
 
 	module.exports = require("slug");
+
+/***/ },
+/* 34 */
+/***/ function(module, exports) {
+
+	module.exports = require("tcomb-form");
+
+/***/ },
+/* 35 */
+/***/ function(module, exports) {
+
+	module.exports = require("tcomb-form-templates-bootstrap");
 
 /***/ }
 /******/ ]);

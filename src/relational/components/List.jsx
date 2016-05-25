@@ -12,15 +12,16 @@ export default class List extends React.Component {
         type: React.PropTypes.object.isRequired,
         plural: React.PropTypes.string,
         singular: React.PropTypes.string,
-        listControls: React.PropTypes.array
+        listControls: React.PropTypes.array,
+        singularPropSelector: React.PropTypes.func,
     }
 
     render(){
-        let { listControls=[AddButton], ItemView, plural, singular, children, actions, singularProps, ...controlProps } = this.props
+        let { listControls=[AddButton], ItemView, plural, singular, children, actions, singularPropSelector, ...controlProps } = this.props
         let { singularId } = this.props.params
         let items = this.props[plural]
         return children ?
-            React.cloneElement(children, singularProps({items, actions, singularId})) : (
+            React.cloneElement(children, singularPropSelector({items, actions, singularId})) : (
             <div className={`${plural.toLowerCase()} relational list`}>
                 <div className="header">
                     <h1 className="title">{toTitle(plural)}</h1>

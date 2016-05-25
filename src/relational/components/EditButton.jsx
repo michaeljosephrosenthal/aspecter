@@ -1,23 +1,25 @@
 import React, { PropTypes, Component } from 'react'
 
-export default React.createClass({
-    getDefaultProps(){ return {
+export default class EditButton extends Component {
+    static defaultProps = {
         editing: false,
-        editingIcon: 'save',
-        icon: 'pencil',
-    } },
-    propTypes : {
+        text: {editing: '', notEditing: ''}
+    }
+
+    static propTypes = {
         editing: PropTypes.bool.isRequired,
+        text: PropTypes.object,
         onClick: PropTypes.func
-    },
+    }
+
     render(){
-        let { editing, editingIcon, icon, ...actions } = this.props
+        let { editing, text, editingText, ...actions } = this.props
         return (
-            <button {...actions}
-                className="circular ui icon button top left corner edit"                  type="button">
-              <i className={"icon " + (editing ? editingIcon : icon)}></i>
-              edit
+            <button {...actions} className={`edit ${(editing ? 'editing' : '')}`} type="button">
+                <i/>
+                {editing ? text.editing : text.notEditing}
             </button>
         )
     }
-})
+}
+

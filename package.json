@@ -25,6 +25,7 @@
     "postcss-loader": "^0.9.1",
     "react": "0.14.7",
     "react-router": "1.0.3",
+    "react-textarea-autosize": "^4.0.2",
     "sass-loader": "^3.2.0",
     "slug": "^0.9.1",
     "tcomb": "^3.0.0",

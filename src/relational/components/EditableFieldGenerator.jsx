@@ -1,6 +1,14 @@
 import React, { PropTypes, Component } from 'react'
-import t from 'tcomb-form'
+import t from 'tcomb-form/lib'
+import en from 'tcomb-form/lib/i18n/en'
+import templates from './subtleTcombTemplates'
 import EditButton from './EditButton'
+
+t.form.Form.i18n = en
+t.form.Form.templates = templates
+
+if($ES.CONTEXT == 'BROWSER')
+    require('./subtleFormTemplates.scss');
 
 export default class EditableFieldGenerator {
 
@@ -13,8 +21,10 @@ export default class EditableFieldGenerator {
     };
 
     class Inliner extends t.form.getComponent(props.type, options) {
-
-      state = { editing: false }
+      constructor(props) {
+        super(props)
+        this.state.editing = false
+      }
 
       toggle(evt) {
         evt.preventDefault();
@@ -22,20 +32,29 @@ export default class EditableFieldGenerator {
         this.forceUpdate(); // overrides the default shouldComponentUpdate
       }
 
-      getTemplate() {
-        let { editing } = this.state
-        const template = super.getTemplate()
-        return (locals) => {
-          return (
-            <div>
-              <EditButton onClick={this.toggle.bind(this)} editing={editing} />
-              <div className="corner-border top left"/>
-              <a href="#" style={{ color: locals.hasError ? '#a94442' : 'normal' }} >
-                  { editing ? template(locals) : locals.value || '...' }
-              </a>
-            </div>
-          );
-        };
+      editButton = ({attrs: {placeholder, name}}) => (
+          <div className='actions'>
+              <EditButton onClick={this.toggle.bind(this)}
+                  editing={this.state.editing != false} />
+          </div>
+      )
+
+      defaultPlaceholder = ({attrs: {placeholder, name}}) => (placeholder || (name + '...'))
+
+      getTemplate(){
+          let template = super.getTemplate()
+          return locals => (
+              <div className={`inline-editable ${this.state.editing ? 'editing' : ''}`}>
+                  {this.editButton(locals)}
+                  { this.state.editing ?
+                      template(locals) : (
+                          (locals.value != undefined && locals.value) ||
+                          this.props.value ||
+                          this.defaultPlaceholder(locals)
+                      )
+                  }
+              </div>
+          )
       }
     }
     return new Inliner(...args);

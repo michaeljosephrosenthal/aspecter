@@ -14,11 +14,12 @@ export default class RelationDomain extends Domain {
             ItemWrapper = SubtlyEditableItem,
             SetView, 
             SetWrapper  = List
-        }
+        },
+        route
     }){
         SetView = SetView || ItemView
         type = expandType(Object.assign({ name: toTitle(singular) }, type))
-        let route = relationRoute({
+        route = route || relationRoute({
             type, singular, plural, 
             ItemView, SetView,
             ItemWrapper, SetWrapper
