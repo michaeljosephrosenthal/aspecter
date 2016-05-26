@@ -2,41 +2,41 @@ module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/
+
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-/******/
+
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-/******/
+
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-/******/
+
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
+
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/
+
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/
-/******/
+
+
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-/******/
+
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-/******/
+
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-/******/
+
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -62,223 +62,39 @@ module.exports =
 
 /***/ },
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-	
-	exports.default = _react2.default.createClass({
-	    displayName: 'EditButton',
-	    getDefaultProps: function getDefaultProps() {
-	        return {
-	            editing: false,
-	            editingIcon: 'save',
-	            icon: 'pencil'
-	        };
-	    },
-	
-	    propTypes: {
-	        editing: _react.PropTypes.bool.isRequired,
-	        onClick: _react.PropTypes.func
-	    },
-	    render: function render() {
-	        var _props = this.props;
-	        var editing = _props.editing;
-	        var editingIcon = _props.editingIcon;
-	        var icon = _props.icon;
-	
-	        var actions = _objectWithoutProperties(_props, ['editing', 'editingIcon', 'icon']);
-	
-	        return _react2.default.createElement(
-	            'button',
-	            _extends({}, actions, {
-	                className: 'circular ui icon button top left corner edit', type: 'button' }),
-	            _react2.default.createElement('i', { className: "icon " + (editing ? editingIcon : icon) }),
-	            'edit'
-	        );
-	    }
-	});
+	module.exports = require("react-router");
 
 /***/ },
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.shadowParent = exports.SubtlyEditableItem = exports.List = undefined;
-	
-	var _List2 = __webpack_require__(20);
-	
-	var _List3 = _interopRequireDefault(_List2);
-	
-	var _SubtlyEditableItem2 = __webpack_require__(21);
-	
-	var _SubtlyEditableItem3 = _interopRequireDefault(_SubtlyEditableItem2);
-	
-	var _shadowParent2 = __webpack_require__(23);
-	
-	var _shadowParent3 = _interopRequireDefault(_shadowParent2);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.List = _List3.default;
-	exports.SubtlyEditableItem = _SubtlyEditableItem3.default;
-	exports.shadowParent = _shadowParent3.default;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar EditButton = function (_Component) {\n    _inherits(EditButton, _Component);\n\n    function EditButton() {\n        _classCallCheck(this, EditButton);\n\n        return _possibleConstructorReturn(this, Object.getPrototypeOf(EditButton).apply(this, arguments));\n    }\n\n    _createClass(EditButton, [{\n        key: 'render',\n        value: function render() {\n            var _props = this.props;\n            var editing = _props.editing;\n            var text = _props.text;\n            var editingText = _props.editingText;\n\n            var actions = _objectWithoutProperties(_props, ['editing', 'text', 'editingText']);\n\n            return _react2.default.createElement(\n                'button',\n                _extends({}, actions, { className: 'edit ' + (editing ? 'editing' : ''), type: 'button' }),\n                _react2.default.createElement('i', null),\n                editing ? text.editing : text.notEditing\n            );\n        }\n    }]);\n\n    return EditButton;\n}(_react.Component);\n\nEditButton.defaultProps = {\n    editing: false,\n    text: { editing: '', notEditing: '' }\n};\nEditButton.propTypes = {\n    editing: _react.PropTypes.bool.isRequired,\n    text: _react.PropTypes.object,\n    onClick: _react.PropTypes.func\n};\nexports.default = EditButton;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiNC5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9yZWxhdGlvbmFsL2NvbXBvbmVudHMvRWRpdEJ1dHRvbi5qc3g/YjViNiJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG5cbk9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBcIl9fZXNNb2R1bGVcIiwge1xuICAgIHZhbHVlOiB0cnVlXG59KTtcblxudmFyIF9leHRlbmRzID0gT2JqZWN0LmFzc2lnbiB8fCBmdW5jdGlvbiAodGFyZ2V0KSB7IGZvciAodmFyIGkgPSAxOyBpIDwgYXJndW1lbnRzLmxlbmd0aDsgaSsrKSB7IHZhciBzb3VyY2UgPSBhcmd1bWVudHNbaV07IGZvciAodmFyIGtleSBpbiBzb3VyY2UpIHsgaWYgKE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChzb3VyY2UsIGtleSkpIHsgdGFyZ2V0W2tleV0gPSBzb3VyY2Vba2V5XTsgfSB9IH0gcmV0dXJuIHRhcmdldDsgfTtcblxudmFyIF9jcmVhdGVDbGFzcyA9IGZ1bmN0aW9uICgpIHsgZnVuY3Rpb24gZGVmaW5lUHJvcGVydGllcyh0YXJnZXQsIHByb3BzKSB7IGZvciAodmFyIGkgPSAwOyBpIDwgcHJvcHMubGVuZ3RoOyBpKyspIHsgdmFyIGRlc2NyaXB0b3IgPSBwcm9wc1tpXTsgZGVzY3JpcHRvci5lbnVtZXJhYmxlID0gZGVzY3JpcHRvci5lbnVtZXJhYmxlIHx8IGZhbHNlOyBkZXNjcmlwdG9yLmNvbmZpZ3VyYWJsZSA9IHRydWU7IGlmIChcInZhbHVlXCIgaW4gZGVzY3JpcHRvcikgZGVzY3JpcHRvci53cml0YWJsZSA9IHRydWU7IE9iamVjdC5kZWZpbmVQcm9wZXJ0eSh0YXJnZXQsIGRlc2NyaXB0b3Iua2V5LCBkZXNjcmlwdG9yKTsgfSB9IHJldHVybiBmdW5jdGlvbiAoQ29uc3RydWN0b3IsIHByb3RvUHJvcHMsIHN0YXRpY1Byb3BzKSB7IGlmIChwcm90b1Byb3BzKSBkZWZpbmVQcm9wZXJ0aWVzKENvbnN0cnVjdG9yLnByb3RvdHlwZSwgcHJvdG9Qcm9wcyk7IGlmIChzdGF0aWNQcm9wcykgZGVmaW5lUHJvcGVydGllcyhDb25zdHJ1Y3Rvciwgc3RhdGljUHJvcHMpOyByZXR1cm4gQ29uc3RydWN0b3I7IH07IH0oKTtcblxudmFyIF9yZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG5cbnZhciBfcmVhY3QyID0gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChfcmVhY3QpO1xuXG5mdW5jdGlvbiBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KG9iaikgeyByZXR1cm4gb2JqICYmIG9iai5fX2VzTW9kdWxlID8gb2JqIDogeyBkZWZhdWx0OiBvYmogfTsgfVxuXG5mdW5jdGlvbiBfb2JqZWN0V2l0aG91dFByb3BlcnRpZXMob2JqLCBrZXlzKSB7IHZhciB0YXJnZXQgPSB7fTsgZm9yICh2YXIgaSBpbiBvYmopIHsgaWYgKGtleXMuaW5kZXhPZihpKSA+PSAwKSBjb250aW51ZTsgaWYgKCFPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqLCBpKSkgY29udGludWU7IHRhcmdldFtpXSA9IG9ialtpXTsgfSByZXR1cm4gdGFyZ2V0OyB9XG5cbmZ1bmN0aW9uIF9jbGFzc0NhbGxDaGVjayhpbnN0YW5jZSwgQ29uc3RydWN0b3IpIHsgaWYgKCEoaW5zdGFuY2UgaW5zdGFuY2VvZiBDb25zdHJ1Y3RvcikpIHsgdGhyb3cgbmV3IFR5cGVFcnJvcihcIkNhbm5vdCBjYWxsIGEgY2xhc3MgYXMgYSBmdW5jdGlvblwiKTsgfSB9XG5cbmZ1bmN0aW9uIF9wb3NzaWJsZUNvbnN0cnVjdG9yUmV0dXJuKHNlbGYsIGNhbGwpIHsgaWYgKCFzZWxmKSB7IHRocm93IG5ldyBSZWZlcmVuY2VFcnJvcihcInRoaXMgaGFzbid0IGJlZW4gaW5pdGlhbGlzZWQgLSBzdXBlcigpIGhhc24ndCBiZWVuIGNhbGxlZFwiKTsgfSByZXR1cm4gY2FsbCAmJiAodHlwZW9mIGNhbGwgPT09IFwib2JqZWN0XCIgfHwgdHlwZW9mIGNhbGwgPT09IFwiZnVuY3Rpb25cIikgPyBjYWxsIDogc2VsZjsgfVxuXG5mdW5jdGlvbiBfaW5oZXJpdHMoc3ViQ2xhc3MsIHN1cGVyQ2xhc3MpIHsgaWYgKHR5cGVvZiBzdXBlckNsYXNzICE9PSBcImZ1bmN0aW9uXCIgJiYgc3VwZXJDbGFzcyAhPT0gbnVsbCkgeyB0aHJvdyBuZXcgVHlwZUVycm9yKFwiU3VwZXIgZXhwcmVzc2lvbiBtdXN0IGVpdGhlciBiZSBudWxsIG9yIGEgZnVuY3Rpb24sIG5vdCBcIiArIHR5cGVvZiBzdXBlckNsYXNzKTsgfSBzdWJDbGFzcy5wcm90b3R5cGUgPSBPYmplY3QuY3JlYXRlKHN1cGVyQ2xhc3MgJiYgc3VwZXJDbGFzcy5wcm90b3R5cGUsIHsgY29uc3RydWN0b3I6IHsgdmFsdWU6IHN1YkNsYXNzLCBlbnVtZXJhYmxlOiBmYWxzZSwgd3JpdGFibGU6IHRydWUsIGNvbmZpZ3VyYWJsZTogdHJ1ZSB9IH0pOyBpZiAoc3VwZXJDbGFzcykgT2JqZWN0LnNldFByb3RvdHlwZU9mID8gT2JqZWN0LnNldFByb3RvdHlwZU9mKHN1YkNsYXNzLCBzdXBlckNsYXNzKSA6IHN1YkNsYXNzLl9fcHJvdG9fXyA9IHN1cGVyQ2xhc3M7IH1cblxudmFyIEVkaXRCdXR0b24gPSBmdW5jdGlvbiAoX0NvbXBvbmVudCkge1xuICAgIF9pbmhlcml0cyhFZGl0QnV0dG9uLCBfQ29tcG9uZW50KTtcblxuICAgIGZ1bmN0aW9uIEVkaXRCdXR0b24oKSB7XG4gICAgICAgIF9jbGFzc0NhbGxDaGVjayh0aGlzLCBFZGl0QnV0dG9uKTtcblxuICAgICAgICByZXR1cm4gX3Bvc3NpYmxlQ29uc3RydWN0b3JSZXR1cm4odGhpcywgT2JqZWN0LmdldFByb3RvdHlwZU9mKEVkaXRCdXR0b24pLmFwcGx5KHRoaXMsIGFyZ3VtZW50cykpO1xuICAgIH1cblxuICAgIF9jcmVhdGVDbGFzcyhFZGl0QnV0dG9uLCBbe1xuICAgICAgICBrZXk6ICdyZW5kZXInLFxuICAgICAgICB2YWx1ZTogZnVuY3Rpb24gcmVuZGVyKCkge1xuICAgICAgICAgICAgdmFyIF9wcm9wcyA9IHRoaXMucHJvcHM7XG4gICAgICAgICAgICB2YXIgZWRpdGluZyA9IF9wcm9wcy5lZGl0aW5nO1xuICAgICAgICAgICAgdmFyIHRleHQgPSBfcHJvcHMudGV4dDtcbiAgICAgICAgICAgIHZhciBlZGl0aW5nVGV4dCA9IF9wcm9wcy5lZGl0aW5nVGV4dDtcblxuICAgICAgICAgICAgdmFyIGFjdGlvbnMgPSBfb2JqZWN0V2l0aG91dFByb3BlcnRpZXMoX3Byb3BzLCBbJ2VkaXRpbmcnLCAndGV4dCcsICdlZGl0aW5nVGV4dCddKTtcblxuICAgICAgICAgICAgcmV0dXJuIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICdidXR0b24nLFxuICAgICAgICAgICAgICAgIF9leHRlbmRzKHt9LCBhY3Rpb25zLCB7IGNsYXNzTmFtZTogJ2VkaXQgJyArIChlZGl0aW5nID8gJ2VkaXRpbmcnIDogJycpLCB0eXBlOiAnYnV0dG9uJyB9KSxcbiAgICAgICAgICAgICAgICBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudCgnaScsIG51bGwpLFxuICAgICAgICAgICAgICAgIGVkaXRpbmcgPyB0ZXh0LmVkaXRpbmcgOiB0ZXh0Lm5vdEVkaXRpbmdcbiAgICAgICAgICAgICk7XG4gICAgICAgIH1cbiAgICB9XSk7XG5cbiAgICByZXR1cm4gRWRpdEJ1dHRvbjtcbn0oX3JlYWN0LkNvbXBvbmVudCk7XG5cbkVkaXRCdXR0b24uZGVmYXVsdFByb3BzID0ge1xuICAgIGVkaXRpbmc6IGZhbHNlLFxuICAgIHRleHQ6IHsgZWRpdGluZzogJycsIG5vdEVkaXRpbmc6ICcnIH1cbn07XG5FZGl0QnV0dG9uLnByb3BUeXBlcyA9IHtcbiAgICBlZGl0aW5nOiBfcmVhY3QuUHJvcFR5cGVzLmJvb2wuaXNSZXF1aXJlZCxcbiAgICB0ZXh0OiBfcmVhY3QuUHJvcFR5cGVzLm9iamVjdCxcbiAgICBvbkNsaWNrOiBfcmVhY3QuUHJvcFR5cGVzLmZ1bmNcbn07XG5leHBvcnRzLmRlZmF1bHQgPSBFZGl0QnV0dG9uO1xuXG5cbi8qKioqKioqKioqKioqKioqKlxuICoqIFdFQlBBQ0sgRk9PVEVSXG4gKiogLi9zcmMvcmVsYXRpb25hbC9jb21wb25lbnRzL0VkaXRCdXR0b24uanN4XG4gKiogbW9kdWxlIGlkID0gNFxuICoqIG1vZHVsZSBjaHVua3MgPSAwXG4gKiovIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ },
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _tcombFormTemplatesBootstrap = __webpack_require__(35);
-	
-	var _tcombFormTemplatesBootstrap2 = _interopRequireDefault(_tcombFormTemplatesBootstrap);
-	
-	var _reactTextareaAutosize = __webpack_require__(32);
-	
-	var _reactTextareaAutosize2 = _interopRequireDefault(_reactTextareaAutosize);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-	
-	var textbox = _tcombFormTemplatesBootstrap2.default.textbox.clone({
-	    renderTextarea: function renderTextarea(_ref) {
-	        var _ref$attrs = _ref.attrs;
-	        var _ref$attrs$className = _ref$attrs.className;
-	        var className = _ref$attrs$className === undefined ? '' : _ref$attrs$className;
-	        var placeholder = _ref$attrs.placeholder;
-	
-	        var attrs = _objectWithoutProperties(_ref$attrs, ['className', 'placeholder']);
-	
-	        return console.log(placeholder, attrs) || _react2.default.createElement(_reactTextareaAutosize2.default, _extends({ className: 'subtle ' + className,
-	            placeholder: placeholder || (attrs.name || '') + '...'
-	        }, attrs));
-	    },
-	
-	    renderTextbox: function renderTextbox(locals) {
-	        if (locals.type === 'static') {
-	            return textbox.renderStatic(locals);
-	        }
-	        var ret = locals.type !== 'input' ? textbox.renderTextarea(locals) : textbox.renderInput(locals);
-	        if (locals.config.addonBefore || locals.config.addonAfter || locals.config.buttonBefore || locals.config.buttonAfter) {
-	            ret = textbox.renderInputGroup(ret, locals);
-	        }
-	        return ret;
-	    }
-	});
-	
-	exports.default = Object.assign({}, _tcombFormTemplatesBootstrap2.default, { textbox: textbox });
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.shadowParent = exports.SubtlyEditableItem = exports.List = undefined;\n\nvar _List2 = __webpack_require__(20);\n\nvar _List3 = _interopRequireDefault(_List2);\n\nvar _SubtlyEditableItem2 = __webpack_require__(21);\n\nvar _SubtlyEditableItem3 = _interopRequireDefault(_SubtlyEditableItem2);\n\nvar _shadowParent2 = __webpack_require__(23);\n\nvar _shadowParent3 = _interopRequireDefault(_shadowParent2);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.List = _List3.default;\nexports.SubtlyEditableItem = _SubtlyEditableItem3.default;\nexports.shadowParent = _shadowParent3.default;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiNS5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9yZWxhdGlvbmFsL2NvbXBvbmVudHMvaW5kZXguanM/NTJlMyJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG5cbk9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBcIl9fZXNNb2R1bGVcIiwge1xuICB2YWx1ZTogdHJ1ZVxufSk7XG5leHBvcnRzLnNoYWRvd1BhcmVudCA9IGV4cG9ydHMuU3VidGx5RWRpdGFibGVJdGVtID0gZXhwb3J0cy5MaXN0ID0gdW5kZWZpbmVkO1xuXG52YXIgX0xpc3QyID0gcmVxdWlyZSgnLi9MaXN0Jyk7XG5cbnZhciBfTGlzdDMgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9MaXN0Mik7XG5cbnZhciBfU3VidGx5RWRpdGFibGVJdGVtMiA9IHJlcXVpcmUoJy4vU3VidGx5RWRpdGFibGVJdGVtJyk7XG5cbnZhciBfU3VidGx5RWRpdGFibGVJdGVtMyA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX1N1YnRseUVkaXRhYmxlSXRlbTIpO1xuXG52YXIgX3NoYWRvd1BhcmVudDIgPSByZXF1aXJlKCcuL3NoYWRvd1BhcmVudCcpO1xuXG52YXIgX3NoYWRvd1BhcmVudDMgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9zaGFkb3dQYXJlbnQyKTtcblxuZnVuY3Rpb24gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChvYmopIHsgcmV0dXJuIG9iaiAmJiBvYmouX19lc01vZHVsZSA/IG9iaiA6IHsgZGVmYXVsdDogb2JqIH07IH1cblxuZXhwb3J0cy5MaXN0ID0gX0xpc3QzLmRlZmF1bHQ7XG5leHBvcnRzLlN1YnRseUVkaXRhYmxlSXRlbSA9IF9TdWJ0bHlFZGl0YWJsZUl0ZW0zLmRlZmF1bHQ7XG5leHBvcnRzLnNoYWRvd1BhcmVudCA9IF9zaGFkb3dQYXJlbnQzLmRlZmF1bHQ7XG5cblxuLyoqKioqKioqKioqKioqKioqXG4gKiogV0VCUEFDSyBGT09URVJcbiAqKiAuL3NyYy9yZWxhdGlvbmFsL2NvbXBvbmVudHMvaW5kZXguanNcbiAqKiBtb2R1bGUgaWQgPSA1XG4gKiogbW9kdWxlIGNodW5rcyA9IDBcbiAqKi8iXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==");
 
 /***/ },
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.toTitle = toTitle;
-	exports.Persistable = Persistable;
-	exports.serializer = serializer;
-	exports.expandType = expandType;
-	
-	var _tcomb = __webpack_require__(9);
-	
-	var _tcomb2 = _interopRequireDefault(_tcomb);
-	
-	var _slug = __webpack_require__(33);
-	
-	var _slug2 = _interopRequireDefault(_slug);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function toTitle(str) {
-	    return str.replace(/([a-z][A-Z])/g, function (g) {
-	        return g[0] + ' ' + g[1];
-	    }).replace(/^([a-zA-Z])| ([a-zA-Z])/g, function (g) {
-	        return g.toUpperCase();
-	    });
-	}
-	
-	function Persistable(BaseType, name) {
-	    var Identified = BaseType.extend([_tcomb2.default.struct({ _id: _tcomb2.default.String })]);
-	    var Persisted = Identified.extend([_tcomb2.default.struct({ _rev: _tcomb2.default.String })]);
-	    var Type = _tcomb2.default.union([BaseType, Identified, Persisted], name);
-	    Type.dispatch = function dispatch(doc) {
-	        return doc._rev && doc._id ? Persisted : doc._id ? Identified : BaseType;
-	    };
-	    return Type;
-	}
-	
-	function serializer(Type, type, fields, sluggify) {
-	    sluggify = sluggify || function (doc) {
-	        return type.toLowerCase() + '/' + fields.map(function (f) {
-	            return (0, _slug2.default)(doc[f].toString().toLowerCase());
-	        }).join('&');
-	    };
-	    return function (doc) {
-	        return Type(Object.assign({}, doc, { _id: sluggify(doc) }));
-	    };
-	}
-	
-	function expandType(_ref) {
-	    var Type = _ref.Type;
-	    var name = _ref.name;
-	    var _ref$serialize = _ref.serialize;
-	    _ref$serialize = _ref$serialize === undefined ? {} : _ref$serialize;
-	    var _ref$serialize$fields = _ref$serialize.fields;
-	    var fields = _ref$serialize$fields === undefined ? ['id'] : _ref$serialize$fields;
-	    var sluggify = _ref$serialize.sluggify;
-	
-	    var persistable = Persistable(Type, name);
-	    return {
-	        name: name,
-	        BaseType: Type,
-	        Persistable: persistable,
-	        serialize: serializer(persistable, name, fields, sluggify)
-	    };
-	}
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _tcombFormTemplatesBootstrap = __webpack_require__(36);\n\nvar _tcombFormTemplatesBootstrap2 = _interopRequireDefault(_tcombFormTemplatesBootstrap);\n\nvar _reactTextareaAutosize = __webpack_require__(33);\n\nvar _reactTextareaAutosize2 = _interopRequireDefault(_reactTextareaAutosize);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }\n\nvar textbox = _tcombFormTemplatesBootstrap2.default.textbox.clone({\n    renderTextarea: function renderTextarea(_ref) {\n        var _ref$attrs = _ref.attrs;\n        var _ref$attrs$className = _ref$attrs.className;\n        var className = _ref$attrs$className === undefined ? '' : _ref$attrs$className;\n        var placeholder = _ref$attrs.placeholder;\n\n        var attrs = _objectWithoutProperties(_ref$attrs, ['className', 'placeholder']);\n\n        return _react2.default.createElement(_reactTextareaAutosize2.default, _extends({ className: 'subtle ' + className,\n            placeholder: placeholder || (attrs.name || '') + '...'\n        }, attrs));\n    },\n\n    renderTextbox: function renderTextbox(locals) {\n        if (locals.type === 'static') {\n            return textbox.renderStatic(locals);\n        }\n        var ret = textbox.renderTextarea(locals);\n\n        if (locals.type == 'input') textbox.renderInput(locals);\n\n        if (locals.config.addonBefore || locals.config.addonAfter || locals.config.buttonBefore || locals.config.buttonAfter) {\n            ret = textbox.renderInputGroup(ret, locals);\n        }\n        return ret;\n    }\n});\n\nexports.default = Object.assign({}, _tcombFormTemplatesBootstrap2.default, { textbox: textbox });\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiNi5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9yZWxhdGlvbmFsL2NvbXBvbmVudHMvc3VidGxlVGNvbWJUZW1wbGF0ZXMuanN4Pzc1ZjciXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJfX2VzTW9kdWxlXCIsIHtcbiAgICB2YWx1ZTogdHJ1ZVxufSk7XG5cbnZhciBfZXh0ZW5kcyA9IE9iamVjdC5hc3NpZ24gfHwgZnVuY3Rpb24gKHRhcmdldCkgeyBmb3IgKHZhciBpID0gMTsgaSA8IGFyZ3VtZW50cy5sZW5ndGg7IGkrKykgeyB2YXIgc291cmNlID0gYXJndW1lbnRzW2ldOyBmb3IgKHZhciBrZXkgaW4gc291cmNlKSB7IGlmIChPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwoc291cmNlLCBrZXkpKSB7IHRhcmdldFtrZXldID0gc291cmNlW2tleV07IH0gfSB9IHJldHVybiB0YXJnZXQ7IH07XG5cbnZhciBfcmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuXG52YXIgX3JlYWN0MiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX3JlYWN0KTtcblxudmFyIF90Y29tYkZvcm1UZW1wbGF0ZXNCb290c3RyYXAgPSByZXF1aXJlKCd0Y29tYi1mb3JtLXRlbXBsYXRlcy1ib290c3RyYXAnKTtcblxudmFyIF90Y29tYkZvcm1UZW1wbGF0ZXNCb290c3RyYXAyID0gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChfdGNvbWJGb3JtVGVtcGxhdGVzQm9vdHN0cmFwKTtcblxudmFyIF9yZWFjdFRleHRhcmVhQXV0b3NpemUgPSByZXF1aXJlKCdyZWFjdC10ZXh0YXJlYS1hdXRvc2l6ZScpO1xuXG52YXIgX3JlYWN0VGV4dGFyZWFBdXRvc2l6ZTIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9yZWFjdFRleHRhcmVhQXV0b3NpemUpO1xuXG5mdW5jdGlvbiBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KG9iaikgeyByZXR1cm4gb2JqICYmIG9iai5fX2VzTW9kdWxlID8gb2JqIDogeyBkZWZhdWx0OiBvYmogfTsgfVxuXG5mdW5jdGlvbiBfb2JqZWN0V2l0aG91dFByb3BlcnRpZXMob2JqLCBrZXlzKSB7IHZhciB0YXJnZXQgPSB7fTsgZm9yICh2YXIgaSBpbiBvYmopIHsgaWYgKGtleXMuaW5kZXhPZihpKSA+PSAwKSBjb250aW51ZTsgaWYgKCFPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqLCBpKSkgY29udGludWU7IHRhcmdldFtpXSA9IG9ialtpXTsgfSByZXR1cm4gdGFyZ2V0OyB9XG5cbnZhciB0ZXh0Ym94ID0gX3Rjb21iRm9ybVRlbXBsYXRlc0Jvb3RzdHJhcDIuZGVmYXVsdC50ZXh0Ym94LmNsb25lKHtcbiAgICByZW5kZXJUZXh0YXJlYTogZnVuY3Rpb24gcmVuZGVyVGV4dGFyZWEoX3JlZikge1xuICAgICAgICB2YXIgX3JlZiRhdHRycyA9IF9yZWYuYXR0cnM7XG4gICAgICAgIHZhciBfcmVmJGF0dHJzJGNsYXNzTmFtZSA9IF9yZWYkYXR0cnMuY2xhc3NOYW1lO1xuICAgICAgICB2YXIgY2xhc3NOYW1lID0gX3JlZiRhdHRycyRjbGFzc05hbWUgPT09IHVuZGVmaW5lZCA/ICcnIDogX3JlZiRhdHRycyRjbGFzc05hbWU7XG4gICAgICAgIHZhciBwbGFjZWhvbGRlciA9IF9yZWYkYXR0cnMucGxhY2Vob2xkZXI7XG5cbiAgICAgICAgdmFyIGF0dHJzID0gX29iamVjdFdpdGhvdXRQcm9wZXJ0aWVzKF9yZWYkYXR0cnMsIFsnY2xhc3NOYW1lJywgJ3BsYWNlaG9sZGVyJ10pO1xuXG4gICAgICAgIHJldHVybiBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChfcmVhY3RUZXh0YXJlYUF1dG9zaXplMi5kZWZhdWx0LCBfZXh0ZW5kcyh7IGNsYXNzTmFtZTogJ3N1YnRsZSAnICsgY2xhc3NOYW1lLFxuICAgICAgICAgICAgcGxhY2Vob2xkZXI6IHBsYWNlaG9sZGVyIHx8IChhdHRycy5uYW1lIHx8ICcnKSArICcuLi4nXG4gICAgICAgIH0sIGF0dHJzKSk7XG4gICAgfSxcblxuICAgIHJlbmRlclRleHRib3g6IGZ1bmN0aW9uIHJlbmRlclRleHRib3gobG9jYWxzKSB7XG4gICAgICAgIGlmIChsb2NhbHMudHlwZSA9PT0gJ3N0YXRpYycpIHtcbiAgICAgICAgICAgIHJldHVybiB0ZXh0Ym94LnJlbmRlclN0YXRpYyhsb2NhbHMpO1xuICAgICAgICB9XG4gICAgICAgIHZhciByZXQgPSB0ZXh0Ym94LnJlbmRlclRleHRhcmVhKGxvY2Fscyk7XG5cbiAgICAgICAgaWYgKGxvY2Fscy50eXBlID09ICdpbnB1dCcpIHRleHRib3gucmVuZGVySW5wdXQobG9jYWxzKTtcblxuICAgICAgICBpZiAobG9jYWxzLmNvbmZpZy5hZGRvbkJlZm9yZSB8fCBsb2NhbHMuY29uZmlnLmFkZG9uQWZ0ZXIgfHwgbG9jYWxzLmNvbmZpZy5idXR0b25CZWZvcmUgfHwgbG9jYWxzLmNvbmZpZy5idXR0b25BZnRlcikge1xuICAgICAgICAgICAgcmV0ID0gdGV4dGJveC5yZW5kZXJJbnB1dEdyb3VwKHJldCwgbG9jYWxzKTtcbiAgICAgICAgfVxuICAgICAgICByZXR1cm4gcmV0O1xuICAgIH1cbn0pO1xuXG5leHBvcnRzLmRlZmF1bHQgPSBPYmplY3QuYXNzaWduKHt9LCBfdGNvbWJGb3JtVGVtcGxhdGVzQm9vdHN0cmFwMi5kZWZhdWx0LCB7IHRleHRib3g6IHRleHRib3ggfSk7XG5cblxuLyoqKioqKioqKioqKioqKioqXG4gKiogV0VCUEFDSyBGT09URVJcbiAqKiAuL3NyYy9yZWxhdGlvbmFsL2NvbXBvbmVudHMvc3VidGxlVGNvbWJUZW1wbGF0ZXMuanN4XG4gKiogbW9kdWxlIGlkID0gNlxuICoqIG1vZHVsZSBjaHVua3MgPSAwXG4gKiovIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=");
 
 /***/ },
 /* 7 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = require("deep-equal");
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.toTitle = toTitle;\nexports.Persistable = Persistable;\nexports.serializer = serializer;\nexports.expandType = expandType;\n\nvar _tcomb = __webpack_require__(9);\n\nvar _tcomb2 = _interopRequireDefault(_tcomb);\n\nvar _slug = __webpack_require__(34);\n\nvar _slug2 = _interopRequireDefault(_slug);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction toTitle(str) {\n    return str.replace(/([a-z][A-Z])/g, function (g) {\n        return g[0] + ' ' + g[1];\n    }).replace(/^([a-zA-Z])| ([a-zA-Z])/g, function (g) {\n        return g.toUpperCase();\n    });\n}\n\nfunction Persistable(BaseType, name) {\n    var Identified = BaseType.extend([_tcomb2.default.struct({ _id: _tcomb2.default.String })]);\n    var Persisted = Identified.extend([_tcomb2.default.struct({ _rev: _tcomb2.default.String })]);\n    var Type = _tcomb2.default.union([BaseType, Identified, Persisted], name);\n    Type.dispatch = function dispatch(doc) {\n        return doc._rev && doc._id ? Persisted : doc._id ? Identified : BaseType;\n    };\n    return Type;\n}\n\nfunction serializer(Type, type, fields, sluggify) {\n    sluggify = sluggify || function (doc) {\n        return type.toLowerCase() + '/' + fields.map(function (f) {\n            return (0, _slug2.default)(doc[f].toString().toLowerCase());\n        }).join('&');\n    };\n    return function (doc) {\n        return Type(Object.assign({}, doc, { _id: sluggify(doc) }));\n    };\n}\n\nfunction expandType(_ref) {\n    var Type = _ref.Type;\n    var name = _ref.name;\n    var _ref$serialize = _ref.serialize;\n    _ref$serialize = _ref$serialize === undefined ? {} : _ref$serialize;\n    var _ref$serialize$fields = _ref$serialize.fields;\n    var fields = _ref$serialize$fields === undefined ? ['id'] : _ref$serialize$fields;\n    var sluggify = _ref$serialize.sluggify;\n\n    var persistable = Persistable(Type, name);\n    return {\n        name: name,\n        BaseType: Type,\n        Persistable: persistable,\n        serialize: serializer(persistable, name, fields, sluggify)\n    };\n}\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiNy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9yZWxhdGlvbmFsL3V0aWxzLmpzPzY5MTQiXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJfX2VzTW9kdWxlXCIsIHtcbiAgICB2YWx1ZTogdHJ1ZVxufSk7XG5leHBvcnRzLnRvVGl0bGUgPSB0b1RpdGxlO1xuZXhwb3J0cy5QZXJzaXN0YWJsZSA9IFBlcnNpc3RhYmxlO1xuZXhwb3J0cy5zZXJpYWxpemVyID0gc2VyaWFsaXplcjtcbmV4cG9ydHMuZXhwYW5kVHlwZSA9IGV4cGFuZFR5cGU7XG5cbnZhciBfdGNvbWIgPSByZXF1aXJlKCd0Y29tYicpO1xuXG52YXIgX3Rjb21iMiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX3Rjb21iKTtcblxudmFyIF9zbHVnID0gcmVxdWlyZSgnc2x1ZycpO1xuXG52YXIgX3NsdWcyID0gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChfc2x1Zyk7XG5cbmZ1bmN0aW9uIF9pbnRlcm9wUmVxdWlyZURlZmF1bHQob2JqKSB7IHJldHVybiBvYmogJiYgb2JqLl9fZXNNb2R1bGUgPyBvYmogOiB7IGRlZmF1bHQ6IG9iaiB9OyB9XG5cbmZ1bmN0aW9uIHRvVGl0bGUoc3RyKSB7XG4gICAgcmV0dXJuIHN0ci5yZXBsYWNlKC8oW2Etel1bQS1aXSkvZywgZnVuY3Rpb24gKGcpIHtcbiAgICAgICAgcmV0dXJuIGdbMF0gKyAnICcgKyBnWzFdO1xuICAgIH0pLnJlcGxhY2UoL14oW2EtekEtWl0pfCAoW2EtekEtWl0pL2csIGZ1bmN0aW9uIChnKSB7XG4gICAgICAgIHJldHVybiBnLnRvVXBwZXJDYXNlKCk7XG4gICAgfSk7XG59XG5cbmZ1bmN0aW9uIFBlcnNpc3RhYmxlKEJhc2VUeXBlLCBuYW1lKSB7XG4gICAgdmFyIElkZW50aWZpZWQgPSBCYXNlVHlwZS5leHRlbmQoW190Y29tYjIuZGVmYXVsdC5zdHJ1Y3QoeyBfaWQ6IF90Y29tYjIuZGVmYXVsdC5TdHJpbmcgfSldKTtcbiAgICB2YXIgUGVyc2lzdGVkID0gSWRlbnRpZmllZC5leHRlbmQoW190Y29tYjIuZGVmYXVsdC5zdHJ1Y3QoeyBfcmV2OiBfdGNvbWIyLmRlZmF1bHQuU3RyaW5nIH0pXSk7XG4gICAgdmFyIFR5cGUgPSBfdGNvbWIyLmRlZmF1bHQudW5pb24oW0Jhc2VUeXBlLCBJZGVudGlmaWVkLCBQZXJzaXN0ZWRdLCBuYW1lKTtcbiAgICBUeXBlLmRpc3BhdGNoID0gZnVuY3Rpb24gZGlzcGF0Y2goZG9jKSB7XG4gICAgICAgIHJldHVybiBkb2MuX3JldiAmJiBkb2MuX2lkID8gUGVyc2lzdGVkIDogZG9jLl9pZCA/IElkZW50aWZpZWQgOiBCYXNlVHlwZTtcbiAgICB9O1xuICAgIHJldHVybiBUeXBlO1xufVxuXG5mdW5jdGlvbiBzZXJpYWxpemVyKFR5cGUsIHR5cGUsIGZpZWxkcywgc2x1Z2dpZnkpIHtcbiAgICBzbHVnZ2lmeSA9IHNsdWdnaWZ5IHx8IGZ1bmN0aW9uIChkb2MpIHtcbiAgICAgICAgcmV0dXJuIHR5cGUudG9Mb3dlckNhc2UoKSArICcvJyArIGZpZWxkcy5tYXAoZnVuY3Rpb24gKGYpIHtcbiAgICAgICAgICAgIHJldHVybiAoMCwgX3NsdWcyLmRlZmF1bHQpKGRvY1tmXS50b1N0cmluZygpLnRvTG93ZXJDYXNlKCkpO1xuICAgICAgICB9KS5qb2luKCcmJyk7XG4gICAgfTtcbiAgICByZXR1cm4gZnVuY3Rpb24gKGRvYykge1xuICAgICAgICByZXR1cm4gVHlwZShPYmplY3QuYXNzaWduKHt9LCBkb2MsIHsgX2lkOiBzbHVnZ2lmeShkb2MpIH0pKTtcbiAgICB9O1xufVxuXG5mdW5jdGlvbiBleHBhbmRUeXBlKF9yZWYpIHtcbiAgICB2YXIgVHlwZSA9IF9yZWYuVHlwZTtcbiAgICB2YXIgbmFtZSA9IF9yZWYubmFtZTtcbiAgICB2YXIgX3JlZiRzZXJpYWxpemUgPSBfcmVmLnNlcmlhbGl6ZTtcbiAgICBfcmVmJHNlcmlhbGl6ZSA9IF9yZWYkc2VyaWFsaXplID09PSB1bmRlZmluZWQgPyB7fSA6IF9yZWYkc2VyaWFsaXplO1xuICAgIHZhciBfcmVmJHNlcmlhbGl6ZSRmaWVsZHMgPSBfcmVmJHNlcmlhbGl6ZS5maWVsZHM7XG4gICAgdmFyIGZpZWxkcyA9IF9yZWYkc2VyaWFsaXplJGZpZWxkcyA9PT0gdW5kZWZpbmVkID8gWydpZCddIDogX3JlZiRzZXJpYWxpemUkZmllbGRzO1xuICAgIHZhciBzbHVnZ2lmeSA9IF9yZWYkc2VyaWFsaXplLnNsdWdnaWZ5O1xuXG4gICAgdmFyIHBlcnNpc3RhYmxlID0gUGVyc2lzdGFibGUoVHlwZSwgbmFtZSk7XG4gICAgcmV0dXJuIHtcbiAgICAgICAgbmFtZTogbmFtZSxcbiAgICAgICAgQmFzZVR5cGU6IFR5cGUsXG4gICAgICAgIFBlcnNpc3RhYmxlOiBwZXJzaXN0YWJsZSxcbiAgICAgICAgc2VyaWFsaXplOiBzZXJpYWxpemVyKHBlcnNpc3RhYmxlLCBuYW1lLCBmaWVsZHMsIHNsdWdnaWZ5KVxuICAgIH07XG59XG5cblxuLyoqKioqKioqKioqKioqKioqXG4gKiogV0VCUEFDSyBGT09URVJcbiAqKiAuL3NyYy9yZWxhdGlvbmFsL3V0aWxzLmpzXG4gKiogbW9kdWxlIGlkID0gN1xuICoqIG1vZHVsZSBjaHVua3MgPSAwXG4gKiovIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=");
 
 /***/ },
 /* 8 */
 /***/ function(module, exports) {
 
-	module.exports = require("react-router");
+	module.exports = require("deep-equal");
 
 /***/ },
 /* 9 */
@@ -302,1266 +118,109 @@ module.exports =
 /* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	__webpack_require__(30);
-	
-	var _polypackBufflehead = __webpack_require__(2);
-	
-	var bufflehead = _interopRequireWildcard(_polypackBufflehead);
-	
-	var _posts = __webpack_require__(16);
-	
-	var _posts2 = _interopRequireDefault(_posts);
-	
-	var _root = __webpack_require__(29);
-	
-	var _root2 = _interopRequireDefault(_root);
-	
-	var _reactRouter = __webpack_require__(8);
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-	
-	var root = (0, _root2.default)({ posts: _posts2.default });
-	
-	var settings = bufflehead.settings({
-	    "db": {
-	        "name": "aspecter",
-	        "uri": "http://127.0.0.1:5984",
-	        "credentials": {
-	            "admin": {
-	                "name": "server",
-	                "password": "server"
-	            }
-	        }
-	    }
-	});
-	
-	var app = new bufflehead.default({
-	    title: 'Bufflehead • Aspecter',
-	    domains: { root: root, posts: _posts2.default, settings: settings }
-	});
-	
-	app.main();
+	eval("'use strict';\n\n__webpack_require__(30);\n\nvar _polypackBufflehead = __webpack_require__(2);\n\nvar bufflehead = _interopRequireWildcard(_polypackBufflehead);\n\nvar _posts = __webpack_require__(16);\n\nvar _posts2 = _interopRequireDefault(_posts);\n\nvar _root = __webpack_require__(29);\n\nvar _root2 = _interopRequireDefault(_root);\n\nvar _reactRouter = __webpack_require__(3);\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nvar posts = _posts2.default;\n\nvar root = (0, _root2.default)({ posts: posts });\n\nvar settings = bufflehead.settings({\n    \"title\": 'Bufflehead • Aspecter',\n    \"server\": {\n        \"host\": \"localhost\",\n        \"port\": \"3000\"\n    },\n    \"db\": {\n        \"name\": \"aspecter\",\n        \"uri\": \"http://127.0.0.1:5984\",\n        \"credentials\": {\n            \"admin\": {\n                \"name\": \"server\",\n                \"password\": \"server\"\n            }\n        }\n    }\n});\n\nvar app = new bufflehead.default({\n    domains: { root: root, posts: posts, settings: settings }\n});\n\napp.main();\n\nif (false) {\n    console.log(\"[HMR] Waiting for server-side updates\");\n\n    module.hot.accept(\"./posts\", function () {\n        console.log(\"reimporting posts and rerunning main\");\n        posts = require(\"./posts\").default;\n        app = new bufflehead.default({\n            domains: { root: root, posts: posts, settings: settings }\n        });\n        app.main();\n    });\n\n    module.hot.addStatusHandler(function (status) {\n        if (status === \"abort\") {\n            setTimeout(function () {\n                return process.exit(0);\n            }, 0);\n        }\n    });\n}\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTIuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvaW5kZXguanM/MTk1OCJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG5cbnJlcXVpcmUoJ2JhYmVsLXBvbHlmaWxsJyk7XG5cbnZhciBfcG9seXBhY2tCdWZmbGVoZWFkID0gcmVxdWlyZSgncG9seXBhY2shYnVmZmxlaGVhZCcpO1xuXG52YXIgYnVmZmxlaGVhZCA9IF9pbnRlcm9wUmVxdWlyZVdpbGRjYXJkKF9wb2x5cGFja0J1ZmZsZWhlYWQpO1xuXG52YXIgX3Bvc3RzID0gcmVxdWlyZSgnLi9wb3N0cycpO1xuXG52YXIgX3Bvc3RzMiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX3Bvc3RzKTtcblxudmFyIF9yb290ID0gcmVxdWlyZSgnLi9yb290Jyk7XG5cbnZhciBfcm9vdDIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9yb290KTtcblxudmFyIF9yZWFjdFJvdXRlciA9IHJlcXVpcmUoJ3JlYWN0LXJvdXRlcicpO1xuXG52YXIgX3JlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcblxudmFyIF9yZWFjdDIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9yZWFjdCk7XG5cbmZ1bmN0aW9uIF9pbnRlcm9wUmVxdWlyZURlZmF1bHQob2JqKSB7IHJldHVybiBvYmogJiYgb2JqLl9fZXNNb2R1bGUgPyBvYmogOiB7IGRlZmF1bHQ6IG9iaiB9OyB9XG5cbmZ1bmN0aW9uIF9pbnRlcm9wUmVxdWlyZVdpbGRjYXJkKG9iaikgeyBpZiAob2JqICYmIG9iai5fX2VzTW9kdWxlKSB7IHJldHVybiBvYmo7IH0gZWxzZSB7IHZhciBuZXdPYmogPSB7fTsgaWYgKG9iaiAhPSBudWxsKSB7IGZvciAodmFyIGtleSBpbiBvYmopIHsgaWYgKE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChvYmosIGtleSkpIG5ld09ialtrZXldID0gb2JqW2tleV07IH0gfSBuZXdPYmouZGVmYXVsdCA9IG9iajsgcmV0dXJuIG5ld09iajsgfSB9XG5cbnZhciBwb3N0cyA9IF9wb3N0czIuZGVmYXVsdDtcblxudmFyIHJvb3QgPSAoMCwgX3Jvb3QyLmRlZmF1bHQpKHsgcG9zdHM6IHBvc3RzIH0pO1xuXG52YXIgc2V0dGluZ3MgPSBidWZmbGVoZWFkLnNldHRpbmdzKHtcbiAgICBcInRpdGxlXCI6ICdCdWZmbGVoZWFkIOKAoiBBc3BlY3RlcicsXG4gICAgXCJzZXJ2ZXJcIjoge1xuICAgICAgICBcImhvc3RcIjogXCJsb2NhbGhvc3RcIixcbiAgICAgICAgXCJwb3J0XCI6IFwiMzAwMFwiXG4gICAgfSxcbiAgICBcImRiXCI6IHtcbiAgICAgICAgXCJuYW1lXCI6IFwiYXNwZWN0ZXJcIixcbiAgICAgICAgXCJ1cmlcIjogXCJodHRwOi8vMTI3LjAuMC4xOjU5ODRcIixcbiAgICAgICAgXCJjcmVkZW50aWFsc1wiOiB7XG4gICAgICAgICAgICBcImFkbWluXCI6IHtcbiAgICAgICAgICAgICAgICBcIm5hbWVcIjogXCJzZXJ2ZXJcIixcbiAgICAgICAgICAgICAgICBcInBhc3N3b3JkXCI6IFwic2VydmVyXCJcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgIH1cbn0pO1xuXG52YXIgYXBwID0gbmV3IGJ1ZmZsZWhlYWQuZGVmYXVsdCh7XG4gICAgZG9tYWluczogeyByb290OiByb290LCBwb3N0czogcG9zdHMsIHNldHRpbmdzOiBzZXR0aW5ncyB9XG59KTtcblxuYXBwLm1haW4oKTtcblxuaWYgKG1vZHVsZS5ob3QpIHtcbiAgICBjb25zb2xlLmxvZyhcIltITVJdIFdhaXRpbmcgZm9yIHNlcnZlci1zaWRlIHVwZGF0ZXNcIik7XG5cbiAgICBtb2R1bGUuaG90LmFjY2VwdChcIi4vcG9zdHNcIiwgZnVuY3Rpb24gKCkge1xuICAgICAgICBjb25zb2xlLmxvZyhcInJlaW1wb3J0aW5nIHBvc3RzIGFuZCByZXJ1bm5pbmcgbWFpblwiKTtcbiAgICAgICAgcG9zdHMgPSByZXF1aXJlKFwiLi9wb3N0c1wiKS5kZWZhdWx0O1xuICAgICAgICBhcHAgPSBuZXcgYnVmZmxlaGVhZC5kZWZhdWx0KHtcbiAgICAgICAgICAgIGRvbWFpbnM6IHsgcm9vdDogcm9vdCwgcG9zdHM6IHBvc3RzLCBzZXR0aW5nczogc2V0dGluZ3MgfVxuICAgICAgICB9KTtcbiAgICAgICAgYXBwLm1haW4oKTtcbiAgICB9KTtcblxuICAgIG1vZHVsZS5ob3QuYWRkU3RhdHVzSGFuZGxlcihmdW5jdGlvbiAoc3RhdHVzKSB7XG4gICAgICAgIGlmIChzdGF0dXMgPT09IFwiYWJvcnRcIikge1xuICAgICAgICAgICAgc2V0VGltZW91dChmdW5jdGlvbiAoKSB7XG4gICAgICAgICAgICAgICAgcmV0dXJuIHByb2Nlc3MuZXhpdCgwKTtcbiAgICAgICAgICAgIH0sIDApO1xuICAgICAgICB9XG4gICAgfSk7XG59XG5cblxuLyoqKioqKioqKioqKioqKioqXG4gKiogV0VCUEFDSyBGT09URVJcbiAqKiAuL3NyYy9pbmRleC5qc1xuICoqIG1vZHVsZSBpZCA9IDEyXG4gKiogbW9kdWxlIGNodW5rcyA9IDBcbiAqKi8iXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=");
 
 /***/ },
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Post = function (_React$Component) {
-	    _inherits(Post, _React$Component);
-	
-	    function Post() {
-	        _classCallCheck(this, Post);
-	
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Post).apply(this, arguments));
-	    }
-	
-	    _createClass(Post, [{
-	        key: "render",
-	        value: function render() {
-	            var _props = this.props;
-	            var title = _props.title;
-	            var text = _props.text;
-	
-	            return _react2.default.createElement(
-	                "div",
-	                { className: "post" },
-	                _react2.default.createElement(
-	                    "h4",
-	                    null,
-	                    title
-	                ),
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "description" },
-	                    text
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return Post;
-	}(_react2.default.Component);
-	
-	exports.default = Post;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.SetView = exports.ItemView = undefined;\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _marked = __webpack_require__(32);\n\nvar _marked2 = _interopRequireDefault(_marked);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nif (false) require('./post.scss');\n\nvar ItemView = exports.ItemView = function (_React$Component) {\n    _inherits(ItemView, _React$Component);\n\n    function ItemView() {\n        _classCallCheck(this, ItemView);\n\n        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemView).apply(this, arguments));\n    }\n\n    _createClass(ItemView, [{\n        key: 'render',\n        value: function render() {\n            var _props = this.props;\n            var title = _props.title;\n            var _props$markdown = _props.markdown;\n            var markdown = _props$markdown === undefined ? '' : _props$markdown;\n\n            return _react2.default.createElement(\n                'div',\n                { className: 'post' },\n                _react2.default.createElement(\n                    'h4',\n                    null,\n                    title\n                ),\n                _react2.default.createElement(\n                    'div',\n                    { className: 'content' },\n                    typeof markdown == 'string' ? _react2.default.createElement('div', { className: 'markdown', dangerouslySetInnerHTML: { __html: (0, _marked2.default)(markdown) } }) : markdown\n                )\n            );\n        }\n    }]);\n\n    return ItemView;\n}(_react2.default.Component);\n\nvar SetView = exports.SetView = function (_React$Component2) {\n    _inherits(SetView, _React$Component2);\n\n    function SetView() {\n        _classCallCheck(this, SetView);\n\n        return _possibleConstructorReturn(this, Object.getPrototypeOf(SetView).apply(this, arguments));\n    }\n\n    _createClass(SetView, [{\n        key: 'render',\n        value: function render() {\n            var _props2 = this.props;\n            var title = _props2.title;\n            var _props2$markdown = _props2.markdown;\n            var markdown = _props2$markdown === undefined ? '' : _props2$markdown;\n\n            return _react2.default.createElement(\n                'div',\n                { className: 'post' },\n                _react2.default.createElement(\n                    'h4',\n                    null,\n                    title\n                )\n            );\n        }\n    }]);\n\n    return SetView;\n}(_react2.default.Component);\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcG9zdHMvY29tcG9uZW50cy9Qb3N0LmpzeD80ZGI2Il0sInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFwiX19lc01vZHVsZVwiLCB7XG4gICAgdmFsdWU6IHRydWVcbn0pO1xuZXhwb3J0cy5TZXRWaWV3ID0gZXhwb3J0cy5JdGVtVmlldyA9IHVuZGVmaW5lZDtcblxudmFyIF9jcmVhdGVDbGFzcyA9IGZ1bmN0aW9uICgpIHsgZnVuY3Rpb24gZGVmaW5lUHJvcGVydGllcyh0YXJnZXQsIHByb3BzKSB7IGZvciAodmFyIGkgPSAwOyBpIDwgcHJvcHMubGVuZ3RoOyBpKyspIHsgdmFyIGRlc2NyaXB0b3IgPSBwcm9wc1tpXTsgZGVzY3JpcHRvci5lbnVtZXJhYmxlID0gZGVzY3JpcHRvci5lbnVtZXJhYmxlIHx8IGZhbHNlOyBkZXNjcmlwdG9yLmNvbmZpZ3VyYWJsZSA9IHRydWU7IGlmIChcInZhbHVlXCIgaW4gZGVzY3JpcHRvcikgZGVzY3JpcHRvci53cml0YWJsZSA9IHRydWU7IE9iamVjdC5kZWZpbmVQcm9wZXJ0eSh0YXJnZXQsIGRlc2NyaXB0b3Iua2V5LCBkZXNjcmlwdG9yKTsgfSB9IHJldHVybiBmdW5jdGlvbiAoQ29uc3RydWN0b3IsIHByb3RvUHJvcHMsIHN0YXRpY1Byb3BzKSB7IGlmIChwcm90b1Byb3BzKSBkZWZpbmVQcm9wZXJ0aWVzKENvbnN0cnVjdG9yLnByb3RvdHlwZSwgcHJvdG9Qcm9wcyk7IGlmIChzdGF0aWNQcm9wcykgZGVmaW5lUHJvcGVydGllcyhDb25zdHJ1Y3Rvciwgc3RhdGljUHJvcHMpOyByZXR1cm4gQ29uc3RydWN0b3I7IH07IH0oKTtcblxudmFyIF9yZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG5cbnZhciBfcmVhY3QyID0gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChfcmVhY3QpO1xuXG52YXIgX21hcmtlZCA9IHJlcXVpcmUoJ21hcmtlZCcpO1xuXG52YXIgX21hcmtlZDIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9tYXJrZWQpO1xuXG5mdW5jdGlvbiBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KG9iaikgeyByZXR1cm4gb2JqICYmIG9iai5fX2VzTW9kdWxlID8gb2JqIDogeyBkZWZhdWx0OiBvYmogfTsgfVxuXG5mdW5jdGlvbiBfY2xhc3NDYWxsQ2hlY2soaW5zdGFuY2UsIENvbnN0cnVjdG9yKSB7IGlmICghKGluc3RhbmNlIGluc3RhbmNlb2YgQ29uc3RydWN0b3IpKSB7IHRocm93IG5ldyBUeXBlRXJyb3IoXCJDYW5ub3QgY2FsbCBhIGNsYXNzIGFzIGEgZnVuY3Rpb25cIik7IH0gfVxuXG5mdW5jdGlvbiBfcG9zc2libGVDb25zdHJ1Y3RvclJldHVybihzZWxmLCBjYWxsKSB7IGlmICghc2VsZikgeyB0aHJvdyBuZXcgUmVmZXJlbmNlRXJyb3IoXCJ0aGlzIGhhc24ndCBiZWVuIGluaXRpYWxpc2VkIC0gc3VwZXIoKSBoYXNuJ3QgYmVlbiBjYWxsZWRcIik7IH0gcmV0dXJuIGNhbGwgJiYgKHR5cGVvZiBjYWxsID09PSBcIm9iamVjdFwiIHx8IHR5cGVvZiBjYWxsID09PSBcImZ1bmN0aW9uXCIpID8gY2FsbCA6IHNlbGY7IH1cblxuZnVuY3Rpb24gX2luaGVyaXRzKHN1YkNsYXNzLCBzdXBlckNsYXNzKSB7IGlmICh0eXBlb2Ygc3VwZXJDbGFzcyAhPT0gXCJmdW5jdGlvblwiICYmIHN1cGVyQ2xhc3MgIT09IG51bGwpIHsgdGhyb3cgbmV3IFR5cGVFcnJvcihcIlN1cGVyIGV4cHJlc3Npb24gbXVzdCBlaXRoZXIgYmUgbnVsbCBvciBhIGZ1bmN0aW9uLCBub3QgXCIgKyB0eXBlb2Ygc3VwZXJDbGFzcyk7IH0gc3ViQ2xhc3MucHJvdG90eXBlID0gT2JqZWN0LmNyZWF0ZShzdXBlckNsYXNzICYmIHN1cGVyQ2xhc3MucHJvdG90eXBlLCB7IGNvbnN0cnVjdG9yOiB7IHZhbHVlOiBzdWJDbGFzcywgZW51bWVyYWJsZTogZmFsc2UsIHdyaXRhYmxlOiB0cnVlLCBjb25maWd1cmFibGU6IHRydWUgfSB9KTsgaWYgKHN1cGVyQ2xhc3MpIE9iamVjdC5zZXRQcm90b3R5cGVPZiA/IE9iamVjdC5zZXRQcm90b3R5cGVPZihzdWJDbGFzcywgc3VwZXJDbGFzcykgOiBzdWJDbGFzcy5fX3Byb3RvX18gPSBzdXBlckNsYXNzOyB9XG5cbmlmICgkRVMuQ09OVEVYVCA9PSAnQlJPV1NFUicpIHJlcXVpcmUoJy4vcG9zdC5zY3NzJyk7XG5cbnZhciBJdGVtVmlldyA9IGV4cG9ydHMuSXRlbVZpZXcgPSBmdW5jdGlvbiAoX1JlYWN0JENvbXBvbmVudCkge1xuICAgIF9pbmhlcml0cyhJdGVtVmlldywgX1JlYWN0JENvbXBvbmVudCk7XG5cbiAgICBmdW5jdGlvbiBJdGVtVmlldygpIHtcbiAgICAgICAgX2NsYXNzQ2FsbENoZWNrKHRoaXMsIEl0ZW1WaWV3KTtcblxuICAgICAgICByZXR1cm4gX3Bvc3NpYmxlQ29uc3RydWN0b3JSZXR1cm4odGhpcywgT2JqZWN0LmdldFByb3RvdHlwZU9mKEl0ZW1WaWV3KS5hcHBseSh0aGlzLCBhcmd1bWVudHMpKTtcbiAgICB9XG5cbiAgICBfY3JlYXRlQ2xhc3MoSXRlbVZpZXcsIFt7XG4gICAgICAgIGtleTogJ3JlbmRlcicsXG4gICAgICAgIHZhbHVlOiBmdW5jdGlvbiByZW5kZXIoKSB7XG4gICAgICAgICAgICB2YXIgX3Byb3BzID0gdGhpcy5wcm9wcztcbiAgICAgICAgICAgIHZhciB0aXRsZSA9IF9wcm9wcy50aXRsZTtcbiAgICAgICAgICAgIHZhciBfcHJvcHMkbWFya2Rvd24gPSBfcHJvcHMubWFya2Rvd247XG4gICAgICAgICAgICB2YXIgbWFya2Rvd24gPSBfcHJvcHMkbWFya2Rvd24gPT09IHVuZGVmaW5lZCA/ICcnIDogX3Byb3BzJG1hcmtkb3duO1xuXG4gICAgICAgICAgICByZXR1cm4gX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgJ2RpdicsXG4gICAgICAgICAgICAgICAgeyBjbGFzc05hbWU6ICdwb3N0JyB9LFxuICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAnaDQnLFxuICAgICAgICAgICAgICAgICAgICBudWxsLFxuICAgICAgICAgICAgICAgICAgICB0aXRsZVxuICAgICAgICAgICAgICAgICksXG4gICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICdkaXYnLFxuICAgICAgICAgICAgICAgICAgICB7IGNsYXNzTmFtZTogJ2NvbnRlbnQnIH0sXG4gICAgICAgICAgICAgICAgICAgIHR5cGVvZiBtYXJrZG93biA9PSAnc3RyaW5nJyA/IF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KCdkaXYnLCB7IGNsYXNzTmFtZTogJ21hcmtkb3duJywgZGFuZ2Vyb3VzbHlTZXRJbm5lckhUTUw6IHsgX19odG1sOiAoMCwgX21hcmtlZDIuZGVmYXVsdCkobWFya2Rvd24pIH0gfSkgOiBtYXJrZG93blxuICAgICAgICAgICAgICAgIClcbiAgICAgICAgICAgICk7XG4gICAgICAgIH1cbiAgICB9XSk7XG5cbiAgICByZXR1cm4gSXRlbVZpZXc7XG59KF9yZWFjdDIuZGVmYXVsdC5Db21wb25lbnQpO1xuXG52YXIgU2V0VmlldyA9IGV4cG9ydHMuU2V0VmlldyA9IGZ1bmN0aW9uIChfUmVhY3QkQ29tcG9uZW50Mikge1xuICAgIF9pbmhlcml0cyhTZXRWaWV3LCBfUmVhY3QkQ29tcG9uZW50Mik7XG5cbiAgICBmdW5jdGlvbiBTZXRWaWV3KCkge1xuICAgICAgICBfY2xhc3NDYWxsQ2hlY2sodGhpcywgU2V0Vmlldyk7XG5cbiAgICAgICAgcmV0dXJuIF9wb3NzaWJsZUNvbnN0cnVjdG9yUmV0dXJuKHRoaXMsIE9iamVjdC5nZXRQcm90b3R5cGVPZihTZXRWaWV3KS5hcHBseSh0aGlzLCBhcmd1bWVudHMpKTtcbiAgICB9XG5cbiAgICBfY3JlYXRlQ2xhc3MoU2V0VmlldywgW3tcbiAgICAgICAga2V5OiAncmVuZGVyJyxcbiAgICAgICAgdmFsdWU6IGZ1bmN0aW9uIHJlbmRlcigpIHtcbiAgICAgICAgICAgIHZhciBfcHJvcHMyID0gdGhpcy5wcm9wcztcbiAgICAgICAgICAgIHZhciB0aXRsZSA9IF9wcm9wczIudGl0bGU7XG4gICAgICAgICAgICB2YXIgX3Byb3BzMiRtYXJrZG93biA9IF9wcm9wczIubWFya2Rvd247XG4gICAgICAgICAgICB2YXIgbWFya2Rvd24gPSBfcHJvcHMyJG1hcmtkb3duID09PSB1bmRlZmluZWQgPyAnJyA6IF9wcm9wczIkbWFya2Rvd247XG5cbiAgICAgICAgICAgIHJldHVybiBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChcbiAgICAgICAgICAgICAgICAnZGl2JyxcbiAgICAgICAgICAgICAgICB7IGNsYXNzTmFtZTogJ3Bvc3QnIH0sXG4gICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICdoNCcsXG4gICAgICAgICAgICAgICAgICAgIG51bGwsXG4gICAgICAgICAgICAgICAgICAgIHRpdGxlXG4gICAgICAgICAgICAgICAgKVxuICAgICAgICAgICAgKTtcbiAgICAgICAgfVxuICAgIH1dKTtcblxuICAgIHJldHVybiBTZXRWaWV3O1xufShfcmVhY3QyLmRlZmF1bHQuQ29tcG9uZW50KTtcblxuXG4vKioqKioqKioqKioqKioqKipcbiAqKiBXRUJQQUNLIEZPT1RFUlxuICoqIC4vc3JjL3Bvc3RzL2NvbXBvbmVudHMvUG9zdC5qc3hcbiAqKiBtb2R1bGUgaWQgPSAxM1xuICoqIG1vZHVsZSBjaHVua3MgPSAwXG4gKiovIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ },
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = undefined;
-	
-	var _Post = __webpack_require__(13);
-	
-	var _Post2 = _interopRequireDefault(_Post);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _Post2.default;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _Post = __webpack_require__(13);\n\nObject.keys(_Post).forEach(function (key) {\n  if (key === \"default\") return;\n  Object.defineProperty(exports, key, {\n    enumerable: true,\n    get: function get() {\n      return _Post[key];\n    }\n  });\n});\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTQuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcG9zdHMvY29tcG9uZW50cy9pbmRleC5qcz83OTJlIl0sInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFwiX19lc01vZHVsZVwiLCB7XG4gIHZhbHVlOiB0cnVlXG59KTtcblxudmFyIF9Qb3N0ID0gcmVxdWlyZSgnLi9Qb3N0Jyk7XG5cbk9iamVjdC5rZXlzKF9Qb3N0KS5mb3JFYWNoKGZ1bmN0aW9uIChrZXkpIHtcbiAgaWYgKGtleSA9PT0gXCJkZWZhdWx0XCIpIHJldHVybjtcbiAgT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIGtleSwge1xuICAgIGVudW1lcmFibGU6IHRydWUsXG4gICAgZ2V0OiBmdW5jdGlvbiBnZXQoKSB7XG4gICAgICByZXR1cm4gX1Bvc3Rba2V5XTtcbiAgICB9XG4gIH0pO1xufSk7XG5cblxuLyoqKioqKioqKioqKioqKioqXG4gKiogV0VCUEFDSyBGT09URVJcbiAqKiAuL3NyYy9wb3N0cy9jb21wb25lbnRzL2luZGV4LmpzXG4gKiogbW9kdWxlIGlkID0gMTRcbiAqKiBtb2R1bGUgY2h1bmtzID0gMFxuICoqLyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==");
 
 /***/ },
 /* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _relational = __webpack_require__(24);
-	
-	var _type = __webpack_require__(17);
-	
-	var _type2 = _interopRequireDefault(_type);
-	
-	var _components = __webpack_require__(14);
-	
-	var _components2 = _interopRequireDefault(_components);
-	
-	var _polypackBufflehead = __webpack_require__(2);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = new _relational.RelationDomain({
-	    plural: 'posts',
-	    singular: 'post',
-	    type: {
-	        Type: _type2.default,
-	        serialize: {
-	            fields: ['title']
-	        }
-	    },
-	    components: {
-	        ItemView: _components2.default
-	    }
-	});
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _relational = __webpack_require__(24);\n\nvar _type = __webpack_require__(17);\n\nvar _type2 = _interopRequireDefault(_type);\n\nvar _components = __webpack_require__(14);\n\nvar components = _interopRequireWildcard(_components);\n\nvar _polypackBufflehead = __webpack_require__(2);\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = new _relational.RelationDomain({\n    plural: 'posts',\n    singular: 'post',\n    type: {\n        Type: _type2.default,\n        serialize: {\n            fields: ['title']\n        }\n    },\n    components: components\n});\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTUuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcG9zdHMvZG9tYWluLmpzP2U4OGQiXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJfX2VzTW9kdWxlXCIsIHtcbiAgICB2YWx1ZTogdHJ1ZVxufSk7XG5cbnZhciBfcmVsYXRpb25hbCA9IHJlcXVpcmUoJy4uL3JlbGF0aW9uYWwnKTtcblxudmFyIF90eXBlID0gcmVxdWlyZSgnLi90eXBlJyk7XG5cbnZhciBfdHlwZTIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF90eXBlKTtcblxudmFyIF9jb21wb25lbnRzID0gcmVxdWlyZSgnLi9jb21wb25lbnRzJyk7XG5cbnZhciBjb21wb25lbnRzID0gX2ludGVyb3BSZXF1aXJlV2lsZGNhcmQoX2NvbXBvbmVudHMpO1xuXG52YXIgX3BvbHlwYWNrQnVmZmxlaGVhZCA9IHJlcXVpcmUoJ3BvbHlwYWNrIWJ1ZmZsZWhlYWQnKTtcblxuZnVuY3Rpb24gX2ludGVyb3BSZXF1aXJlV2lsZGNhcmQob2JqKSB7IGlmIChvYmogJiYgb2JqLl9fZXNNb2R1bGUpIHsgcmV0dXJuIG9iajsgfSBlbHNlIHsgdmFyIG5ld09iaiA9IHt9OyBpZiAob2JqICE9IG51bGwpIHsgZm9yICh2YXIga2V5IGluIG9iaikgeyBpZiAoT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iaiwga2V5KSkgbmV3T2JqW2tleV0gPSBvYmpba2V5XTsgfSB9IG5ld09iai5kZWZhdWx0ID0gb2JqOyByZXR1cm4gbmV3T2JqOyB9IH1cblxuZnVuY3Rpb24gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChvYmopIHsgcmV0dXJuIG9iaiAmJiBvYmouX19lc01vZHVsZSA/IG9iaiA6IHsgZGVmYXVsdDogb2JqIH07IH1cblxuZXhwb3J0cy5kZWZhdWx0ID0gbmV3IF9yZWxhdGlvbmFsLlJlbGF0aW9uRG9tYWluKHtcbiAgICBwbHVyYWw6ICdwb3N0cycsXG4gICAgc2luZ3VsYXI6ICdwb3N0JyxcbiAgICB0eXBlOiB7XG4gICAgICAgIFR5cGU6IF90eXBlMi5kZWZhdWx0LFxuICAgICAgICBzZXJpYWxpemU6IHtcbiAgICAgICAgICAgIGZpZWxkczogWyd0aXRsZSddXG4gICAgICAgIH1cbiAgICB9LFxuICAgIGNvbXBvbmVudHM6IGNvbXBvbmVudHNcbn0pO1xuXG5cbi8qKioqKioqKioqKioqKioqKlxuICoqIFdFQlBBQ0sgRk9PVEVSXG4gKiogLi9zcmMvcG9zdHMvZG9tYWluLmpzXG4gKiogbW9kdWxlIGlkID0gMTVcbiAqKiBtb2R1bGUgY2h1bmtzID0gMFxuICoqLyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ },
 /* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = undefined;
-	
-	var _domain = __webpack_require__(15);
-	
-	var _domain2 = _interopRequireDefault(_domain);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _domain2.default;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = undefined;\n\nvar _domain = __webpack_require__(15);\n\nvar _domain2 = _interopRequireDefault(_domain);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = _domain2.default;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTYuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcG9zdHMvaW5kZXguanM/MzZjMSJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG5cbk9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBcIl9fZXNNb2R1bGVcIiwge1xuICB2YWx1ZTogdHJ1ZVxufSk7XG5leHBvcnRzLmRlZmF1bHQgPSB1bmRlZmluZWQ7XG5cbnZhciBfZG9tYWluID0gcmVxdWlyZSgnLi9kb21haW4nKTtcblxudmFyIF9kb21haW4yID0gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChfZG9tYWluKTtcblxuZnVuY3Rpb24gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChvYmopIHsgcmV0dXJuIG9iaiAmJiBvYmouX19lc01vZHVsZSA/IG9iaiA6IHsgZGVmYXVsdDogb2JqIH07IH1cblxuZXhwb3J0cy5kZWZhdWx0ID0gX2RvbWFpbjIuZGVmYXVsdDtcblxuXG4vKioqKioqKioqKioqKioqKipcbiAqKiBXRUJQQUNLIEZPT1RFUlxuICoqIC4vc3JjL3Bvc3RzL2luZGV4LmpzXG4gKiogbW9kdWxlIGlkID0gMTZcbiAqKiBtb2R1bGUgY2h1bmtzID0gMFxuICoqLyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==");
 
 /***/ },
 /* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _tcomb = __webpack_require__(9);
-	
-	var _tcomb2 = _interopRequireDefault(_tcomb);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _tcomb2.default.struct({
-	    title: _tcomb2.default.String,
-	    text: _tcomb2.default.String
-	});
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _tcomb = __webpack_require__(9);\n\nvar _tcomb2 = _interopRequireDefault(_tcomb);\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Type = _tcomb2.default.struct({\n    title: _tcomb2.default.String,\n    markdown: _tcomb2.default.String\n});\n\n//default: t.String,\n//articles: t.dict(t.String, t.String),\n//snippets: t.dict(t.String, t.String)\nexports.default = Type;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTcuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcG9zdHMvdHlwZS5qcz9iMjdkIl0sInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFwiX19lc01vZHVsZVwiLCB7XG4gICAgdmFsdWU6IHRydWVcbn0pO1xuXG52YXIgX3Rjb21iID0gcmVxdWlyZSgndGNvbWInKTtcblxudmFyIF90Y29tYjIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF90Y29tYik7XG5cbnZhciBfcmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuXG52YXIgX3JlYWN0MiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX3JlYWN0KTtcblxuZnVuY3Rpb24gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChvYmopIHsgcmV0dXJuIG9iaiAmJiBvYmouX19lc01vZHVsZSA/IG9iaiA6IHsgZGVmYXVsdDogb2JqIH07IH1cblxudmFyIFR5cGUgPSBfdGNvbWIyLmRlZmF1bHQuc3RydWN0KHtcbiAgICB0aXRsZTogX3Rjb21iMi5kZWZhdWx0LlN0cmluZyxcbiAgICBtYXJrZG93bjogX3Rjb21iMi5kZWZhdWx0LlN0cmluZ1xufSk7XG5cbi8vZGVmYXVsdDogdC5TdHJpbmcsXG4vL2FydGljbGVzOiB0LmRpY3QodC5TdHJpbmcsIHQuU3RyaW5nKSxcbi8vc25pcHBldHM6IHQuZGljdCh0LlN0cmluZywgdC5TdHJpbmcpXG5leHBvcnRzLmRlZmF1bHQgPSBUeXBlO1xuXG5cbi8qKioqKioqKioqKioqKioqKlxuICoqIFdFQlBBQ0sgRk9PVEVSXG4gKiogLi9zcmMvcG9zdHMvdHlwZS5qc1xuICoqIG1vZHVsZSBpZCA9IDE3XG4gKiogbW9kdWxlIGNodW5rcyA9IDBcbiAqKi8iXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ },
 /* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _polypackBufflehead = __webpack_require__(2);
-	
-	var _utils = __webpack_require__(6);
-	
-	var _relationRoute = __webpack_require__(25);
-	
-	var _relationRoute2 = _interopRequireDefault(_relationRoute);
-	
-	var _components = __webpack_require__(4);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var RelationDomain = function (_Domain) {
-	    _inherits(RelationDomain, _Domain);
-	
-	    function RelationDomain(_ref) {
-	        var type = _ref.type;
-	        var singular = _ref.singular;
-	        var plural = _ref.plural;
-	        var _ref$dataFlows = _ref.dataFlows;
-	        var dataFlows = _ref$dataFlows === undefined ? _polypackBufflehead.persister.defaultDataFlows : _ref$dataFlows;
-	        var _ref$components = _ref.components;
-	        var ItemView = _ref$components.ItemView;
-	        var _ref$components$ItemW = _ref$components.ItemWrapper;
-	        var ItemWrapper = _ref$components$ItemW === undefined ? _components.SubtlyEditableItem : _ref$components$ItemW;
-	        var SetView = _ref$components.SetView;
-	        var _ref$components$SetWr = _ref$components.SetWrapper;
-	        var SetWrapper = _ref$components$SetWr === undefined ? _components.List : _ref$components$SetWr;
-	        var route = _ref.route;
-	
-	        _classCallCheck(this, RelationDomain);
-	
-	        SetView = SetView || ItemView;
-	        type = (0, _utils.expandType)(Object.assign({ name: (0, _utils.toTitle)(singular) }, type));
-	        route = route || (0, _relationRoute2.default)({
-	            type: type, singular: singular, plural: plural,
-	            ItemView: ItemView, SetView: SetView,
-	            ItemWrapper: ItemWrapper, SetWrapper: SetWrapper
-	        });
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(RelationDomain).call(this, {
-	            name: plural,
-	            dbPrefix: singular,
-	            type: type,
-	            dataFlows: dataFlows,
-	            route: route
-	        }));
-	    }
-	
-	    return RelationDomain;
-	}(_polypackBufflehead.Domain);
-	
-	exports.default = RelationDomain;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _polypackBufflehead = __webpack_require__(2);\n\nvar _utils = __webpack_require__(7);\n\nvar _relationRoute = __webpack_require__(25);\n\nvar _relationRoute2 = _interopRequireDefault(_relationRoute);\n\nvar _components = __webpack_require__(5);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar RelationDomain = function (_Domain) {\n    _inherits(RelationDomain, _Domain);\n\n    function RelationDomain(_ref) {\n        var type = _ref.type;\n        var singular = _ref.singular;\n        var plural = _ref.plural;\n        var _ref$dataFlows = _ref.dataFlows;\n        var dataFlows = _ref$dataFlows === undefined ? _polypackBufflehead.persister.defaultDataFlows : _ref$dataFlows;\n        var _ref$components = _ref.components;\n        var ItemView = _ref$components.ItemView;\n        var _ref$components$ItemW = _ref$components.ItemWrapper;\n        var ItemWrapper = _ref$components$ItemW === undefined ? _components.SubtlyEditableItem : _ref$components$ItemW;\n        var SetView = _ref$components.SetView;\n        var _ref$components$SetWr = _ref$components.SetWrapper;\n        var SetWrapper = _ref$components$SetWr === undefined ? _components.List : _ref$components$SetWr;\n        var route = _ref.route;\n\n        _classCallCheck(this, RelationDomain);\n\n        SetView = SetView || ItemView;\n        type = (0, _utils.expandType)(Object.assign({ name: (0, _utils.toTitle)(singular) }, type));\n        route = route || (0, _relationRoute2.default)({\n            type: type, singular: singular, plural: plural,\n            ItemView: ItemView, SetView: SetView,\n            ItemWrapper: ItemWrapper, SetWrapper: SetWrapper\n        });\n        return _possibleConstructorReturn(this, Object.getPrototypeOf(RelationDomain).call(this, {\n            name: plural,\n            dbPrefix: singular,\n            type: type,\n            dataFlows: dataFlows,\n            route: route\n        }));\n    }\n\n    return RelationDomain;\n}(_polypackBufflehead.Domain);\n\nexports.default = RelationDomain;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTguanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcmVsYXRpb25hbC9SZWxhdGlvbkRvbWFpbi5qcz82OTUxIl0sInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFwiX19lc01vZHVsZVwiLCB7XG4gICAgdmFsdWU6IHRydWVcbn0pO1xuXG52YXIgX3BvbHlwYWNrQnVmZmxlaGVhZCA9IHJlcXVpcmUoJ3BvbHlwYWNrIWJ1ZmZsZWhlYWQnKTtcblxudmFyIF91dGlscyA9IHJlcXVpcmUoJy4vdXRpbHMnKTtcblxudmFyIF9yZWxhdGlvblJvdXRlID0gcmVxdWlyZSgnLi9yZWxhdGlvblJvdXRlJyk7XG5cbnZhciBfcmVsYXRpb25Sb3V0ZTIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9yZWxhdGlvblJvdXRlKTtcblxudmFyIF9jb21wb25lbnRzID0gcmVxdWlyZSgnLi9jb21wb25lbnRzJyk7XG5cbmZ1bmN0aW9uIF9pbnRlcm9wUmVxdWlyZURlZmF1bHQob2JqKSB7IHJldHVybiBvYmogJiYgb2JqLl9fZXNNb2R1bGUgPyBvYmogOiB7IGRlZmF1bHQ6IG9iaiB9OyB9XG5cbmZ1bmN0aW9uIF9jbGFzc0NhbGxDaGVjayhpbnN0YW5jZSwgQ29uc3RydWN0b3IpIHsgaWYgKCEoaW5zdGFuY2UgaW5zdGFuY2VvZiBDb25zdHJ1Y3RvcikpIHsgdGhyb3cgbmV3IFR5cGVFcnJvcihcIkNhbm5vdCBjYWxsIGEgY2xhc3MgYXMgYSBmdW5jdGlvblwiKTsgfSB9XG5cbmZ1bmN0aW9uIF9wb3NzaWJsZUNvbnN0cnVjdG9yUmV0dXJuKHNlbGYsIGNhbGwpIHsgaWYgKCFzZWxmKSB7IHRocm93IG5ldyBSZWZlcmVuY2VFcnJvcihcInRoaXMgaGFzbid0IGJlZW4gaW5pdGlhbGlzZWQgLSBzdXBlcigpIGhhc24ndCBiZWVuIGNhbGxlZFwiKTsgfSByZXR1cm4gY2FsbCAmJiAodHlwZW9mIGNhbGwgPT09IFwib2JqZWN0XCIgfHwgdHlwZW9mIGNhbGwgPT09IFwiZnVuY3Rpb25cIikgPyBjYWxsIDogc2VsZjsgfVxuXG5mdW5jdGlvbiBfaW5oZXJpdHMoc3ViQ2xhc3MsIHN1cGVyQ2xhc3MpIHsgaWYgKHR5cGVvZiBzdXBlckNsYXNzICE9PSBcImZ1bmN0aW9uXCIgJiYgc3VwZXJDbGFzcyAhPT0gbnVsbCkgeyB0aHJvdyBuZXcgVHlwZUVycm9yKFwiU3VwZXIgZXhwcmVzc2lvbiBtdXN0IGVpdGhlciBiZSBudWxsIG9yIGEgZnVuY3Rpb24sIG5vdCBcIiArIHR5cGVvZiBzdXBlckNsYXNzKTsgfSBzdWJDbGFzcy5wcm90b3R5cGUgPSBPYmplY3QuY3JlYXRlKHN1cGVyQ2xhc3MgJiYgc3VwZXJDbGFzcy5wcm90b3R5cGUsIHsgY29uc3RydWN0b3I6IHsgdmFsdWU6IHN1YkNsYXNzLCBlbnVtZXJhYmxlOiBmYWxzZSwgd3JpdGFibGU6IHRydWUsIGNvbmZpZ3VyYWJsZTogdHJ1ZSB9IH0pOyBpZiAoc3VwZXJDbGFzcykgT2JqZWN0LnNldFByb3RvdHlwZU9mID8gT2JqZWN0LnNldFByb3RvdHlwZU9mKHN1YkNsYXNzLCBzdXBlckNsYXNzKSA6IHN1YkNsYXNzLl9fcHJvdG9fXyA9IHN1cGVyQ2xhc3M7IH1cblxudmFyIFJlbGF0aW9uRG9tYWluID0gZnVuY3Rpb24gKF9Eb21haW4pIHtcbiAgICBfaW5oZXJpdHMoUmVsYXRpb25Eb21haW4sIF9Eb21haW4pO1xuXG4gICAgZnVuY3Rpb24gUmVsYXRpb25Eb21haW4oX3JlZikge1xuICAgICAgICB2YXIgdHlwZSA9IF9yZWYudHlwZTtcbiAgICAgICAgdmFyIHNpbmd1bGFyID0gX3JlZi5zaW5ndWxhcjtcbiAgICAgICAgdmFyIHBsdXJhbCA9IF9yZWYucGx1cmFsO1xuICAgICAgICB2YXIgX3JlZiRkYXRhRmxvd3MgPSBfcmVmLmRhdGFGbG93cztcbiAgICAgICAgdmFyIGRhdGFGbG93cyA9IF9yZWYkZGF0YUZsb3dzID09PSB1bmRlZmluZWQgPyBfcG9seXBhY2tCdWZmbGVoZWFkLnBlcnNpc3Rlci5kZWZhdWx0RGF0YUZsb3dzIDogX3JlZiRkYXRhRmxvd3M7XG4gICAgICAgIHZhciBfcmVmJGNvbXBvbmVudHMgPSBfcmVmLmNvbXBvbmVudHM7XG4gICAgICAgIHZhciBJdGVtVmlldyA9IF9yZWYkY29tcG9uZW50cy5JdGVtVmlldztcbiAgICAgICAgdmFyIF9yZWYkY29tcG9uZW50cyRJdGVtVyA9IF9yZWYkY29tcG9uZW50cy5JdGVtV3JhcHBlcjtcbiAgICAgICAgdmFyIEl0ZW1XcmFwcGVyID0gX3JlZiRjb21wb25lbnRzJEl0ZW1XID09PSB1bmRlZmluZWQgPyBfY29tcG9uZW50cy5TdWJ0bHlFZGl0YWJsZUl0ZW0gOiBfcmVmJGNvbXBvbmVudHMkSXRlbVc7XG4gICAgICAgIHZhciBTZXRWaWV3ID0gX3JlZiRjb21wb25lbnRzLlNldFZpZXc7XG4gICAgICAgIHZhciBfcmVmJGNvbXBvbmVudHMkU2V0V3IgPSBfcmVmJGNvbXBvbmVudHMuU2V0V3JhcHBlcjtcbiAgICAgICAgdmFyIFNldFdyYXBwZXIgPSBfcmVmJGNvbXBvbmVudHMkU2V0V3IgPT09IHVuZGVmaW5lZCA/IF9jb21wb25lbnRzLkxpc3QgOiBfcmVmJGNvbXBvbmVudHMkU2V0V3I7XG4gICAgICAgIHZhciByb3V0ZSA9IF9yZWYucm91dGU7XG5cbiAgICAgICAgX2NsYXNzQ2FsbENoZWNrKHRoaXMsIFJlbGF0aW9uRG9tYWluKTtcblxuICAgICAgICBTZXRWaWV3ID0gU2V0VmlldyB8fCBJdGVtVmlldztcbiAgICAgICAgdHlwZSA9ICgwLCBfdXRpbHMuZXhwYW5kVHlwZSkoT2JqZWN0LmFzc2lnbih7IG5hbWU6ICgwLCBfdXRpbHMudG9UaXRsZSkoc2luZ3VsYXIpIH0sIHR5cGUpKTtcbiAgICAgICAgcm91dGUgPSByb3V0ZSB8fCAoMCwgX3JlbGF0aW9uUm91dGUyLmRlZmF1bHQpKHtcbiAgICAgICAgICAgIHR5cGU6IHR5cGUsIHNpbmd1bGFyOiBzaW5ndWxhciwgcGx1cmFsOiBwbHVyYWwsXG4gICAgICAgICAgICBJdGVtVmlldzogSXRlbVZpZXcsIFNldFZpZXc6IFNldFZpZXcsXG4gICAgICAgICAgICBJdGVtV3JhcHBlcjogSXRlbVdyYXBwZXIsIFNldFdyYXBwZXI6IFNldFdyYXBwZXJcbiAgICAgICAgfSk7XG4gICAgICAgIHJldHVybiBfcG9zc2libGVDb25zdHJ1Y3RvclJldHVybih0aGlzLCBPYmplY3QuZ2V0UHJvdG90eXBlT2YoUmVsYXRpb25Eb21haW4pLmNhbGwodGhpcywge1xuICAgICAgICAgICAgbmFtZTogcGx1cmFsLFxuICAgICAgICAgICAgZGJQcmVmaXg6IHNpbmd1bGFyLFxuICAgICAgICAgICAgdHlwZTogdHlwZSxcbiAgICAgICAgICAgIGRhdGFGbG93czogZGF0YUZsb3dzLFxuICAgICAgICAgICAgcm91dGU6IHJvdXRlXG4gICAgICAgIH0pKTtcbiAgICB9XG5cbiAgICByZXR1cm4gUmVsYXRpb25Eb21haW47XG59KF9wb2x5cGFja0J1ZmZsZWhlYWQuRG9tYWluKTtcblxuZXhwb3J0cy5kZWZhdWx0ID0gUmVsYXRpb25Eb21haW47XG5cblxuLyoqKioqKioqKioqKioqKioqXG4gKiogV0VCUEFDSyBGT09URVJcbiAqKiAuL3NyYy9yZWxhdGlvbmFsL1JlbGF0aW9uRG9tYWluLmpzXG4gKiogbW9kdWxlIGlkID0gMThcbiAqKiBtb2R1bGUgY2h1bmtzID0gMFxuICoqLyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=");
 
 /***/ },
 /* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _lib = __webpack_require__(10);
-	
-	var _lib2 = _interopRequireDefault(_lib);
-	
-	var _en = __webpack_require__(11);
-	
-	var _en2 = _interopRequireDefault(_en);
-	
-	var _subtleTcombTemplates = __webpack_require__(5);
-	
-	var _subtleTcombTemplates2 = _interopRequireDefault(_subtleTcombTemplates);
-	
-	var _EditButton = __webpack_require__(3);
-	
-	var _EditButton2 = _interopRequireDefault(_EditButton);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	_lib2.default.form.Form.i18n = _en2.default;
-	_lib2.default.form.Form.templates = _subtleTcombTemplates2.default;
-	
-	var EditableFieldGenerator = function EditableFieldGenerator() {
-	  _classCallCheck(this, EditableFieldGenerator);
-	
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  var props = args[0];
-	  var options = _extends({}, props.options, {
-	    factory: null // avoid circular reference
-	  });
-	
-	  var Inliner = function (_t$form$getComponent) {
-	    _inherits(Inliner, _t$form$getComponent);
-	
-	    function Inliner() {
-	      var _Object$getPrototypeO;
-	
-	      var _temp, _this, _ret;
-	
-	      _classCallCheck(this, Inliner);
-	
-	      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-	        args[_key2] = arguments[_key2];
-	      }
-	
-	      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Inliner)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = { editing: false }, _temp), _possibleConstructorReturn(_this, _ret);
-	    }
-	
-	    _createClass(Inliner, [{
-	      key: 'toggle',
-	      value: function toggle(evt) {
-	        evt.preventDefault();
-	        this.state.editing = !this.state.editing;
-	        this.forceUpdate(); // overrides the default shouldComponentUpdate
-	      }
-	    }, {
-	      key: 'componentShouldUpdate',
-	      value: function componentShouldUpdate(nextProps, nextState) {
-	        return _get(Object.getPrototypeOf(Inliner.prototype), 'componentShouldUpdate', this).call(this, nextProps, nextState) || next.Props.value != this.props.value;
-	      }
-	    }, {
-	      key: 'getTemplate',
-	      value: function getTemplate() {
-	        var _this2 = this;
-	
-	        var editing = this.state.editing;
-	
-	        var template = _get(Object.getPrototypeOf(Inliner.prototype), 'getTemplate', this).call(this);
-	        return function (locals) {
-	          console.log(locals);
-	          return _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(_EditButton2.default, { onClick: _this2.toggle.bind(_this2), editing: editing }),
-	            _react2.default.createElement('div', { className: 'corner-border top left' }),
-	            _react2.default.createElement(
-	              'a',
-	              { href: '#', style: { color: locals.hasError ? '#a94442' : 'normal' } },
-	              editing ? template(locals) : locals.value || '...'
-	            )
-	          );
-	        };
-	      }
-	    }]);
-	
-	    return Inliner;
-	  }(_lib2.default.form.getComponent(props.type, options));
-	
-	  return new (Function.prototype.bind.apply(Inliner, [null].concat(args)))();
-	};
-	
-	exports.default = EditableFieldGenerator;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if (\"value\" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _lib = __webpack_require__(10);\n\nvar _lib2 = _interopRequireDefault(_lib);\n\nvar _en = __webpack_require__(11);\n\nvar _en2 = _interopRequireDefault(_en);\n\nvar _subtleTcombTemplates = __webpack_require__(6);\n\nvar _subtleTcombTemplates2 = _interopRequireDefault(_subtleTcombTemplates);\n\nvar _EditButton = __webpack_require__(4);\n\nvar _EditButton2 = _interopRequireDefault(_EditButton);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\n_lib2.default.form.Form.i18n = _en2.default;\n_lib2.default.form.Form.templates = _subtleTcombTemplates2.default;\n\nif (false) require('./subtleFormTemplates.scss');\n\nvar EditableFieldGenerator = function EditableFieldGenerator() {\n    _classCallCheck(this, EditableFieldGenerator);\n\n    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {\n        args[_key] = arguments[_key];\n    }\n\n    var props = args[0];\n    var options = _extends({}, props.options, {\n        factory: null // avoid circular reference\n    });\n\n    var Inliner = function (_t$form$getComponent) {\n        _inherits(Inliner, _t$form$getComponent);\n\n        function Inliner(props) {\n            _classCallCheck(this, Inliner);\n\n            var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Inliner).call(this, props));\n\n            _this.editButton = function (_ref) {\n                var _ref$attrs = _ref.attrs;\n                var placeholder = _ref$attrs.placeholder;\n                var name = _ref$attrs.name;\n                return _react2.default.createElement(\n                    'div',\n                    { className: 'actions' },\n                    _react2.default.createElement(_EditButton2.default, { onClick: _this.toggle.bind(_this),\n                        editing: _this.state.editing != false })\n                );\n            };\n\n            _this.defaultPlaceholder = function (_ref2) {\n                var _ref2$attrs = _ref2.attrs;\n                var placeholder = _ref2$attrs.placeholder;\n                var name = _ref2$attrs.name;\n                return placeholder || name + '...';\n            };\n\n            _this.state.editing = false;\n            return _this;\n        }\n\n        _createClass(Inliner, [{\n            key: 'toggle',\n            value: function toggle(evt) {\n                evt.preventDefault();\n                this.state.editing = !this.state.editing;\n                this.forceUpdate(); // overrides the default shouldComponentUpdate\n            }\n        }, {\n            key: 'getTemplate',\n            value: function getTemplate() {\n                var _this2 = this;\n\n                var template = _get(Object.getPrototypeOf(Inliner.prototype), 'getTemplate', this).call(this);\n                return function (locals) {\n                    return _react2.default.createElement(\n                        'div',\n                        { className: 'inline-editable ' + (_this2.state.editing ? 'editing' : '') },\n                        _this2.editButton(locals),\n                        _this2.state.editing ? template(locals) : locals.value != undefined && locals.value || _this2.props.value || _this2.defaultPlaceholder(locals)\n                    );\n                };\n            }\n        }]);\n\n        return Inliner;\n    }(_lib2.default.form.getComponent(props.type, options));\n\n    return new (Function.prototype.bind.apply(Inliner, [null].concat(args)))();\n};\n\nexports.default = EditableFieldGenerator;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTkuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcmVsYXRpb25hbC9jb21wb25lbnRzL0VkaXRhYmxlRmllbGRHZW5lcmF0b3IuanN4P2FkNTQiXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJfX2VzTW9kdWxlXCIsIHtcbiAgICB2YWx1ZTogdHJ1ZVxufSk7XG5cbnZhciBfY3JlYXRlQ2xhc3MgPSBmdW5jdGlvbiAoKSB7IGZ1bmN0aW9uIGRlZmluZVByb3BlcnRpZXModGFyZ2V0LCBwcm9wcykgeyBmb3IgKHZhciBpID0gMDsgaSA8IHByb3BzLmxlbmd0aDsgaSsrKSB7IHZhciBkZXNjcmlwdG9yID0gcHJvcHNbaV07IGRlc2NyaXB0b3IuZW51bWVyYWJsZSA9IGRlc2NyaXB0b3IuZW51bWVyYWJsZSB8fCBmYWxzZTsgZGVzY3JpcHRvci5jb25maWd1cmFibGUgPSB0cnVlOyBpZiAoXCJ2YWx1ZVwiIGluIGRlc2NyaXB0b3IpIGRlc2NyaXB0b3Iud3JpdGFibGUgPSB0cnVlOyBPYmplY3QuZGVmaW5lUHJvcGVydHkodGFyZ2V0LCBkZXNjcmlwdG9yLmtleSwgZGVzY3JpcHRvcik7IH0gfSByZXR1cm4gZnVuY3Rpb24gKENvbnN0cnVjdG9yLCBwcm90b1Byb3BzLCBzdGF0aWNQcm9wcykgeyBpZiAocHJvdG9Qcm9wcykgZGVmaW5lUHJvcGVydGllcyhDb25zdHJ1Y3Rvci5wcm90b3R5cGUsIHByb3RvUHJvcHMpOyBpZiAoc3RhdGljUHJvcHMpIGRlZmluZVByb3BlcnRpZXMoQ29uc3RydWN0b3IsIHN0YXRpY1Byb3BzKTsgcmV0dXJuIENvbnN0cnVjdG9yOyB9OyB9KCk7XG5cbnZhciBfZ2V0ID0gZnVuY3Rpb24gZ2V0KG9iamVjdCwgcHJvcGVydHksIHJlY2VpdmVyKSB7IGlmIChvYmplY3QgPT09IG51bGwpIG9iamVjdCA9IEZ1bmN0aW9uLnByb3RvdHlwZTsgdmFyIGRlc2MgPSBPYmplY3QuZ2V0T3duUHJvcGVydHlEZXNjcmlwdG9yKG9iamVjdCwgcHJvcGVydHkpOyBpZiAoZGVzYyA9PT0gdW5kZWZpbmVkKSB7IHZhciBwYXJlbnQgPSBPYmplY3QuZ2V0UHJvdG90eXBlT2Yob2JqZWN0KTsgaWYgKHBhcmVudCA9PT0gbnVsbCkgeyByZXR1cm4gdW5kZWZpbmVkOyB9IGVsc2UgeyByZXR1cm4gZ2V0KHBhcmVudCwgcHJvcGVydHksIHJlY2VpdmVyKTsgfSB9IGVsc2UgaWYgKFwidmFsdWVcIiBpbiBkZXNjKSB7IHJldHVybiBkZXNjLnZhbHVlOyB9IGVsc2UgeyB2YXIgZ2V0dGVyID0gZGVzYy5nZXQ7IGlmIChnZXR0ZXIgPT09IHVuZGVmaW5lZCkgeyByZXR1cm4gdW5kZWZpbmVkOyB9IHJldHVybiBnZXR0ZXIuY2FsbChyZWNlaXZlcik7IH0gfTtcblxudmFyIF9leHRlbmRzID0gT2JqZWN0LmFzc2lnbiB8fCBmdW5jdGlvbiAodGFyZ2V0KSB7IGZvciAodmFyIGkgPSAxOyBpIDwgYXJndW1lbnRzLmxlbmd0aDsgaSsrKSB7IHZhciBzb3VyY2UgPSBhcmd1bWVudHNbaV07IGZvciAodmFyIGtleSBpbiBzb3VyY2UpIHsgaWYgKE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChzb3VyY2UsIGtleSkpIHsgdGFyZ2V0W2tleV0gPSBzb3VyY2Vba2V5XTsgfSB9IH0gcmV0dXJuIHRhcmdldDsgfTtcblxudmFyIF9yZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG5cbnZhciBfcmVhY3QyID0gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChfcmVhY3QpO1xuXG52YXIgX2xpYiA9IHJlcXVpcmUoJ3Rjb21iLWZvcm0vbGliJyk7XG5cbnZhciBfbGliMiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX2xpYik7XG5cbnZhciBfZW4gPSByZXF1aXJlKCd0Y29tYi1mb3JtL2xpYi9pMThuL2VuJyk7XG5cbnZhciBfZW4yID0gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChfZW4pO1xuXG52YXIgX3N1YnRsZVRjb21iVGVtcGxhdGVzID0gcmVxdWlyZSgnLi9zdWJ0bGVUY29tYlRlbXBsYXRlcycpO1xuXG52YXIgX3N1YnRsZVRjb21iVGVtcGxhdGVzMiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX3N1YnRsZVRjb21iVGVtcGxhdGVzKTtcblxudmFyIF9FZGl0QnV0dG9uID0gcmVxdWlyZSgnLi9FZGl0QnV0dG9uJyk7XG5cbnZhciBfRWRpdEJ1dHRvbjIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9FZGl0QnV0dG9uKTtcblxuZnVuY3Rpb24gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChvYmopIHsgcmV0dXJuIG9iaiAmJiBvYmouX19lc01vZHVsZSA/IG9iaiA6IHsgZGVmYXVsdDogb2JqIH07IH1cblxuZnVuY3Rpb24gX3Bvc3NpYmxlQ29uc3RydWN0b3JSZXR1cm4oc2VsZiwgY2FsbCkgeyBpZiAoIXNlbGYpIHsgdGhyb3cgbmV3IFJlZmVyZW5jZUVycm9yKFwidGhpcyBoYXNuJ3QgYmVlbiBpbml0aWFsaXNlZCAtIHN1cGVyKCkgaGFzbid0IGJlZW4gY2FsbGVkXCIpOyB9IHJldHVybiBjYWxsICYmICh0eXBlb2YgY2FsbCA9PT0gXCJvYmplY3RcIiB8fCB0eXBlb2YgY2FsbCA9PT0gXCJmdW5jdGlvblwiKSA/IGNhbGwgOiBzZWxmOyB9XG5cbmZ1bmN0aW9uIF9pbmhlcml0cyhzdWJDbGFzcywgc3VwZXJDbGFzcykgeyBpZiAodHlwZW9mIHN1cGVyQ2xhc3MgIT09IFwiZnVuY3Rpb25cIiAmJiBzdXBlckNsYXNzICE9PSBudWxsKSB7IHRocm93IG5ldyBUeXBlRXJyb3IoXCJTdXBlciBleHByZXNzaW9uIG11c3QgZWl0aGVyIGJlIG51bGwgb3IgYSBmdW5jdGlvbiwgbm90IFwiICsgdHlwZW9mIHN1cGVyQ2xhc3MpOyB9IHN1YkNsYXNzLnByb3RvdHlwZSA9IE9iamVjdC5jcmVhdGUoc3VwZXJDbGFzcyAmJiBzdXBlckNsYXNzLnByb3RvdHlwZSwgeyBjb25zdHJ1Y3RvcjogeyB2YWx1ZTogc3ViQ2xhc3MsIGVudW1lcmFibGU6IGZhbHNlLCB3cml0YWJsZTogdHJ1ZSwgY29uZmlndXJhYmxlOiB0cnVlIH0gfSk7IGlmIChzdXBlckNsYXNzKSBPYmplY3Quc2V0UHJvdG90eXBlT2YgPyBPYmplY3Quc2V0UHJvdG90eXBlT2Yoc3ViQ2xhc3MsIHN1cGVyQ2xhc3MpIDogc3ViQ2xhc3MuX19wcm90b19fID0gc3VwZXJDbGFzczsgfVxuXG5mdW5jdGlvbiBfY2xhc3NDYWxsQ2hlY2soaW5zdGFuY2UsIENvbnN0cnVjdG9yKSB7IGlmICghKGluc3RhbmNlIGluc3RhbmNlb2YgQ29uc3RydWN0b3IpKSB7IHRocm93IG5ldyBUeXBlRXJyb3IoXCJDYW5ub3QgY2FsbCBhIGNsYXNzIGFzIGEgZnVuY3Rpb25cIik7IH0gfVxuXG5fbGliMi5kZWZhdWx0LmZvcm0uRm9ybS5pMThuID0gX2VuMi5kZWZhdWx0O1xuX2xpYjIuZGVmYXVsdC5mb3JtLkZvcm0udGVtcGxhdGVzID0gX3N1YnRsZVRjb21iVGVtcGxhdGVzMi5kZWZhdWx0O1xuXG5pZiAoJEVTLkNPTlRFWFQgPT0gJ0JST1dTRVInKSByZXF1aXJlKCcuL3N1YnRsZUZvcm1UZW1wbGF0ZXMuc2NzcycpO1xuXG52YXIgRWRpdGFibGVGaWVsZEdlbmVyYXRvciA9IGZ1bmN0aW9uIEVkaXRhYmxlRmllbGRHZW5lcmF0b3IoKSB7XG4gICAgX2NsYXNzQ2FsbENoZWNrKHRoaXMsIEVkaXRhYmxlRmllbGRHZW5lcmF0b3IpO1xuXG4gICAgZm9yICh2YXIgX2xlbiA9IGFyZ3VtZW50cy5sZW5ndGgsIGFyZ3MgPSBBcnJheShfbGVuKSwgX2tleSA9IDA7IF9rZXkgPCBfbGVuOyBfa2V5KyspIHtcbiAgICAgICAgYXJnc1tfa2V5XSA9IGFyZ3VtZW50c1tfa2V5XTtcbiAgICB9XG5cbiAgICB2YXIgcHJvcHMgPSBhcmdzWzBdO1xuICAgIHZhciBvcHRpb25zID0gX2V4dGVuZHMoe30sIHByb3BzLm9wdGlvbnMsIHtcbiAgICAgICAgZmFjdG9yeTogbnVsbCAvLyBhdm9pZCBjaXJjdWxhciByZWZlcmVuY2VcbiAgICB9KTtcblxuICAgIHZhciBJbmxpbmVyID0gZnVuY3Rpb24gKF90JGZvcm0kZ2V0Q29tcG9uZW50KSB7XG4gICAgICAgIF9pbmhlcml0cyhJbmxpbmVyLCBfdCRmb3JtJGdldENvbXBvbmVudCk7XG5cbiAgICAgICAgZnVuY3Rpb24gSW5saW5lcihwcm9wcykge1xuICAgICAgICAgICAgX2NsYXNzQ2FsbENoZWNrKHRoaXMsIElubGluZXIpO1xuXG4gICAgICAgICAgICB2YXIgX3RoaXMgPSBfcG9zc2libGVDb25zdHJ1Y3RvclJldHVybih0aGlzLCBPYmplY3QuZ2V0UHJvdG90eXBlT2YoSW5saW5lcikuY2FsbCh0aGlzLCBwcm9wcykpO1xuXG4gICAgICAgICAgICBfdGhpcy5lZGl0QnV0dG9uID0gZnVuY3Rpb24gKF9yZWYpIHtcbiAgICAgICAgICAgICAgICB2YXIgX3JlZiRhdHRycyA9IF9yZWYuYXR0cnM7XG4gICAgICAgICAgICAgICAgdmFyIHBsYWNlaG9sZGVyID0gX3JlZiRhdHRycy5wbGFjZWhvbGRlcjtcbiAgICAgICAgICAgICAgICB2YXIgbmFtZSA9IF9yZWYkYXR0cnMubmFtZTtcbiAgICAgICAgICAgICAgICByZXR1cm4gX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICdkaXYnLFxuICAgICAgICAgICAgICAgICAgICB7IGNsYXNzTmFtZTogJ2FjdGlvbnMnIH0sXG4gICAgICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KF9FZGl0QnV0dG9uMi5kZWZhdWx0LCB7IG9uQ2xpY2s6IF90aGlzLnRvZ2dsZS5iaW5kKF90aGlzKSxcbiAgICAgICAgICAgICAgICAgICAgICAgIGVkaXRpbmc6IF90aGlzLnN0YXRlLmVkaXRpbmcgIT0gZmFsc2UgfSlcbiAgICAgICAgICAgICAgICApO1xuICAgICAgICAgICAgfTtcblxuICAgICAgICAgICAgX3RoaXMuZGVmYXVsdFBsYWNlaG9sZGVyID0gZnVuY3Rpb24gKF9yZWYyKSB7XG4gICAgICAgICAgICAgICAgdmFyIF9yZWYyJGF0dHJzID0gX3JlZjIuYXR0cnM7XG4gICAgICAgICAgICAgICAgdmFyIHBsYWNlaG9sZGVyID0gX3JlZjIkYXR0cnMucGxhY2Vob2xkZXI7XG4gICAgICAgICAgICAgICAgdmFyIG5hbWUgPSBfcmVmMiRhdHRycy5uYW1lO1xuICAgICAgICAgICAgICAgIHJldHVybiBwbGFjZWhvbGRlciB8fCBuYW1lICsgJy4uLic7XG4gICAgICAgICAgICB9O1xuXG4gICAgICAgICAgICBfdGhpcy5zdGF0ZS5lZGl0aW5nID0gZmFsc2U7XG4gICAgICAgICAgICByZXR1cm4gX3RoaXM7XG4gICAgICAgIH1cblxuICAgICAgICBfY3JlYXRlQ2xhc3MoSW5saW5lciwgW3tcbiAgICAgICAgICAgIGtleTogJ3RvZ2dsZScsXG4gICAgICAgICAgICB2YWx1ZTogZnVuY3Rpb24gdG9nZ2xlKGV2dCkge1xuICAgICAgICAgICAgICAgIGV2dC5wcmV2ZW50RGVmYXVsdCgpO1xuICAgICAgICAgICAgICAgIHRoaXMuc3RhdGUuZWRpdGluZyA9ICF0aGlzLnN0YXRlLmVkaXRpbmc7XG4gICAgICAgICAgICAgICAgdGhpcy5mb3JjZVVwZGF0ZSgpOyAvLyBvdmVycmlkZXMgdGhlIGRlZmF1bHQgc2hvdWxkQ29tcG9uZW50VXBkYXRlXG4gICAgICAgICAgICB9XG4gICAgICAgIH0sIHtcbiAgICAgICAgICAgIGtleTogJ2dldFRlbXBsYXRlJyxcbiAgICAgICAgICAgIHZhbHVlOiBmdW5jdGlvbiBnZXRUZW1wbGF0ZSgpIHtcbiAgICAgICAgICAgICAgICB2YXIgX3RoaXMyID0gdGhpcztcblxuICAgICAgICAgICAgICAgIHZhciB0ZW1wbGF0ZSA9IF9nZXQoT2JqZWN0LmdldFByb3RvdHlwZU9mKElubGluZXIucHJvdG90eXBlKSwgJ2dldFRlbXBsYXRlJywgdGhpcykuY2FsbCh0aGlzKTtcbiAgICAgICAgICAgICAgICByZXR1cm4gZnVuY3Rpb24gKGxvY2Fscykge1xuICAgICAgICAgICAgICAgICAgICByZXR1cm4gX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICAgICAnZGl2JyxcbiAgICAgICAgICAgICAgICAgICAgICAgIHsgY2xhc3NOYW1lOiAnaW5saW5lLWVkaXRhYmxlICcgKyAoX3RoaXMyLnN0YXRlLmVkaXRpbmcgPyAnZWRpdGluZycgOiAnJykgfSxcbiAgICAgICAgICAgICAgICAgICAgICAgIF90aGlzMi5lZGl0QnV0dG9uKGxvY2FscyksXG4gICAgICAgICAgICAgICAgICAgICAgICBfdGhpczIuc3RhdGUuZWRpdGluZyA/IHRlbXBsYXRlKGxvY2FscykgOiBsb2NhbHMudmFsdWUgIT0gdW5kZWZpbmVkICYmIGxvY2Fscy52YWx1ZSB8fCBfdGhpczIucHJvcHMudmFsdWUgfHwgX3RoaXMyLmRlZmF1bHRQbGFjZWhvbGRlcihsb2NhbHMpXG4gICAgICAgICAgICAgICAgICAgICk7XG4gICAgICAgICAgICAgICAgfTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfV0pO1xuXG4gICAgICAgIHJldHVybiBJbmxpbmVyO1xuICAgIH0oX2xpYjIuZGVmYXVsdC5mb3JtLmdldENvbXBvbmVudChwcm9wcy50eXBlLCBvcHRpb25zKSk7XG5cbiAgICByZXR1cm4gbmV3IChGdW5jdGlvbi5wcm90b3R5cGUuYmluZC5hcHBseShJbmxpbmVyLCBbbnVsbF0uY29uY2F0KGFyZ3MpKSkoKTtcbn07XG5cbmV4cG9ydHMuZGVmYXVsdCA9IEVkaXRhYmxlRmllbGRHZW5lcmF0b3I7XG5cblxuLyoqKioqKioqKioqKioqKioqXG4gKiogV0VCUEFDSyBGT09URVJcbiAqKiAuL3NyYy9yZWxhdGlvbmFsL2NvbXBvbmVudHMvRWRpdGFibGVGaWVsZEdlbmVyYXRvci5qc3hcbiAqKiBtb2R1bGUgaWQgPSAxOVxuICoqIG1vZHVsZSBjaHVua3MgPSAwXG4gKiovIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ },
 /* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _utils = __webpack_require__(6);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	function AddButton(_ref) {
-	    var singular = _ref.singular;
-	
-	    return _react2.default.createElement(
-	        'a',
-	        { className: 'add-new', href: '/' + singular + '/new?editing=true' },
-	        ' Add '
-	    );
-	}
-	
-	var List = function (_React$Component) {
-	    _inherits(List, _React$Component);
-	
-	    function List() {
-	        _classCallCheck(this, List);
-	
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
-	    }
-	
-	    _createClass(List, [{
-	        key: 'render',
-	        value: function render() {
-	            var _props = this.props;
-	            var _props$listControls = _props.listControls;
-	            var listControls = _props$listControls === undefined ? [AddButton] : _props$listControls;
-	            var ItemView = _props.ItemView;
-	            var plural = _props.plural;
-	            var singular = _props.singular;
-	            var children = _props.children;
-	            var actions = _props.actions;
-	            var singularPropSelector = _props.singularPropSelector;
-	
-	            var controlProps = _objectWithoutProperties(_props, ['listControls', 'ItemView', 'plural', 'singular', 'children', 'actions', 'singularPropSelector']);
-	
-	            var singularId = this.props.params.singularId;
-	
-	            var items = this.props[plural];
-	            return children ? _react2.default.cloneElement(children, singularPropSelector({ items: items, actions: actions, singularId: singularId })) : _react2.default.createElement(
-	                'div',
-	                { className: plural.toLowerCase() + ' relational list' },
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'header' },
-	                    _react2.default.createElement(
-	                        'h1',
-	                        { className: 'title' },
-	                        (0, _utils.toTitle)(plural)
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'controls' },
-	                        listControls.map(function (Control) {
-	                            return _react2.default.createElement(Control, _extends({ key: Control.name, actions: actions, singular: singular }, controlProps));
-	                        })
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'items' },
-	                    items.map(function (i) {
-	                        return _react2.default.createElement(
-	                            'a',
-	                            { key: i._id, className: singular.toLowerCase() + ' item', href: '/' + i._id },
-	                            _react2.default.createElement(ItemView, i)
-	                        );
-	                    })
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return List;
-	}(_react2.default.Component);
-	
-	List.propTypes = {
-	    ItemView: _react2.default.PropTypes.func.isRequired,
-	    type: _react2.default.PropTypes.object.isRequired,
-	    plural: _react2.default.PropTypes.string,
-	    singular: _react2.default.PropTypes.string,
-	    listControls: _react2.default.PropTypes.array,
-	    singularPropSelector: _react2.default.PropTypes.func
-	};
-	exports.default = List;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _utils = __webpack_require__(7);\n\nvar _reactRouter = __webpack_require__(3);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nif (false) require('./list.scss');\n\nfunction AddButton(_ref) {\n    var singular = _ref.singular;\n\n    return _react2.default.createElement(\n        _reactRouter.Link,\n        { className: 'add-new', to: '/' + singular + '/new?editing=true' },\n        ' Add '\n    );\n}\n\nvar List = function (_React$Component) {\n    _inherits(List, _React$Component);\n\n    function List() {\n        _classCallCheck(this, List);\n\n        return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));\n    }\n\n    _createClass(List, [{\n        key: 'render',\n        value: function render() {\n            var _props = this.props;\n            var _props$listControls = _props.listControls;\n            var listControls = _props$listControls === undefined ? [AddButton] : _props$listControls;\n            var ItemView = _props.ItemView;\n            var plural = _props.plural;\n            var singular = _props.singular;\n            var children = _props.children;\n            var actions = _props.actions;\n            var singularPropSelector = _props.singularPropSelector;\n\n            var controlProps = _objectWithoutProperties(_props, ['listControls', 'ItemView', 'plural', 'singular', 'children', 'actions', 'singularPropSelector']);\n\n            var singularId = this.props.params.singularId;\n\n            var items = this.props[plural];\n            return children ? _react2.default.cloneElement(children, singularPropSelector({ items: items, actions: actions, singularId: singularId })) : _react2.default.createElement(\n                'div',\n                { className: plural.toLowerCase() + ' relational list' },\n                _react2.default.createElement(\n                    'div',\n                    { className: 'header' },\n                    _react2.default.createElement(\n                        'h1',\n                        { className: 'title' },\n                        (0, _utils.toTitle)(plural)\n                    ),\n                    _react2.default.createElement(\n                        'div',\n                        { className: 'controls' },\n                        listControls.map(function (Control) {\n                            return _react2.default.createElement(Control, _extends({ key: Control.name, actions: actions, singular: singular }, controlProps));\n                        })\n                    )\n                ),\n                _react2.default.createElement(\n                    'div',\n                    { className: 'items' },\n                    items.map(function (i) {\n                        return _react2.default.createElement(\n                            _reactRouter.Link,\n                            { key: i._id, className: singular.toLowerCase() + ' item', to: '/' + i._id },\n                            _react2.default.createElement(ItemView, i)\n                        );\n                    })\n                )\n            );\n        }\n    }]);\n\n    return List;\n}(_react2.default.Component);\n\nList.propTypes = {\n    ItemView: _react2.default.PropTypes.func.isRequired,\n    type: _react2.default.PropTypes.object.isRequired,\n    plural: _react2.default.PropTypes.string,\n    singular: _react2.default.PropTypes.string,\n    listControls: _react2.default.PropTypes.array,\n    singularPropSelector: _react2.default.PropTypes.func\n};\nexports.default = List;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjAuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcmVsYXRpb25hbC9jb21wb25lbnRzL0xpc3QuanN4P2Q5NjgiXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJfX2VzTW9kdWxlXCIsIHtcbiAgICB2YWx1ZTogdHJ1ZVxufSk7XG5cbnZhciBfZXh0ZW5kcyA9IE9iamVjdC5hc3NpZ24gfHwgZnVuY3Rpb24gKHRhcmdldCkgeyBmb3IgKHZhciBpID0gMTsgaSA8IGFyZ3VtZW50cy5sZW5ndGg7IGkrKykgeyB2YXIgc291cmNlID0gYXJndW1lbnRzW2ldOyBmb3IgKHZhciBrZXkgaW4gc291cmNlKSB7IGlmIChPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwoc291cmNlLCBrZXkpKSB7IHRhcmdldFtrZXldID0gc291cmNlW2tleV07IH0gfSB9IHJldHVybiB0YXJnZXQ7IH07XG5cbnZhciBfY3JlYXRlQ2xhc3MgPSBmdW5jdGlvbiAoKSB7IGZ1bmN0aW9uIGRlZmluZVByb3BlcnRpZXModGFyZ2V0LCBwcm9wcykgeyBmb3IgKHZhciBpID0gMDsgaSA8IHByb3BzLmxlbmd0aDsgaSsrKSB7IHZhciBkZXNjcmlwdG9yID0gcHJvcHNbaV07IGRlc2NyaXB0b3IuZW51bWVyYWJsZSA9IGRlc2NyaXB0b3IuZW51bWVyYWJsZSB8fCBmYWxzZTsgZGVzY3JpcHRvci5jb25maWd1cmFibGUgPSB0cnVlOyBpZiAoXCJ2YWx1ZVwiIGluIGRlc2NyaXB0b3IpIGRlc2NyaXB0b3Iud3JpdGFibGUgPSB0cnVlOyBPYmplY3QuZGVmaW5lUHJvcGVydHkodGFyZ2V0LCBkZXNjcmlwdG9yLmtleSwgZGVzY3JpcHRvcik7IH0gfSByZXR1cm4gZnVuY3Rpb24gKENvbnN0cnVjdG9yLCBwcm90b1Byb3BzLCBzdGF0aWNQcm9wcykgeyBpZiAocHJvdG9Qcm9wcykgZGVmaW5lUHJvcGVydGllcyhDb25zdHJ1Y3Rvci5wcm90b3R5cGUsIHByb3RvUHJvcHMpOyBpZiAoc3RhdGljUHJvcHMpIGRlZmluZVByb3BlcnRpZXMoQ29uc3RydWN0b3IsIHN0YXRpY1Byb3BzKTsgcmV0dXJuIENvbnN0cnVjdG9yOyB9OyB9KCk7XG5cbnZhciBfcmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuXG52YXIgX3JlYWN0MiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX3JlYWN0KTtcblxudmFyIF91dGlscyA9IHJlcXVpcmUoJy4uL3V0aWxzJyk7XG5cbnZhciBfcmVhY3RSb3V0ZXIgPSByZXF1aXJlKCdyZWFjdC1yb3V0ZXInKTtcblxuZnVuY3Rpb24gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChvYmopIHsgcmV0dXJuIG9iaiAmJiBvYmouX19lc01vZHVsZSA/IG9iaiA6IHsgZGVmYXVsdDogb2JqIH07IH1cblxuZnVuY3Rpb24gX29iamVjdFdpdGhvdXRQcm9wZXJ0aWVzKG9iaiwga2V5cykgeyB2YXIgdGFyZ2V0ID0ge307IGZvciAodmFyIGkgaW4gb2JqKSB7IGlmIChrZXlzLmluZGV4T2YoaSkgPj0gMCkgY29udGludWU7IGlmICghT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iaiwgaSkpIGNvbnRpbnVlOyB0YXJnZXRbaV0gPSBvYmpbaV07IH0gcmV0dXJuIHRhcmdldDsgfVxuXG5mdW5jdGlvbiBfY2xhc3NDYWxsQ2hlY2soaW5zdGFuY2UsIENvbnN0cnVjdG9yKSB7IGlmICghKGluc3RhbmNlIGluc3RhbmNlb2YgQ29uc3RydWN0b3IpKSB7IHRocm93IG5ldyBUeXBlRXJyb3IoXCJDYW5ub3QgY2FsbCBhIGNsYXNzIGFzIGEgZnVuY3Rpb25cIik7IH0gfVxuXG5mdW5jdGlvbiBfcG9zc2libGVDb25zdHJ1Y3RvclJldHVybihzZWxmLCBjYWxsKSB7IGlmICghc2VsZikgeyB0aHJvdyBuZXcgUmVmZXJlbmNlRXJyb3IoXCJ0aGlzIGhhc24ndCBiZWVuIGluaXRpYWxpc2VkIC0gc3VwZXIoKSBoYXNuJ3QgYmVlbiBjYWxsZWRcIik7IH0gcmV0dXJuIGNhbGwgJiYgKHR5cGVvZiBjYWxsID09PSBcIm9iamVjdFwiIHx8IHR5cGVvZiBjYWxsID09PSBcImZ1bmN0aW9uXCIpID8gY2FsbCA6IHNlbGY7IH1cblxuZnVuY3Rpb24gX2luaGVyaXRzKHN1YkNsYXNzLCBzdXBlckNsYXNzKSB7IGlmICh0eXBlb2Ygc3VwZXJDbGFzcyAhPT0gXCJmdW5jdGlvblwiICYmIHN1cGVyQ2xhc3MgIT09IG51bGwpIHsgdGhyb3cgbmV3IFR5cGVFcnJvcihcIlN1cGVyIGV4cHJlc3Npb24gbXVzdCBlaXRoZXIgYmUgbnVsbCBvciBhIGZ1bmN0aW9uLCBub3QgXCIgKyB0eXBlb2Ygc3VwZXJDbGFzcyk7IH0gc3ViQ2xhc3MucHJvdG90eXBlID0gT2JqZWN0LmNyZWF0ZShzdXBlckNsYXNzICYmIHN1cGVyQ2xhc3MucHJvdG90eXBlLCB7IGNvbnN0cnVjdG9yOiB7IHZhbHVlOiBzdWJDbGFzcywgZW51bWVyYWJsZTogZmFsc2UsIHdyaXRhYmxlOiB0cnVlLCBjb25maWd1cmFibGU6IHRydWUgfSB9KTsgaWYgKHN1cGVyQ2xhc3MpIE9iamVjdC5zZXRQcm90b3R5cGVPZiA/IE9iamVjdC5zZXRQcm90b3R5cGVPZihzdWJDbGFzcywgc3VwZXJDbGFzcykgOiBzdWJDbGFzcy5fX3Byb3RvX18gPSBzdXBlckNsYXNzOyB9XG5cbmlmICgkRVMuQ09OVEVYVCA9PSAnQlJPV1NFUicpIHJlcXVpcmUoJy4vbGlzdC5zY3NzJyk7XG5cbmZ1bmN0aW9uIEFkZEJ1dHRvbihfcmVmKSB7XG4gICAgdmFyIHNpbmd1bGFyID0gX3JlZi5zaW5ndWxhcjtcblxuICAgIHJldHVybiBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChcbiAgICAgICAgX3JlYWN0Um91dGVyLkxpbmssXG4gICAgICAgIHsgY2xhc3NOYW1lOiAnYWRkLW5ldycsIHRvOiAnLycgKyBzaW5ndWxhciArICcvbmV3P2VkaXRpbmc9dHJ1ZScgfSxcbiAgICAgICAgJyBBZGQgJ1xuICAgICk7XG59XG5cbnZhciBMaXN0ID0gZnVuY3Rpb24gKF9SZWFjdCRDb21wb25lbnQpIHtcbiAgICBfaW5oZXJpdHMoTGlzdCwgX1JlYWN0JENvbXBvbmVudCk7XG5cbiAgICBmdW5jdGlvbiBMaXN0KCkge1xuICAgICAgICBfY2xhc3NDYWxsQ2hlY2sodGhpcywgTGlzdCk7XG5cbiAgICAgICAgcmV0dXJuIF9wb3NzaWJsZUNvbnN0cnVjdG9yUmV0dXJuKHRoaXMsIE9iamVjdC5nZXRQcm90b3R5cGVPZihMaXN0KS5hcHBseSh0aGlzLCBhcmd1bWVudHMpKTtcbiAgICB9XG5cbiAgICBfY3JlYXRlQ2xhc3MoTGlzdCwgW3tcbiAgICAgICAga2V5OiAncmVuZGVyJyxcbiAgICAgICAgdmFsdWU6IGZ1bmN0aW9uIHJlbmRlcigpIHtcbiAgICAgICAgICAgIHZhciBfcHJvcHMgPSB0aGlzLnByb3BzO1xuICAgICAgICAgICAgdmFyIF9wcm9wcyRsaXN0Q29udHJvbHMgPSBfcHJvcHMubGlzdENvbnRyb2xzO1xuICAgICAgICAgICAgdmFyIGxpc3RDb250cm9scyA9IF9wcm9wcyRsaXN0Q29udHJvbHMgPT09IHVuZGVmaW5lZCA/IFtBZGRCdXR0b25dIDogX3Byb3BzJGxpc3RDb250cm9scztcbiAgICAgICAgICAgIHZhciBJdGVtVmlldyA9IF9wcm9wcy5JdGVtVmlldztcbiAgICAgICAgICAgIHZhciBwbHVyYWwgPSBfcHJvcHMucGx1cmFsO1xuICAgICAgICAgICAgdmFyIHNpbmd1bGFyID0gX3Byb3BzLnNpbmd1bGFyO1xuICAgICAgICAgICAgdmFyIGNoaWxkcmVuID0gX3Byb3BzLmNoaWxkcmVuO1xuICAgICAgICAgICAgdmFyIGFjdGlvbnMgPSBfcHJvcHMuYWN0aW9ucztcbiAgICAgICAgICAgIHZhciBzaW5ndWxhclByb3BTZWxlY3RvciA9IF9wcm9wcy5zaW5ndWxhclByb3BTZWxlY3RvcjtcblxuICAgICAgICAgICAgdmFyIGNvbnRyb2xQcm9wcyA9IF9vYmplY3RXaXRob3V0UHJvcGVydGllcyhfcHJvcHMsIFsnbGlzdENvbnRyb2xzJywgJ0l0ZW1WaWV3JywgJ3BsdXJhbCcsICdzaW5ndWxhcicsICdjaGlsZHJlbicsICdhY3Rpb25zJywgJ3Npbmd1bGFyUHJvcFNlbGVjdG9yJ10pO1xuXG4gICAgICAgICAgICB2YXIgc2luZ3VsYXJJZCA9IHRoaXMucHJvcHMucGFyYW1zLnNpbmd1bGFySWQ7XG5cbiAgICAgICAgICAgIHZhciBpdGVtcyA9IHRoaXMucHJvcHNbcGx1cmFsXTtcbiAgICAgICAgICAgIHJldHVybiBjaGlsZHJlbiA/IF9yZWFjdDIuZGVmYXVsdC5jbG9uZUVsZW1lbnQoY2hpbGRyZW4sIHNpbmd1bGFyUHJvcFNlbGVjdG9yKHsgaXRlbXM6IGl0ZW1zLCBhY3Rpb25zOiBhY3Rpb25zLCBzaW5ndWxhcklkOiBzaW5ndWxhcklkIH0pKSA6IF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICdkaXYnLFxuICAgICAgICAgICAgICAgIHsgY2xhc3NOYW1lOiBwbHVyYWwudG9Mb3dlckNhc2UoKSArICcgcmVsYXRpb25hbCBsaXN0JyB9LFxuICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAnZGl2JyxcbiAgICAgICAgICAgICAgICAgICAgeyBjbGFzc05hbWU6ICdoZWFkZXInIH0sXG4gICAgICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAgICAgJ2gxJyxcbiAgICAgICAgICAgICAgICAgICAgICAgIHsgY2xhc3NOYW1lOiAndGl0bGUnIH0sXG4gICAgICAgICAgICAgICAgICAgICAgICAoMCwgX3V0aWxzLnRvVGl0bGUpKHBsdXJhbClcbiAgICAgICAgICAgICAgICAgICAgKSxcbiAgICAgICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICAgICAnZGl2JyxcbiAgICAgICAgICAgICAgICAgICAgICAgIHsgY2xhc3NOYW1lOiAnY29udHJvbHMnIH0sXG4gICAgICAgICAgICAgICAgICAgICAgICBsaXN0Q29udHJvbHMubWFwKGZ1bmN0aW9uIChDb250cm9sKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KENvbnRyb2wsIF9leHRlbmRzKHsga2V5OiBDb250cm9sLm5hbWUsIGFjdGlvbnM6IGFjdGlvbnMsIHNpbmd1bGFyOiBzaW5ndWxhciB9LCBjb250cm9sUHJvcHMpKTtcbiAgICAgICAgICAgICAgICAgICAgICAgIH0pXG4gICAgICAgICAgICAgICAgICAgIClcbiAgICAgICAgICAgICAgICApLFxuICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAnZGl2JyxcbiAgICAgICAgICAgICAgICAgICAgeyBjbGFzc05hbWU6ICdpdGVtcycgfSxcbiAgICAgICAgICAgICAgICAgICAgaXRlbXMubWFwKGZ1bmN0aW9uIChpKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgX3JlYWN0Um91dGVyLkxpbmssXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgeyBrZXk6IGkuX2lkLCBjbGFzc05hbWU6IHNpbmd1bGFyLnRvTG93ZXJDYXNlKCkgKyAnIGl0ZW0nLCB0bzogJy8nICsgaS5faWQgfSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChJdGVtVmlldywgaSlcbiAgICAgICAgICAgICAgICAgICAgICAgICk7XG4gICAgICAgICAgICAgICAgICAgIH0pXG4gICAgICAgICAgICAgICAgKVxuICAgICAgICAgICAgKTtcbiAgICAgICAgfVxuICAgIH1dKTtcblxuICAgIHJldHVybiBMaXN0O1xufShfcmVhY3QyLmRlZmF1bHQuQ29tcG9uZW50KTtcblxuTGlzdC5wcm9wVHlwZXMgPSB7XG4gICAgSXRlbVZpZXc6IF9yZWFjdDIuZGVmYXVsdC5Qcm9wVHlwZXMuZnVuYy5pc1JlcXVpcmVkLFxuICAgIHR5cGU6IF9yZWFjdDIuZGVmYXVsdC5Qcm9wVHlwZXMub2JqZWN0LmlzUmVxdWlyZWQsXG4gICAgcGx1cmFsOiBfcmVhY3QyLmRlZmF1bHQuUHJvcFR5cGVzLnN0cmluZyxcbiAgICBzaW5ndWxhcjogX3JlYWN0Mi5kZWZhdWx0LlByb3BUeXBlcy5zdHJpbmcsXG4gICAgbGlzdENvbnRyb2xzOiBfcmVhY3QyLmRlZmF1bHQuUHJvcFR5cGVzLmFycmF5LFxuICAgIHNpbmd1bGFyUHJvcFNlbGVjdG9yOiBfcmVhY3QyLmRlZmF1bHQuUHJvcFR5cGVzLmZ1bmNcbn07XG5leHBvcnRzLmRlZmF1bHQgPSBMaXN0O1xuXG5cbi8qKioqKioqKioqKioqKioqKlxuICoqIFdFQlBBQ0sgRk9PVEVSXG4gKiogLi9zcmMvcmVsYXRpb25hbC9jb21wb25lbnRzL0xpc3QuanN4XG4gKiogbW9kdWxlIGlkID0gMjBcbiAqKiBtb2R1bGUgY2h1bmtzID0gMFxuICoqLyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==");
 
 /***/ },
 /* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _deepEqual = __webpack_require__(7);
-	
-	var _deepEqual2 = _interopRequireDefault(_deepEqual);
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _TypedCommitableForm = __webpack_require__(22);
-	
-	var _TypedCommitableForm2 = _interopRequireDefault(_TypedCommitableForm);
-	
-	var _EditButton = __webpack_require__(3);
-	
-	var _EditButton2 = _interopRequireDefault(_EditButton);
-	
-	var _EditableFieldGenerator = __webpack_require__(19);
-	
-	var _EditableFieldGenerator2 = _interopRequireDefault(_EditableFieldGenerator);
-	
-	var _lib = __webpack_require__(10);
-	
-	var _lib2 = _interopRequireDefault(_lib);
-	
-	var _en = __webpack_require__(11);
-	
-	var _en2 = _interopRequireDefault(_en);
-	
-	var _subtleTcombTemplates = __webpack_require__(5);
-	
-	var _subtleTcombTemplates2 = _interopRequireDefault(_subtleTcombTemplates);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	_lib2.default.form.Form.i18n = _en2.default;
-	_lib2.default.form.Form.templates = _subtleTcombTemplates2.default;
-	
-	if (false) require('./subtleFormTemplates.scss');
-	
-	function toTcombFormTemplate(Template) {
-	    if (Template.constructor) {
-	        return function (locals) {
-	            return _react2.default.createElement(Template, locals.inputs);
-	        };
-	    } else {
-	        return function (locals) {
-	            return Template(locals.inputs);
-	        };
-	    }
-	}
-	
-	function generateSubtleOptions(type) {
-	    return {
-	        fields: Object.keys(type.meta.props).reduce(function (fields, prop) {
-	            fields[prop] = {
-	                factory: _EditableFieldGenerator2.default
-	            };
-	            return fields;
-	        }, {})
-	    };
-	}
-	
-	function optionsFromProps(_ref) {
-	    var BaseType = _ref.type.BaseType;
-	    var Template = _ref.Template;
-	
-	    return _extends({
-	        template: toTcombFormTemplate(Template),
-	        auto: 'none'
-	    }, generateSubtleOptions(BaseType));
-	}
-	
-	var ToggleableEditableSubtleForm = function (_React$Component) {
-	    _inherits(ToggleableEditableSubtleForm, _React$Component);
-	
-	    function ToggleableEditableSubtleForm(props) {
-	        _classCallCheck(this, ToggleableEditableSubtleForm);
-	
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ToggleableEditableSubtleForm).call(this, props));
-	
-	        _this.componentWillReceiveProps = function (_ref2) {
-	            var value = _ref2.value;
-	
-	            if (!(0, _deepEqual2.default)(value, _this.state.value)) _this.setState({ value: value });
-	        };
-	
-	        _this.save = function (event) {
-	            var _this$props = _this.props;
-	            var value = _this$props.value;
-	            var _this$props$type = _this$props.type;
-	            var serialize = _this$props$type.serialize;
-	
-	            var rest = _objectWithoutProperties(_this$props$type, ['serialize']);
-	
-	            var _this$props$actions = _this$props.actions;
-	            _this$props$actions = _this$props$actions === undefined ? {} : _this$props$actions;
-	            var insert = _this$props$actions.insert;
-	
-	            event.preventDefault();
-	            var formValue = _this.refs.form.getValue();
-	            if (formValue) {
-	                insert(serialize(Object.assign({}, value, formValue)));
-	                _this.setState({ editing: false });
-	            }
-	        };
-	
-	        _this.onChange = function (value) {
-	            return _this.setState({ value: value });
-	        };
-	
-	        var _props$location = props.location;
-	        _props$location = _props$location === undefined ? {} : _props$location;
-	        var _props$location$query = _props$location.query;
-	        _props$location$query = _props$location$query === undefined ? {} : _props$location$query;
-	        var _props$location$query2 = _props$location$query.editing;
-	        var editing = _props$location$query2 === undefined ? false : _props$location$query2;
-	
-	        _this.state = {
-	            editing: editing,
-	            value: _this.props.value,
-	            options: optionsFromProps(_this.props)
-	        };
-	        return _this;
-	    }
-	
-	    _createClass(ToggleableEditableSubtleForm, [{
-	        key: 'render',
-	        value: function render() {
-	            var _this2 = this;
-	
-	            var _props = this.props;
-	            var _props$type = _props.type;
-	            var name = _props$type.name;
-	            var Type = _props$type.Type;
-	            var BaseType = _props$type.BaseType;
-	            var serialize = _props$type.serialize;
-	            var Template = _props.Template;
-	            var _props$actions = _props.actions;
-	            _props$actions = _props$actions === undefined ? {} : _props$actions;
-	            var remove = _props$actions.remove;
-	            var _state = this.state;
-	            var editing = _state.editing;
-	            var options = _state.options;
-	            var deleting = _state.deleting;
-	            var value = _state.value;
-	
-	            return _react2.default.createElement(
-	                'div',
-	                { className: name.toLowerCase() + ' item-view' },
-	                _react2.default.createElement(_EditButton2.default, { onClick: function onClick(_) {
-	                        return _this2.setState({ editing: !editing });
-	                    }, editing: editing != false }),
-	                editing ? _react2.default.createElement(_lib2.default.form.Form, { ref: 'form',
-	                    onChange: this.onChange,
-	                    type: BaseType,
-	                    options: options,
-	                    value: value }) : _react2.default.createElement(Template, value),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'actions' },
-	                    deleting && remove ? _react2.default.createElement(
-	                        'div',
-	                        { className: 'deleting group' },
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'alert deleting', role: 'alert' },
-	                            'Are you sure you want to delete this ',
-	                            name,
-	                            '?'
-	                        ),
-	                        _react2.default.createElement(
-	                            'a',
-	                            { onClick: function onClick(_) {
-	                                    return remove(value);
-	                                }, className: 'delete' },
-	                            ' Yes, Delete '
-	                        ),
-	                        _react2.default.createElement(
-	                            'a',
-	                            { onClick: function onClick(_) {
-	                                    return isDeleting(false);
-	                                }, className: 'cancel' },
-	                            ' Cancel '
-	                        )
-	                    ) : _react2.default.createElement(
-	                        'div',
-	                        { className: 'default group' },
-	                        _react2.default.createElement(
-	                            'button',
-	                            { className: 'save', onClick: this.save },
-	                            'Save'
-	                        ),
-	                        _react2.default.createElement(
-	                            'a',
-	                            { onClick: function onClick(_) {
-	                                    return _this2.setState({ editing: false });
-	                                }, className: 'cancel' },
-	                            'Cancel'
-	                        ),
-	                        remove && _react2.default.createElement(
-	                            'a',
-	                            { onClick: function onClick(_) {
-	                                    return isDeleting(true);
-	                                }, className: 'delete' },
-	                            'delete'
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return ToggleableEditableSubtleForm;
-	}(_react2.default.Component);
-	
-	ToggleableEditableSubtleForm.propTypes = {
-	    Template: _react2.default.PropTypes.func.isRequired,
-	    type: _react2.default.PropTypes.object,
-	    value: _react2.default.PropTypes.object
-	};
-	exports.default = ToggleableEditableSubtleForm;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _deepEqual = __webpack_require__(8);\n\nvar _deepEqual2 = _interopRequireDefault(_deepEqual);\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _TypedCommitableForm = __webpack_require__(22);\n\nvar _TypedCommitableForm2 = _interopRequireDefault(_TypedCommitableForm);\n\nvar _EditButton = __webpack_require__(4);\n\nvar _EditButton2 = _interopRequireDefault(_EditButton);\n\nvar _EditableFieldGenerator = __webpack_require__(19);\n\nvar _EditableFieldGenerator2 = _interopRequireDefault(_EditableFieldGenerator);\n\nvar _lib = __webpack_require__(10);\n\nvar _lib2 = _interopRequireDefault(_lib);\n\nvar _en = __webpack_require__(11);\n\nvar _en2 = _interopRequireDefault(_en);\n\nvar _subtleTcombTemplates = __webpack_require__(6);\n\nvar _subtleTcombTemplates2 = _interopRequireDefault(_subtleTcombTemplates);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\n_lib2.default.form.Form.i18n = _en2.default;\n_lib2.default.form.Form.templates = _subtleTcombTemplates2.default;\n\nif (false) require('./subtleFormTemplates.scss');\n\nfunction toTcombFormTemplate(Template) {\n    if (Template.constructor) {\n        return function (locals) {\n            return _react2.default.createElement(Template, locals.inputs);\n        };\n    } else {\n        return function (locals) {\n            return Template(locals.inputs);\n        };\n    }\n}\n\nfunction generateSubtleOptions(type) {\n    return {\n        fields: Object.keys(type.meta.props).reduce(function (fields, prop) {\n            fields[prop] = {\n                factory: _EditableFieldGenerator2.default\n            };\n            if (type.meta.props[prop].meta.editor) {\n                fields[prop].editor = type.meta.props[prop].meta.editor;\n            }\n            return fields;\n        }, {})\n    };\n}\n\nfunction optionsFromProps(_ref) {\n    var BaseType = _ref.type.BaseType;\n    var Template = _ref.Template;\n\n    return _extends({\n        template: toTcombFormTemplate(Template),\n        auto: 'none'\n    }, generateSubtleOptions(BaseType));\n}\n\nvar ToggleableEditableSubtleForm = function (_React$Component) {\n    _inherits(ToggleableEditableSubtleForm, _React$Component);\n\n    function ToggleableEditableSubtleForm(props) {\n        _classCallCheck(this, ToggleableEditableSubtleForm);\n\n        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ToggleableEditableSubtleForm).call(this, props));\n\n        _this.componentWillReceiveProps = function (_ref2) {\n            var value = _ref2.value;\n\n            if (!(0, _deepEqual2.default)(value, _this.state.value)) _this.setState({ value: value });\n        };\n\n        _this.save = function (_) {\n            var _this$props = _this.props;\n            var value = _this$props.value;\n            var _this$props$type = _this$props.type;\n            var serialize = _this$props$type.serialize;\n\n            var rest = _objectWithoutProperties(_this$props$type, ['serialize']);\n\n            var _this$props$actions = _this$props.actions;\n            _this$props$actions = _this$props$actions === undefined ? {} : _this$props$actions;\n            var insert = _this$props$actions.insert;\n            var update = _this$props$actions.update;\n\n            var formValue = _this.refs.form.getValue();\n            if (formValue) {\n                var serialized = serialize(Object.assign({}, value, formValue));\n                if (serialized._rev) {\n                    update(serialized);\n                } else {\n                    insert(serialized);\n                }\n            }\n            _this.setState({ editing: false });\n        };\n\n        _this.editToggle = function (event) {\n            event.preventDefault();\n            _this.state.editing ? _this.save() : _this.setState({ editing: true });\n        };\n\n        _this.onChange = function (value) {\n            return _this.setState({ value: value });\n        };\n\n        var _props$location = props.location;\n        _props$location = _props$location === undefined ? {} : _props$location;\n        var _props$location$query = _props$location.query;\n        _props$location$query = _props$location$query === undefined ? {} : _props$location$query;\n        var _props$location$query2 = _props$location$query.editing;\n        var editing = _props$location$query2 === undefined ? false : _props$location$query2;\n\n        _this.state = {\n            editing: editing,\n            value: _this.props.value,\n            options: optionsFromProps(_this.props)\n        };\n        return _this;\n    }\n\n    _createClass(ToggleableEditableSubtleForm, [{\n        key: 'render',\n        value: function render() {\n            var _this2 = this;\n\n            var _props = this.props;\n            var _props$type = _props.type;\n            var name = _props$type.name;\n            var Type = _props$type.Type;\n            var BaseType = _props$type.BaseType;\n            var serialize = _props$type.serialize;\n            var Template = _props.Template;\n            var _props$actions = _props.actions;\n            _props$actions = _props$actions === undefined ? {} : _props$actions;\n            var remove = _props$actions.remove;\n            var _state = this.state;\n            var editing = _state.editing;\n            var options = _state.options;\n            var deleting = _state.deleting;\n            var value = _state.value;\n\n            return _react2.default.createElement(\n                'div',\n                { className: name.toLowerCase() + ' item-view inline-editable ' + (deleting ? 'deleting' : '') + ' ' + (editing ? 'editing' : '') },\n                deleting && remove ? _react2.default.createElement(\n                    'div',\n                    { className: 'deleting top actions' },\n                    _react2.default.createElement(\n                        'div',\n                        { className: 'alert deleting', role: 'alert' },\n                        'Are you sure you want to delete this ',\n                        name,\n                        '?'\n                    ),\n                    _react2.default.createElement(\n                        'button',\n                        { onClick: function onClick(_) {\n                                return remove(value);\n                            }, className: 'delete text' },\n                        _react2.default.createElement('i', null),\n                        ' Yes, Delete '\n                    ),\n                    _react2.default.createElement(\n                        'button',\n                        { onClick: function onClick(_) {\n                                return _this2.setState({ deleting: false });\n                            }, className: 'cancel text' },\n                        _react2.default.createElement('i', null),\n                        ' Cancel '\n                    )\n                ) : _react2.default.createElement(\n                    'div',\n                    { className: 'top actions' },\n                    _react2.default.createElement(_EditButton2.default, { onClick: this.editToggle, editing: editing != false }),\n                    editing && _react2.default.createElement(\n                        'button',\n                        { onClick: function onClick(_) {\n                                return _this2.setState({ editing: false });\n                            }, className: 'cancel' },\n                        _react2.default.createElement('i', null)\n                    ),\n                    editing && remove && _react2.default.createElement(\n                        'button',\n                        { onClick: function onClick(_) {\n                                return _this2.setState({ deleting: true });\n                            }, className: 'delete' },\n                        _react2.default.createElement('i', null)\n                    )\n                ),\n                editing ? _react2.default.createElement(_lib2.default.form.Form, { ref: 'form',\n                    onChange: this.onChange,\n                    type: BaseType,\n                    options: options,\n                    value: value }) : _react2.default.createElement(Template, value)\n            );\n        }\n    }]);\n\n    return ToggleableEditableSubtleForm;\n}(_react2.default.Component);\n\nToggleableEditableSubtleForm.propTypes = {\n    Template: _react2.default.PropTypes.func.isRequired,\n    type: _react2.default.PropTypes.object,\n    value: _react2.default.PropTypes.object\n};\nexports.default = ToggleableEditableSubtleForm;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjEuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcmVsYXRpb25hbC9jb21wb25lbnRzL1N1YnRseUVkaXRhYmxlSXRlbS5qc3g/MDIyOSJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG5cbk9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBcIl9fZXNNb2R1bGVcIiwge1xuICAgIHZhbHVlOiB0cnVlXG59KTtcblxudmFyIF9jcmVhdGVDbGFzcyA9IGZ1bmN0aW9uICgpIHsgZnVuY3Rpb24gZGVmaW5lUHJvcGVydGllcyh0YXJnZXQsIHByb3BzKSB7IGZvciAodmFyIGkgPSAwOyBpIDwgcHJvcHMubGVuZ3RoOyBpKyspIHsgdmFyIGRlc2NyaXB0b3IgPSBwcm9wc1tpXTsgZGVzY3JpcHRvci5lbnVtZXJhYmxlID0gZGVzY3JpcHRvci5lbnVtZXJhYmxlIHx8IGZhbHNlOyBkZXNjcmlwdG9yLmNvbmZpZ3VyYWJsZSA9IHRydWU7IGlmIChcInZhbHVlXCIgaW4gZGVzY3JpcHRvcikgZGVzY3JpcHRvci53cml0YWJsZSA9IHRydWU7IE9iamVjdC5kZWZpbmVQcm9wZXJ0eSh0YXJnZXQsIGRlc2NyaXB0b3Iua2V5LCBkZXNjcmlwdG9yKTsgfSB9IHJldHVybiBmdW5jdGlvbiAoQ29uc3RydWN0b3IsIHByb3RvUHJvcHMsIHN0YXRpY1Byb3BzKSB7IGlmIChwcm90b1Byb3BzKSBkZWZpbmVQcm9wZXJ0aWVzKENvbnN0cnVjdG9yLnByb3RvdHlwZSwgcHJvdG9Qcm9wcyk7IGlmIChzdGF0aWNQcm9wcykgZGVmaW5lUHJvcGVydGllcyhDb25zdHJ1Y3Rvciwgc3RhdGljUHJvcHMpOyByZXR1cm4gQ29uc3RydWN0b3I7IH07IH0oKTtcblxudmFyIF9leHRlbmRzID0gT2JqZWN0LmFzc2lnbiB8fCBmdW5jdGlvbiAodGFyZ2V0KSB7IGZvciAodmFyIGkgPSAxOyBpIDwgYXJndW1lbnRzLmxlbmd0aDsgaSsrKSB7IHZhciBzb3VyY2UgPSBhcmd1bWVudHNbaV07IGZvciAodmFyIGtleSBpbiBzb3VyY2UpIHsgaWYgKE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChzb3VyY2UsIGtleSkpIHsgdGFyZ2V0W2tleV0gPSBzb3VyY2Vba2V5XTsgfSB9IH0gcmV0dXJuIHRhcmdldDsgfTtcblxudmFyIF9kZWVwRXF1YWwgPSByZXF1aXJlKCdkZWVwLWVxdWFsJyk7XG5cbnZhciBfZGVlcEVxdWFsMiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX2RlZXBFcXVhbCk7XG5cbnZhciBfcmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuXG52YXIgX3JlYWN0MiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX3JlYWN0KTtcblxudmFyIF9UeXBlZENvbW1pdGFibGVGb3JtID0gcmVxdWlyZSgnLi9UeXBlZENvbW1pdGFibGVGb3JtJyk7XG5cbnZhciBfVHlwZWRDb21taXRhYmxlRm9ybTIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9UeXBlZENvbW1pdGFibGVGb3JtKTtcblxudmFyIF9FZGl0QnV0dG9uID0gcmVxdWlyZSgnLi9FZGl0QnV0dG9uJyk7XG5cbnZhciBfRWRpdEJ1dHRvbjIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9FZGl0QnV0dG9uKTtcblxudmFyIF9FZGl0YWJsZUZpZWxkR2VuZXJhdG9yID0gcmVxdWlyZSgnLi9FZGl0YWJsZUZpZWxkR2VuZXJhdG9yJyk7XG5cbnZhciBfRWRpdGFibGVGaWVsZEdlbmVyYXRvcjIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9FZGl0YWJsZUZpZWxkR2VuZXJhdG9yKTtcblxudmFyIF9saWIgPSByZXF1aXJlKCd0Y29tYi1mb3JtL2xpYicpO1xuXG52YXIgX2xpYjIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9saWIpO1xuXG52YXIgX2VuID0gcmVxdWlyZSgndGNvbWItZm9ybS9saWIvaTE4bi9lbicpO1xuXG52YXIgX2VuMiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX2VuKTtcblxudmFyIF9zdWJ0bGVUY29tYlRlbXBsYXRlcyA9IHJlcXVpcmUoJy4vc3VidGxlVGNvbWJUZW1wbGF0ZXMnKTtcblxudmFyIF9zdWJ0bGVUY29tYlRlbXBsYXRlczIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9zdWJ0bGVUY29tYlRlbXBsYXRlcyk7XG5cbmZ1bmN0aW9uIF9pbnRlcm9wUmVxdWlyZURlZmF1bHQob2JqKSB7IHJldHVybiBvYmogJiYgb2JqLl9fZXNNb2R1bGUgPyBvYmogOiB7IGRlZmF1bHQ6IG9iaiB9OyB9XG5cbmZ1bmN0aW9uIF9vYmplY3RXaXRob3V0UHJvcGVydGllcyhvYmosIGtleXMpIHsgdmFyIHRhcmdldCA9IHt9OyBmb3IgKHZhciBpIGluIG9iaikgeyBpZiAoa2V5cy5pbmRleE9mKGkpID49IDApIGNvbnRpbnVlOyBpZiAoIU9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChvYmosIGkpKSBjb250aW51ZTsgdGFyZ2V0W2ldID0gb2JqW2ldOyB9IHJldHVybiB0YXJnZXQ7IH1cblxuZnVuY3Rpb24gX2NsYXNzQ2FsbENoZWNrKGluc3RhbmNlLCBDb25zdHJ1Y3RvcikgeyBpZiAoIShpbnN0YW5jZSBpbnN0YW5jZW9mIENvbnN0cnVjdG9yKSkgeyB0aHJvdyBuZXcgVHlwZUVycm9yKFwiQ2Fubm90IGNhbGwgYSBjbGFzcyBhcyBhIGZ1bmN0aW9uXCIpOyB9IH1cblxuZnVuY3Rpb24gX3Bvc3NpYmxlQ29uc3RydWN0b3JSZXR1cm4oc2VsZiwgY2FsbCkgeyBpZiAoIXNlbGYpIHsgdGhyb3cgbmV3IFJlZmVyZW5jZUVycm9yKFwidGhpcyBoYXNuJ3QgYmVlbiBpbml0aWFsaXNlZCAtIHN1cGVyKCkgaGFzbid0IGJlZW4gY2FsbGVkXCIpOyB9IHJldHVybiBjYWxsICYmICh0eXBlb2YgY2FsbCA9PT0gXCJvYmplY3RcIiB8fCB0eXBlb2YgY2FsbCA9PT0gXCJmdW5jdGlvblwiKSA/IGNhbGwgOiBzZWxmOyB9XG5cbmZ1bmN0aW9uIF9pbmhlcml0cyhzdWJDbGFzcywgc3VwZXJDbGFzcykgeyBpZiAodHlwZW9mIHN1cGVyQ2xhc3MgIT09IFwiZnVuY3Rpb25cIiAmJiBzdXBlckNsYXNzICE9PSBudWxsKSB7IHRocm93IG5ldyBUeXBlRXJyb3IoXCJTdXBlciBleHByZXNzaW9uIG11c3QgZWl0aGVyIGJlIG51bGwgb3IgYSBmdW5jdGlvbiwgbm90IFwiICsgdHlwZW9mIHN1cGVyQ2xhc3MpOyB9IHN1YkNsYXNzLnByb3RvdHlwZSA9IE9iamVjdC5jcmVhdGUoc3VwZXJDbGFzcyAmJiBzdXBlckNsYXNzLnByb3RvdHlwZSwgeyBjb25zdHJ1Y3RvcjogeyB2YWx1ZTogc3ViQ2xhc3MsIGVudW1lcmFibGU6IGZhbHNlLCB3cml0YWJsZTogdHJ1ZSwgY29uZmlndXJhYmxlOiB0cnVlIH0gfSk7IGlmIChzdXBlckNsYXNzKSBPYmplY3Quc2V0UHJvdG90eXBlT2YgPyBPYmplY3Quc2V0UHJvdG90eXBlT2Yoc3ViQ2xhc3MsIHN1cGVyQ2xhc3MpIDogc3ViQ2xhc3MuX19wcm90b19fID0gc3VwZXJDbGFzczsgfVxuXG5fbGliMi5kZWZhdWx0LmZvcm0uRm9ybS5pMThuID0gX2VuMi5kZWZhdWx0O1xuX2xpYjIuZGVmYXVsdC5mb3JtLkZvcm0udGVtcGxhdGVzID0gX3N1YnRsZVRjb21iVGVtcGxhdGVzMi5kZWZhdWx0O1xuXG5pZiAoJEVTLkNPTlRFWFQgPT0gJ0JST1dTRVInKSByZXF1aXJlKCcuL3N1YnRsZUZvcm1UZW1wbGF0ZXMuc2NzcycpO1xuXG5mdW5jdGlvbiB0b1Rjb21iRm9ybVRlbXBsYXRlKFRlbXBsYXRlKSB7XG4gICAgaWYgKFRlbXBsYXRlLmNvbnN0cnVjdG9yKSB7XG4gICAgICAgIHJldHVybiBmdW5jdGlvbiAobG9jYWxzKSB7XG4gICAgICAgICAgICByZXR1cm4gX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoVGVtcGxhdGUsIGxvY2Fscy5pbnB1dHMpO1xuICAgICAgICB9O1xuICAgIH0gZWxzZSB7XG4gICAgICAgIHJldHVybiBmdW5jdGlvbiAobG9jYWxzKSB7XG4gICAgICAgICAgICByZXR1cm4gVGVtcGxhdGUobG9jYWxzLmlucHV0cyk7XG4gICAgICAgIH07XG4gICAgfVxufVxuXG5mdW5jdGlvbiBnZW5lcmF0ZVN1YnRsZU9wdGlvbnModHlwZSkge1xuICAgIHJldHVybiB7XG4gICAgICAgIGZpZWxkczogT2JqZWN0LmtleXModHlwZS5tZXRhLnByb3BzKS5yZWR1Y2UoZnVuY3Rpb24gKGZpZWxkcywgcHJvcCkge1xuICAgICAgICAgICAgZmllbGRzW3Byb3BdID0ge1xuICAgICAgICAgICAgICAgIGZhY3Rvcnk6IF9FZGl0YWJsZUZpZWxkR2VuZXJhdG9yMi5kZWZhdWx0XG4gICAgICAgICAgICB9O1xuICAgICAgICAgICAgaWYgKHR5cGUubWV0YS5wcm9wc1twcm9wXS5tZXRhLmVkaXRvcikge1xuICAgICAgICAgICAgICAgIGZpZWxkc1twcm9wXS5lZGl0b3IgPSB0eXBlLm1ldGEucHJvcHNbcHJvcF0ubWV0YS5lZGl0b3I7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICByZXR1cm4gZmllbGRzO1xuICAgICAgICB9LCB7fSlcbiAgICB9O1xufVxuXG5mdW5jdGlvbiBvcHRpb25zRnJvbVByb3BzKF9yZWYpIHtcbiAgICB2YXIgQmFzZVR5cGUgPSBfcmVmLnR5cGUuQmFzZVR5cGU7XG4gICAgdmFyIFRlbXBsYXRlID0gX3JlZi5UZW1wbGF0ZTtcblxuICAgIHJldHVybiBfZXh0ZW5kcyh7XG4gICAgICAgIHRlbXBsYXRlOiB0b1Rjb21iRm9ybVRlbXBsYXRlKFRlbXBsYXRlKSxcbiAgICAgICAgYXV0bzogJ25vbmUnXG4gICAgfSwgZ2VuZXJhdGVTdWJ0bGVPcHRpb25zKEJhc2VUeXBlKSk7XG59XG5cbnZhciBUb2dnbGVhYmxlRWRpdGFibGVTdWJ0bGVGb3JtID0gZnVuY3Rpb24gKF9SZWFjdCRDb21wb25lbnQpIHtcbiAgICBfaW5oZXJpdHMoVG9nZ2xlYWJsZUVkaXRhYmxlU3VidGxlRm9ybSwgX1JlYWN0JENvbXBvbmVudCk7XG5cbiAgICBmdW5jdGlvbiBUb2dnbGVhYmxlRWRpdGFibGVTdWJ0bGVGb3JtKHByb3BzKSB7XG4gICAgICAgIF9jbGFzc0NhbGxDaGVjayh0aGlzLCBUb2dnbGVhYmxlRWRpdGFibGVTdWJ0bGVGb3JtKTtcblxuICAgICAgICB2YXIgX3RoaXMgPSBfcG9zc2libGVDb25zdHJ1Y3RvclJldHVybih0aGlzLCBPYmplY3QuZ2V0UHJvdG90eXBlT2YoVG9nZ2xlYWJsZUVkaXRhYmxlU3VidGxlRm9ybSkuY2FsbCh0aGlzLCBwcm9wcykpO1xuXG4gICAgICAgIF90aGlzLmNvbXBvbmVudFdpbGxSZWNlaXZlUHJvcHMgPSBmdW5jdGlvbiAoX3JlZjIpIHtcbiAgICAgICAgICAgIHZhciB2YWx1ZSA9IF9yZWYyLnZhbHVlO1xuXG4gICAgICAgICAgICBpZiAoISgwLCBfZGVlcEVxdWFsMi5kZWZhdWx0KSh2YWx1ZSwgX3RoaXMuc3RhdGUudmFsdWUpKSBfdGhpcy5zZXRTdGF0ZSh7IHZhbHVlOiB2YWx1ZSB9KTtcbiAgICAgICAgfTtcblxuICAgICAgICBfdGhpcy5zYXZlID0gZnVuY3Rpb24gKF8pIHtcbiAgICAgICAgICAgIHZhciBfdGhpcyRwcm9wcyA9IF90aGlzLnByb3BzO1xuICAgICAgICAgICAgdmFyIHZhbHVlID0gX3RoaXMkcHJvcHMudmFsdWU7XG4gICAgICAgICAgICB2YXIgX3RoaXMkcHJvcHMkdHlwZSA9IF90aGlzJHByb3BzLnR5cGU7XG4gICAgICAgICAgICB2YXIgc2VyaWFsaXplID0gX3RoaXMkcHJvcHMkdHlwZS5zZXJpYWxpemU7XG5cbiAgICAgICAgICAgIHZhciByZXN0ID0gX29iamVjdFdpdGhvdXRQcm9wZXJ0aWVzKF90aGlzJHByb3BzJHR5cGUsIFsnc2VyaWFsaXplJ10pO1xuXG4gICAgICAgICAgICB2YXIgX3RoaXMkcHJvcHMkYWN0aW9ucyA9IF90aGlzJHByb3BzLmFjdGlvbnM7XG4gICAgICAgICAgICBfdGhpcyRwcm9wcyRhY3Rpb25zID0gX3RoaXMkcHJvcHMkYWN0aW9ucyA9PT0gdW5kZWZpbmVkID8ge30gOiBfdGhpcyRwcm9wcyRhY3Rpb25zO1xuICAgICAgICAgICAgdmFyIGluc2VydCA9IF90aGlzJHByb3BzJGFjdGlvbnMuaW5zZXJ0O1xuICAgICAgICAgICAgdmFyIHVwZGF0ZSA9IF90aGlzJHByb3BzJGFjdGlvbnMudXBkYXRlO1xuXG4gICAgICAgICAgICB2YXIgZm9ybVZhbHVlID0gX3RoaXMucmVmcy5mb3JtLmdldFZhbHVlKCk7XG4gICAgICAgICAgICBpZiAoZm9ybVZhbHVlKSB7XG4gICAgICAgICAgICAgICAgdmFyIHNlcmlhbGl6ZWQgPSBzZXJpYWxpemUoT2JqZWN0LmFzc2lnbih7fSwgdmFsdWUsIGZvcm1WYWx1ZSkpO1xuICAgICAgICAgICAgICAgIGlmIChzZXJpYWxpemVkLl9yZXYpIHtcbiAgICAgICAgICAgICAgICAgICAgdXBkYXRlKHNlcmlhbGl6ZWQpO1xuICAgICAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgICAgICAgIGluc2VydChzZXJpYWxpemVkKTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBfdGhpcy5zZXRTdGF0ZSh7IGVkaXRpbmc6IGZhbHNlIH0pO1xuICAgICAgICB9O1xuXG4gICAgICAgIF90aGlzLmVkaXRUb2dnbGUgPSBmdW5jdGlvbiAoZXZlbnQpIHtcbiAgICAgICAgICAgIGV2ZW50LnByZXZlbnREZWZhdWx0KCk7XG4gICAgICAgICAgICBfdGhpcy5zdGF0ZS5lZGl0aW5nID8gX3RoaXMuc2F2ZSgpIDogX3RoaXMuc2V0U3RhdGUoeyBlZGl0aW5nOiB0cnVlIH0pO1xuICAgICAgICB9O1xuXG4gICAgICAgIF90aGlzLm9uQ2hhbmdlID0gZnVuY3Rpb24gKHZhbHVlKSB7XG4gICAgICAgICAgICByZXR1cm4gX3RoaXMuc2V0U3RhdGUoeyB2YWx1ZTogdmFsdWUgfSk7XG4gICAgICAgIH07XG5cbiAgICAgICAgdmFyIF9wcm9wcyRsb2NhdGlvbiA9IHByb3BzLmxvY2F0aW9uO1xuICAgICAgICBfcHJvcHMkbG9jYXRpb24gPSBfcHJvcHMkbG9jYXRpb24gPT09IHVuZGVmaW5lZCA/IHt9IDogX3Byb3BzJGxvY2F0aW9uO1xuICAgICAgICB2YXIgX3Byb3BzJGxvY2F0aW9uJHF1ZXJ5ID0gX3Byb3BzJGxvY2F0aW9uLnF1ZXJ5O1xuICAgICAgICBfcHJvcHMkbG9jYXRpb24kcXVlcnkgPSBfcHJvcHMkbG9jYXRpb24kcXVlcnkgPT09IHVuZGVmaW5lZCA/IHt9IDogX3Byb3BzJGxvY2F0aW9uJHF1ZXJ5O1xuICAgICAgICB2YXIgX3Byb3BzJGxvY2F0aW9uJHF1ZXJ5MiA9IF9wcm9wcyRsb2NhdGlvbiRxdWVyeS5lZGl0aW5nO1xuICAgICAgICB2YXIgZWRpdGluZyA9IF9wcm9wcyRsb2NhdGlvbiRxdWVyeTIgPT09IHVuZGVmaW5lZCA/IGZhbHNlIDogX3Byb3BzJGxvY2F0aW9uJHF1ZXJ5MjtcblxuICAgICAgICBfdGhpcy5zdGF0ZSA9IHtcbiAgICAgICAgICAgIGVkaXRpbmc6IGVkaXRpbmcsXG4gICAgICAgICAgICB2YWx1ZTogX3RoaXMucHJvcHMudmFsdWUsXG4gICAgICAgICAgICBvcHRpb25zOiBvcHRpb25zRnJvbVByb3BzKF90aGlzLnByb3BzKVxuICAgICAgICB9O1xuICAgICAgICByZXR1cm4gX3RoaXM7XG4gICAgfVxuXG4gICAgX2NyZWF0ZUNsYXNzKFRvZ2dsZWFibGVFZGl0YWJsZVN1YnRsZUZvcm0sIFt7XG4gICAgICAgIGtleTogJ3JlbmRlcicsXG4gICAgICAgIHZhbHVlOiBmdW5jdGlvbiByZW5kZXIoKSB7XG4gICAgICAgICAgICB2YXIgX3RoaXMyID0gdGhpcztcblxuICAgICAgICAgICAgdmFyIF9wcm9wcyA9IHRoaXMucHJvcHM7XG4gICAgICAgICAgICB2YXIgX3Byb3BzJHR5cGUgPSBfcHJvcHMudHlwZTtcbiAgICAgICAgICAgIHZhciBuYW1lID0gX3Byb3BzJHR5cGUubmFtZTtcbiAgICAgICAgICAgIHZhciBUeXBlID0gX3Byb3BzJHR5cGUuVHlwZTtcbiAgICAgICAgICAgIHZhciBCYXNlVHlwZSA9IF9wcm9wcyR0eXBlLkJhc2VUeXBlO1xuICAgICAgICAgICAgdmFyIHNlcmlhbGl6ZSA9IF9wcm9wcyR0eXBlLnNlcmlhbGl6ZTtcbiAgICAgICAgICAgIHZhciBUZW1wbGF0ZSA9IF9wcm9wcy5UZW1wbGF0ZTtcbiAgICAgICAgICAgIHZhciBfcHJvcHMkYWN0aW9ucyA9IF9wcm9wcy5hY3Rpb25zO1xuICAgICAgICAgICAgX3Byb3BzJGFjdGlvbnMgPSBfcHJvcHMkYWN0aW9ucyA9PT0gdW5kZWZpbmVkID8ge30gOiBfcHJvcHMkYWN0aW9ucztcbiAgICAgICAgICAgIHZhciByZW1vdmUgPSBfcHJvcHMkYWN0aW9ucy5yZW1vdmU7XG4gICAgICAgICAgICB2YXIgX3N0YXRlID0gdGhpcy5zdGF0ZTtcbiAgICAgICAgICAgIHZhciBlZGl0aW5nID0gX3N0YXRlLmVkaXRpbmc7XG4gICAgICAgICAgICB2YXIgb3B0aW9ucyA9IF9zdGF0ZS5vcHRpb25zO1xuICAgICAgICAgICAgdmFyIGRlbGV0aW5nID0gX3N0YXRlLmRlbGV0aW5nO1xuICAgICAgICAgICAgdmFyIHZhbHVlID0gX3N0YXRlLnZhbHVlO1xuXG4gICAgICAgICAgICByZXR1cm4gX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgJ2RpdicsXG4gICAgICAgICAgICAgICAgeyBjbGFzc05hbWU6IG5hbWUudG9Mb3dlckNhc2UoKSArICcgaXRlbS12aWV3IGlubGluZS1lZGl0YWJsZSAnICsgKGRlbGV0aW5nID8gJ2RlbGV0aW5nJyA6ICcnKSArICcgJyArIChlZGl0aW5nID8gJ2VkaXRpbmcnIDogJycpIH0sXG4gICAgICAgICAgICAgICAgZGVsZXRpbmcgJiYgcmVtb3ZlID8gX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICdkaXYnLFxuICAgICAgICAgICAgICAgICAgICB7IGNsYXNzTmFtZTogJ2RlbGV0aW5nIHRvcCBhY3Rpb25zJyB9LFxuICAgICAgICAgICAgICAgICAgICBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChcbiAgICAgICAgICAgICAgICAgICAgICAgICdkaXYnLFxuICAgICAgICAgICAgICAgICAgICAgICAgeyBjbGFzc05hbWU6ICdhbGVydCBkZWxldGluZycsIHJvbGU6ICdhbGVydCcgfSxcbiAgICAgICAgICAgICAgICAgICAgICAgICdBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gZGVsZXRlIHRoaXMgJyxcbiAgICAgICAgICAgICAgICAgICAgICAgIG5hbWUsXG4gICAgICAgICAgICAgICAgICAgICAgICAnPydcbiAgICAgICAgICAgICAgICAgICAgKSxcbiAgICAgICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICAgICAnYnV0dG9uJyxcbiAgICAgICAgICAgICAgICAgICAgICAgIHsgb25DbGljazogZnVuY3Rpb24gb25DbGljayhfKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiByZW1vdmUodmFsdWUpO1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sIGNsYXNzTmFtZTogJ2RlbGV0ZSB0ZXh0JyB9LFxuICAgICAgICAgICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoJ2knLCBudWxsKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICcgWWVzLCBEZWxldGUgJ1xuICAgICAgICAgICAgICAgICAgICApLFxuICAgICAgICAgICAgICAgICAgICBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChcbiAgICAgICAgICAgICAgICAgICAgICAgICdidXR0b24nLFxuICAgICAgICAgICAgICAgICAgICAgICAgeyBvbkNsaWNrOiBmdW5jdGlvbiBvbkNsaWNrKF8pIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIF90aGlzMi5zZXRTdGF0ZSh7IGRlbGV0aW5nOiBmYWxzZSB9KTtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LCBjbGFzc05hbWU6ICdjYW5jZWwgdGV4dCcgfSxcbiAgICAgICAgICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KCdpJywgbnVsbCksXG4gICAgICAgICAgICAgICAgICAgICAgICAnIENhbmNlbCAnXG4gICAgICAgICAgICAgICAgICAgIClcbiAgICAgICAgICAgICAgICApIDogX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICdkaXYnLFxuICAgICAgICAgICAgICAgICAgICB7IGNsYXNzTmFtZTogJ3RvcCBhY3Rpb25zJyB9LFxuICAgICAgICAgICAgICAgICAgICBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChfRWRpdEJ1dHRvbjIuZGVmYXVsdCwgeyBvbkNsaWNrOiB0aGlzLmVkaXRUb2dnbGUsIGVkaXRpbmc6IGVkaXRpbmcgIT0gZmFsc2UgfSksXG4gICAgICAgICAgICAgICAgICAgIGVkaXRpbmcgJiYgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICAgICAnYnV0dG9uJyxcbiAgICAgICAgICAgICAgICAgICAgICAgIHsgb25DbGljazogZnVuY3Rpb24gb25DbGljayhfKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiBfdGhpczIuc2V0U3RhdGUoeyBlZGl0aW5nOiBmYWxzZSB9KTtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LCBjbGFzc05hbWU6ICdjYW5jZWwnIH0sXG4gICAgICAgICAgICAgICAgICAgICAgICBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudCgnaScsIG51bGwpXG4gICAgICAgICAgICAgICAgICAgICksXG4gICAgICAgICAgICAgICAgICAgIGVkaXRpbmcgJiYgcmVtb3ZlICYmIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAgICAgJ2J1dHRvbicsXG4gICAgICAgICAgICAgICAgICAgICAgICB7IG9uQ2xpY2s6IGZ1bmN0aW9uIG9uQ2xpY2soXykge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gX3RoaXMyLnNldFN0YXRlKHsgZGVsZXRpbmc6IHRydWUgfSk7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwgY2xhc3NOYW1lOiAnZGVsZXRlJyB9LFxuICAgICAgICAgICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoJ2knLCBudWxsKVxuICAgICAgICAgICAgICAgICAgICApXG4gICAgICAgICAgICAgICAgKSxcbiAgICAgICAgICAgICAgICBlZGl0aW5nID8gX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoX2xpYjIuZGVmYXVsdC5mb3JtLkZvcm0sIHsgcmVmOiAnZm9ybScsXG4gICAgICAgICAgICAgICAgICAgIG9uQ2hhbmdlOiB0aGlzLm9uQ2hhbmdlLFxuICAgICAgICAgICAgICAgICAgICB0eXBlOiBCYXNlVHlwZSxcbiAgICAgICAgICAgICAgICAgICAgb3B0aW9uczogb3B0aW9ucyxcbiAgICAgICAgICAgICAgICAgICAgdmFsdWU6IHZhbHVlIH0pIDogX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoVGVtcGxhdGUsIHZhbHVlKVxuICAgICAgICAgICAgKTtcbiAgICAgICAgfVxuICAgIH1dKTtcblxuICAgIHJldHVybiBUb2dnbGVhYmxlRWRpdGFibGVTdWJ0bGVGb3JtO1xufShfcmVhY3QyLmRlZmF1bHQuQ29tcG9uZW50KTtcblxuVG9nZ2xlYWJsZUVkaXRhYmxlU3VidGxlRm9ybS5wcm9wVHlwZXMgPSB7XG4gICAgVGVtcGxhdGU6IF9yZWFjdDIuZGVmYXVsdC5Qcm9wVHlwZXMuZnVuYy5pc1JlcXVpcmVkLFxuICAgIHR5cGU6IF9yZWFjdDIuZGVmYXVsdC5Qcm9wVHlwZXMub2JqZWN0LFxuICAgIHZhbHVlOiBfcmVhY3QyLmRlZmF1bHQuUHJvcFR5cGVzLm9iamVjdFxufTtcbmV4cG9ydHMuZGVmYXVsdCA9IFRvZ2dsZWFibGVFZGl0YWJsZVN1YnRsZUZvcm07XG5cblxuLyoqKioqKioqKioqKioqKioqXG4gKiogV0VCUEFDSyBGT09URVJcbiAqKiAuL3NyYy9yZWxhdGlvbmFsL2NvbXBvbmVudHMvU3VidGx5RWRpdGFibGVJdGVtLmpzeFxuICoqIG1vZHVsZSBpZCA9IDIxXG4gKiogbW9kdWxlIGNodW5rcyA9IDBcbiAqKi8iXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==");
 
 /***/ },
 /* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _tcombForm = __webpack_require__(34);
-	
-	var _tcombForm2 = _interopRequireDefault(_tcombForm);
-	
-	var _deepEqual = __webpack_require__(7);
-	
-	var _deepEqual2 = _interopRequireDefault(_deepEqual);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var defaultOptions = {
-	    config: {
-	        horizontal: {
-	            md: [2, 10],
-	            sm: [2, 10]
-	        }
-	    }
-	};
-	
-	var TypedCommitableForm = function (_React$Component) {
-	    _inherits(TypedCommitableForm, _React$Component);
-	
-	    function TypedCommitableForm() {
-	        var _Object$getPrototypeO;
-	
-	        var _temp, _this, _ret;
-	
-	        _classCallCheck(this, TypedCommitableForm);
-	
-	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	            args[_key] = arguments[_key];
-	        }
-	
-	        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(TypedCommitableForm)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = { value: _this.props.value, deleting: false }, _this.componentWillReceiveProps = function (_ref) {
-	            var value = _ref.value;
-	
-	            if (!(0, _deepEqual2.default)(value, _this.state.value)) _this.setState({ value: value });
-	        }, _this.onSubmit = function (event) {
-	            var _this$props = _this.props;
-	            var value = _this$props.value;
-	            var hide = _this$props.hide;
-	            var commit = _this$props.commit;
-	            var serialize = _this$props.serialize;
-	
-	            event.preventDefault();
-	            var formValue = _this.refs.form.getValue();
-	            if (formValue) {
-	                commit(serialize(Object.assign({}, value, formValue)));
-	                hide();
-	            }
-	        }, _this.onChange = function (value) {
-	            return _this.setState({ value: value });
-	        }, _temp), _possibleConstructorReturn(_this, _ret);
-	    }
-	
-	    _createClass(TypedCommitableForm, [{
-	        key: 'render',
-	        value: function render() {
-	            var _this2 = this;
-	
-	            var isDeleting = function isDeleting(bool) {
-	                return _this2.setState({ deleting: bool });
-	            };
-	            var _state = this.state;
-	            var value = _state.value;
-	            var deleting = _state.deleting;
-	            var _props = this.props;
-	            var hide = _props.hide;
-	            var remove = _props.remove;
-	            var baseType = _props.baseType;
-	            var name = _props.name;
-	            var _props$options = _props.options;
-	            var options = _props$options === undefined ? {} : _props$options;
-	
-	            return _react2.default.createElement(
-	                'form',
-	                { onSubmit: this.onSubmit, className: 'form-horizontal' },
-	                _react2.default.createElement(_tcombForm2.default.form.Form, { ref: 'form', type: baseType, options: Object.assign(defaultOptions, options), value: value,
-	                    onChange: this.onChange
-	                }),
-	                deleting && remove ? _react2.default.createElement(
-	                    'div',
-	                    { className: 'form-group' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'alert alert-danger', role: 'alert' },
-	                        'Are you sure you want to delete this ',
-	                        name,
-	                        '?'
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'btn-group btn-group-justified' },
-	                        _react2.default.createElement(
-	                            'a',
-	                            { onClick: function onClick(_) {
-	                                    return remove(value);
-	                                }, className: 'btn btn-danger' },
-	                            ' Yes, Delete '
-	                        ),
-	                        _react2.default.createElement(
-	                            'a',
-	                            { onClick: function onClick(_) {
-	                                    return isDeleting(false);
-	                                }, className: 'btn btn-default' },
-	                            ' Cancel '
-	                        )
-	                    )
-	                ) : _react2.default.createElement(
-	                    'div',
-	                    { className: 'form-group' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'btn-group pull-right' },
-	                        _react2.default.createElement(
-	                            'button',
-	                            { type: 'submit', className: 'btn btn-primary' },
-	                            'Save'
-	                        ),
-	                        _react2.default.createElement(
-	                            'a',
-	                            { onClick: hide, className: 'btn btn-warning' },
-	                            'cancel'
-	                        ),
-	                        remove && _react2.default.createElement(
-	                            'a',
-	                            { onClick: function onClick(_) {
-	                                    return isDeleting(true);
-	                                }, className: 'btn btn-danger' },
-	                            'delete'
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return TypedCommitableForm;
-	}(_react2.default.Component);
-	
-	TypedCommitableForm.propTypes = {
-	    baseType: _react2.default.PropTypes.func.isRequired,
-	    name: _react2.default.PropTypes.string,
-	    serialize: _react2.default.PropTypes.func.isRequired,
-	    commit: _react2.default.PropTypes.func.isRequired,
-	    options: _react2.default.PropTypes.object
-	};
-	exports.default = TypedCommitableForm;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _tcombForm = __webpack_require__(35);\n\nvar _tcombForm2 = _interopRequireDefault(_tcombForm);\n\nvar _deepEqual = __webpack_require__(8);\n\nvar _deepEqual2 = _interopRequireDefault(_deepEqual);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar defaultOptions = {\n    config: {\n        horizontal: {\n            md: [2, 10],\n            sm: [2, 10]\n        }\n    }\n};\n\nvar TypedCommitableForm = function (_React$Component) {\n    _inherits(TypedCommitableForm, _React$Component);\n\n    function TypedCommitableForm() {\n        var _Object$getPrototypeO;\n\n        var _temp, _this, _ret;\n\n        _classCallCheck(this, TypedCommitableForm);\n\n        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {\n            args[_key] = arguments[_key];\n        }\n\n        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(TypedCommitableForm)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = { value: _this.props.value, deleting: false }, _this.componentWillReceiveProps = function (_ref) {\n            var value = _ref.value;\n\n            if (!(0, _deepEqual2.default)(value, _this.state.value)) _this.setState({ value: value });\n        }, _this.onSubmit = function (event) {\n            var _this$props = _this.props;\n            var value = _this$props.value;\n            var hide = _this$props.hide;\n            var commit = _this$props.commit;\n            var serialize = _this$props.serialize;\n\n            event.preventDefault();\n            var formValue = _this.refs.form.getValue();\n            if (formValue) {\n                commit(serialize(Object.assign({}, value, formValue)));\n                hide();\n            }\n        }, _this.onChange = function (value) {\n            return _this.setState({ value: value });\n        }, _temp), _possibleConstructorReturn(_this, _ret);\n    }\n\n    _createClass(TypedCommitableForm, [{\n        key: 'render',\n        value: function render() {\n            var _this2 = this;\n\n            var isDeleting = function isDeleting(bool) {\n                return _this2.setState({ deleting: bool });\n            };\n            var _state = this.state;\n            var value = _state.value;\n            var deleting = _state.deleting;\n            var _props = this.props;\n            var hide = _props.hide;\n            var remove = _props.remove;\n            var baseType = _props.baseType;\n            var name = _props.name;\n            var _props$options = _props.options;\n            var options = _props$options === undefined ? {} : _props$options;\n\n            return _react2.default.createElement(\n                'form',\n                { onSubmit: this.onSubmit, className: 'form-horizontal' },\n                _react2.default.createElement(_tcombForm2.default.form.Form, { ref: 'form', type: baseType, options: Object.assign(defaultOptions, options), value: value,\n                    onChange: this.onChange\n                }),\n                deleting && remove ? _react2.default.createElement(\n                    'div',\n                    { className: 'form-group' },\n                    _react2.default.createElement(\n                        'div',\n                        { className: 'alert alert-danger', role: 'alert' },\n                        'Are you sure you want to delete this ',\n                        name,\n                        '?'\n                    ),\n                    _react2.default.createElement(\n                        'div',\n                        { className: 'btn-group btn-group-justified' },\n                        _react2.default.createElement(\n                            'a',\n                            { onClick: function onClick(_) {\n                                    return remove(value);\n                                }, className: 'btn btn-danger' },\n                            ' Yes, Delete '\n                        ),\n                        _react2.default.createElement(\n                            'a',\n                            { onClick: function onClick(_) {\n                                    return isDeleting(false);\n                                }, className: 'btn btn-default' },\n                            ' Cancel '\n                        )\n                    )\n                ) : _react2.default.createElement(\n                    'div',\n                    { className: 'form-group' },\n                    _react2.default.createElement(\n                        'div',\n                        { className: 'btn-group pull-right' },\n                        _react2.default.createElement(\n                            'button',\n                            { type: 'submit', className: 'btn btn-primary' },\n                            'Save'\n                        ),\n                        _react2.default.createElement(\n                            'a',\n                            { onClick: hide, className: 'btn btn-warning' },\n                            'cancel'\n                        ),\n                        remove && _react2.default.createElement(\n                            'a',\n                            { onClick: function onClick(_) {\n                                    return isDeleting(true);\n                                }, className: 'btn btn-danger' },\n                            'delete'\n                        )\n                    )\n                )\n            );\n        }\n    }]);\n\n    return TypedCommitableForm;\n}(_react2.default.Component);\n\nTypedCommitableForm.propTypes = {\n    baseType: _react2.default.PropTypes.func.isRequired,\n    name: _react2.default.PropTypes.string,\n    serialize: _react2.default.PropTypes.func.isRequired,\n    commit: _react2.default.PropTypes.func.isRequired,\n    options: _react2.default.PropTypes.object\n};\nexports.default = TypedCommitableForm;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjIuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcmVsYXRpb25hbC9jb21wb25lbnRzL1R5cGVkQ29tbWl0YWJsZUZvcm0uanN4P2FjODkiXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJfX2VzTW9kdWxlXCIsIHtcbiAgICB2YWx1ZTogdHJ1ZVxufSk7XG5cbnZhciBfY3JlYXRlQ2xhc3MgPSBmdW5jdGlvbiAoKSB7IGZ1bmN0aW9uIGRlZmluZVByb3BlcnRpZXModGFyZ2V0LCBwcm9wcykgeyBmb3IgKHZhciBpID0gMDsgaSA8IHByb3BzLmxlbmd0aDsgaSsrKSB7IHZhciBkZXNjcmlwdG9yID0gcHJvcHNbaV07IGRlc2NyaXB0b3IuZW51bWVyYWJsZSA9IGRlc2NyaXB0b3IuZW51bWVyYWJsZSB8fCBmYWxzZTsgZGVzY3JpcHRvci5jb25maWd1cmFibGUgPSB0cnVlOyBpZiAoXCJ2YWx1ZVwiIGluIGRlc2NyaXB0b3IpIGRlc2NyaXB0b3Iud3JpdGFibGUgPSB0cnVlOyBPYmplY3QuZGVmaW5lUHJvcGVydHkodGFyZ2V0LCBkZXNjcmlwdG9yLmtleSwgZGVzY3JpcHRvcik7IH0gfSByZXR1cm4gZnVuY3Rpb24gKENvbnN0cnVjdG9yLCBwcm90b1Byb3BzLCBzdGF0aWNQcm9wcykgeyBpZiAocHJvdG9Qcm9wcykgZGVmaW5lUHJvcGVydGllcyhDb25zdHJ1Y3Rvci5wcm90b3R5cGUsIHByb3RvUHJvcHMpOyBpZiAoc3RhdGljUHJvcHMpIGRlZmluZVByb3BlcnRpZXMoQ29uc3RydWN0b3IsIHN0YXRpY1Byb3BzKTsgcmV0dXJuIENvbnN0cnVjdG9yOyB9OyB9KCk7XG5cbnZhciBfcmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuXG52YXIgX3JlYWN0MiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX3JlYWN0KTtcblxudmFyIF90Y29tYkZvcm0gPSByZXF1aXJlKCd0Y29tYi1mb3JtJyk7XG5cbnZhciBfdGNvbWJGb3JtMiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX3Rjb21iRm9ybSk7XG5cbnZhciBfZGVlcEVxdWFsID0gcmVxdWlyZSgnZGVlcC1lcXVhbCcpO1xuXG52YXIgX2RlZXBFcXVhbDIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9kZWVwRXF1YWwpO1xuXG5mdW5jdGlvbiBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KG9iaikgeyByZXR1cm4gb2JqICYmIG9iai5fX2VzTW9kdWxlID8gb2JqIDogeyBkZWZhdWx0OiBvYmogfTsgfVxuXG5mdW5jdGlvbiBfY2xhc3NDYWxsQ2hlY2soaW5zdGFuY2UsIENvbnN0cnVjdG9yKSB7IGlmICghKGluc3RhbmNlIGluc3RhbmNlb2YgQ29uc3RydWN0b3IpKSB7IHRocm93IG5ldyBUeXBlRXJyb3IoXCJDYW5ub3QgY2FsbCBhIGNsYXNzIGFzIGEgZnVuY3Rpb25cIik7IH0gfVxuXG5mdW5jdGlvbiBfcG9zc2libGVDb25zdHJ1Y3RvclJldHVybihzZWxmLCBjYWxsKSB7IGlmICghc2VsZikgeyB0aHJvdyBuZXcgUmVmZXJlbmNlRXJyb3IoXCJ0aGlzIGhhc24ndCBiZWVuIGluaXRpYWxpc2VkIC0gc3VwZXIoKSBoYXNuJ3QgYmVlbiBjYWxsZWRcIik7IH0gcmV0dXJuIGNhbGwgJiYgKHR5cGVvZiBjYWxsID09PSBcIm9iamVjdFwiIHx8IHR5cGVvZiBjYWxsID09PSBcImZ1bmN0aW9uXCIpID8gY2FsbCA6IHNlbGY7IH1cblxuZnVuY3Rpb24gX2luaGVyaXRzKHN1YkNsYXNzLCBzdXBlckNsYXNzKSB7IGlmICh0eXBlb2Ygc3VwZXJDbGFzcyAhPT0gXCJmdW5jdGlvblwiICYmIHN1cGVyQ2xhc3MgIT09IG51bGwpIHsgdGhyb3cgbmV3IFR5cGVFcnJvcihcIlN1cGVyIGV4cHJlc3Npb24gbXVzdCBlaXRoZXIgYmUgbnVsbCBvciBhIGZ1bmN0aW9uLCBub3QgXCIgKyB0eXBlb2Ygc3VwZXJDbGFzcyk7IH0gc3ViQ2xhc3MucHJvdG90eXBlID0gT2JqZWN0LmNyZWF0ZShzdXBlckNsYXNzICYmIHN1cGVyQ2xhc3MucHJvdG90eXBlLCB7IGNvbnN0cnVjdG9yOiB7IHZhbHVlOiBzdWJDbGFzcywgZW51bWVyYWJsZTogZmFsc2UsIHdyaXRhYmxlOiB0cnVlLCBjb25maWd1cmFibGU6IHRydWUgfSB9KTsgaWYgKHN1cGVyQ2xhc3MpIE9iamVjdC5zZXRQcm90b3R5cGVPZiA/IE9iamVjdC5zZXRQcm90b3R5cGVPZihzdWJDbGFzcywgc3VwZXJDbGFzcykgOiBzdWJDbGFzcy5fX3Byb3RvX18gPSBzdXBlckNsYXNzOyB9XG5cbnZhciBkZWZhdWx0T3B0aW9ucyA9IHtcbiAgICBjb25maWc6IHtcbiAgICAgICAgaG9yaXpvbnRhbDoge1xuICAgICAgICAgICAgbWQ6IFsyLCAxMF0sXG4gICAgICAgICAgICBzbTogWzIsIDEwXVxuICAgICAgICB9XG4gICAgfVxufTtcblxudmFyIFR5cGVkQ29tbWl0YWJsZUZvcm0gPSBmdW5jdGlvbiAoX1JlYWN0JENvbXBvbmVudCkge1xuICAgIF9pbmhlcml0cyhUeXBlZENvbW1pdGFibGVGb3JtLCBfUmVhY3QkQ29tcG9uZW50KTtcblxuICAgIGZ1bmN0aW9uIFR5cGVkQ29tbWl0YWJsZUZvcm0oKSB7XG4gICAgICAgIHZhciBfT2JqZWN0JGdldFByb3RvdHlwZU87XG5cbiAgICAgICAgdmFyIF90ZW1wLCBfdGhpcywgX3JldDtcblxuICAgICAgICBfY2xhc3NDYWxsQ2hlY2sodGhpcywgVHlwZWRDb21taXRhYmxlRm9ybSk7XG5cbiAgICAgICAgZm9yICh2YXIgX2xlbiA9IGFyZ3VtZW50cy5sZW5ndGgsIGFyZ3MgPSBBcnJheShfbGVuKSwgX2tleSA9IDA7IF9rZXkgPCBfbGVuOyBfa2V5KyspIHtcbiAgICAgICAgICAgIGFyZ3NbX2tleV0gPSBhcmd1bWVudHNbX2tleV07XG4gICAgICAgIH1cblxuICAgICAgICByZXR1cm4gX3JldCA9IChfdGVtcCA9IChfdGhpcyA9IF9wb3NzaWJsZUNvbnN0cnVjdG9yUmV0dXJuKHRoaXMsIChfT2JqZWN0JGdldFByb3RvdHlwZU8gPSBPYmplY3QuZ2V0UHJvdG90eXBlT2YoVHlwZWRDb21taXRhYmxlRm9ybSkpLmNhbGwuYXBwbHkoX09iamVjdCRnZXRQcm90b3R5cGVPLCBbdGhpc10uY29uY2F0KGFyZ3MpKSksIF90aGlzKSwgX3RoaXMuc3RhdGUgPSB7IHZhbHVlOiBfdGhpcy5wcm9wcy52YWx1ZSwgZGVsZXRpbmc6IGZhbHNlIH0sIF90aGlzLmNvbXBvbmVudFdpbGxSZWNlaXZlUHJvcHMgPSBmdW5jdGlvbiAoX3JlZikge1xuICAgICAgICAgICAgdmFyIHZhbHVlID0gX3JlZi52YWx1ZTtcblxuICAgICAgICAgICAgaWYgKCEoMCwgX2RlZXBFcXVhbDIuZGVmYXVsdCkodmFsdWUsIF90aGlzLnN0YXRlLnZhbHVlKSkgX3RoaXMuc2V0U3RhdGUoeyB2YWx1ZTogdmFsdWUgfSk7XG4gICAgICAgIH0sIF90aGlzLm9uU3VibWl0ID0gZnVuY3Rpb24gKGV2ZW50KSB7XG4gICAgICAgICAgICB2YXIgX3RoaXMkcHJvcHMgPSBfdGhpcy5wcm9wcztcbiAgICAgICAgICAgIHZhciB2YWx1ZSA9IF90aGlzJHByb3BzLnZhbHVlO1xuICAgICAgICAgICAgdmFyIGhpZGUgPSBfdGhpcyRwcm9wcy5oaWRlO1xuICAgICAgICAgICAgdmFyIGNvbW1pdCA9IF90aGlzJHByb3BzLmNvbW1pdDtcbiAgICAgICAgICAgIHZhciBzZXJpYWxpemUgPSBfdGhpcyRwcm9wcy5zZXJpYWxpemU7XG5cbiAgICAgICAgICAgIGV2ZW50LnByZXZlbnREZWZhdWx0KCk7XG4gICAgICAgICAgICB2YXIgZm9ybVZhbHVlID0gX3RoaXMucmVmcy5mb3JtLmdldFZhbHVlKCk7XG4gICAgICAgICAgICBpZiAoZm9ybVZhbHVlKSB7XG4gICAgICAgICAgICAgICAgY29tbWl0KHNlcmlhbGl6ZShPYmplY3QuYXNzaWduKHt9LCB2YWx1ZSwgZm9ybVZhbHVlKSkpO1xuICAgICAgICAgICAgICAgIGhpZGUoKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfSwgX3RoaXMub25DaGFuZ2UgPSBmdW5jdGlvbiAodmFsdWUpIHtcbiAgICAgICAgICAgIHJldHVybiBfdGhpcy5zZXRTdGF0ZSh7IHZhbHVlOiB2YWx1ZSB9KTtcbiAgICAgICAgfSwgX3RlbXApLCBfcG9zc2libGVDb25zdHJ1Y3RvclJldHVybihfdGhpcywgX3JldCk7XG4gICAgfVxuXG4gICAgX2NyZWF0ZUNsYXNzKFR5cGVkQ29tbWl0YWJsZUZvcm0sIFt7XG4gICAgICAgIGtleTogJ3JlbmRlcicsXG4gICAgICAgIHZhbHVlOiBmdW5jdGlvbiByZW5kZXIoKSB7XG4gICAgICAgICAgICB2YXIgX3RoaXMyID0gdGhpcztcblxuICAgICAgICAgICAgdmFyIGlzRGVsZXRpbmcgPSBmdW5jdGlvbiBpc0RlbGV0aW5nKGJvb2wpIHtcbiAgICAgICAgICAgICAgICByZXR1cm4gX3RoaXMyLnNldFN0YXRlKHsgZGVsZXRpbmc6IGJvb2wgfSk7XG4gICAgICAgICAgICB9O1xuICAgICAgICAgICAgdmFyIF9zdGF0ZSA9IHRoaXMuc3RhdGU7XG4gICAgICAgICAgICB2YXIgdmFsdWUgPSBfc3RhdGUudmFsdWU7XG4gICAgICAgICAgICB2YXIgZGVsZXRpbmcgPSBfc3RhdGUuZGVsZXRpbmc7XG4gICAgICAgICAgICB2YXIgX3Byb3BzID0gdGhpcy5wcm9wcztcbiAgICAgICAgICAgIHZhciBoaWRlID0gX3Byb3BzLmhpZGU7XG4gICAgICAgICAgICB2YXIgcmVtb3ZlID0gX3Byb3BzLnJlbW92ZTtcbiAgICAgICAgICAgIHZhciBiYXNlVHlwZSA9IF9wcm9wcy5iYXNlVHlwZTtcbiAgICAgICAgICAgIHZhciBuYW1lID0gX3Byb3BzLm5hbWU7XG4gICAgICAgICAgICB2YXIgX3Byb3BzJG9wdGlvbnMgPSBfcHJvcHMub3B0aW9ucztcbiAgICAgICAgICAgIHZhciBvcHRpb25zID0gX3Byb3BzJG9wdGlvbnMgPT09IHVuZGVmaW5lZCA/IHt9IDogX3Byb3BzJG9wdGlvbnM7XG5cbiAgICAgICAgICAgIHJldHVybiBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChcbiAgICAgICAgICAgICAgICAnZm9ybScsXG4gICAgICAgICAgICAgICAgeyBvblN1Ym1pdDogdGhpcy5vblN1Ym1pdCwgY2xhc3NOYW1lOiAnZm9ybS1ob3Jpem9udGFsJyB9LFxuICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KF90Y29tYkZvcm0yLmRlZmF1bHQuZm9ybS5Gb3JtLCB7IHJlZjogJ2Zvcm0nLCB0eXBlOiBiYXNlVHlwZSwgb3B0aW9uczogT2JqZWN0LmFzc2lnbihkZWZhdWx0T3B0aW9ucywgb3B0aW9ucyksIHZhbHVlOiB2YWx1ZSxcbiAgICAgICAgICAgICAgICAgICAgb25DaGFuZ2U6IHRoaXMub25DaGFuZ2VcbiAgICAgICAgICAgICAgICB9KSxcbiAgICAgICAgICAgICAgICBkZWxldGluZyAmJiByZW1vdmUgPyBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChcbiAgICAgICAgICAgICAgICAgICAgJ2RpdicsXG4gICAgICAgICAgICAgICAgICAgIHsgY2xhc3NOYW1lOiAnZm9ybS1ncm91cCcgfSxcbiAgICAgICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICAgICAnZGl2JyxcbiAgICAgICAgICAgICAgICAgICAgICAgIHsgY2xhc3NOYW1lOiAnYWxlcnQgYWxlcnQtZGFuZ2VyJywgcm9sZTogJ2FsZXJ0JyB9LFxuICAgICAgICAgICAgICAgICAgICAgICAgJ0FyZSB5b3Ugc3VyZSB5b3Ugd2FudCB0byBkZWxldGUgdGhpcyAnLFxuICAgICAgICAgICAgICAgICAgICAgICAgbmFtZSxcbiAgICAgICAgICAgICAgICAgICAgICAgICc/J1xuICAgICAgICAgICAgICAgICAgICApLFxuICAgICAgICAgICAgICAgICAgICBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChcbiAgICAgICAgICAgICAgICAgICAgICAgICdkaXYnLFxuICAgICAgICAgICAgICAgICAgICAgICAgeyBjbGFzc05hbWU6ICdidG4tZ3JvdXAgYnRuLWdyb3VwLWp1c3RpZmllZCcgfSxcbiAgICAgICAgICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICdhJyxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7IG9uQ2xpY2s6IGZ1bmN0aW9uIG9uQ2xpY2soXykge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIHJlbW92ZSh2YWx1ZSk7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0sIGNsYXNzTmFtZTogJ2J0biBidG4tZGFuZ2VyJyB9LFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICcgWWVzLCBEZWxldGUgJ1xuICAgICAgICAgICAgICAgICAgICAgICAgKSxcbiAgICAgICAgICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICdhJyxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7IG9uQ2xpY2s6IGZ1bmN0aW9uIG9uQ2xpY2soXykge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIGlzRGVsZXRpbmcoZmFsc2UpO1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LCBjbGFzc05hbWU6ICdidG4gYnRuLWRlZmF1bHQnIH0sXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgJyBDYW5jZWwgJ1xuICAgICAgICAgICAgICAgICAgICAgICAgKVxuICAgICAgICAgICAgICAgICAgICApXG4gICAgICAgICAgICAgICAgKSA6IF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAnZGl2JyxcbiAgICAgICAgICAgICAgICAgICAgeyBjbGFzc05hbWU6ICdmb3JtLWdyb3VwJyB9LFxuICAgICAgICAgICAgICAgICAgICBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChcbiAgICAgICAgICAgICAgICAgICAgICAgICdkaXYnLFxuICAgICAgICAgICAgICAgICAgICAgICAgeyBjbGFzc05hbWU6ICdidG4tZ3JvdXAgcHVsbC1yaWdodCcgfSxcbiAgICAgICAgICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICdidXR0b24nLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsgdHlwZTogJ3N1Ym1pdCcsIGNsYXNzTmFtZTogJ2J0biBidG4tcHJpbWFyeScgfSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAnU2F2ZSdcbiAgICAgICAgICAgICAgICAgICAgICAgICksXG4gICAgICAgICAgICAgICAgICAgICAgICBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAnYScsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgeyBvbkNsaWNrOiBoaWRlLCBjbGFzc05hbWU6ICdidG4gYnRuLXdhcm5pbmcnIH0sXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgJ2NhbmNlbCdcbiAgICAgICAgICAgICAgICAgICAgICAgICksXG4gICAgICAgICAgICAgICAgICAgICAgICByZW1vdmUgJiYgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgJ2EnLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsgb25DbGljazogZnVuY3Rpb24gb25DbGljayhfKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gaXNEZWxldGluZyh0cnVlKTtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwgY2xhc3NOYW1lOiAnYnRuIGJ0bi1kYW5nZXInIH0sXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgJ2RlbGV0ZSdcbiAgICAgICAgICAgICAgICAgICAgICAgIClcbiAgICAgICAgICAgICAgICAgICAgKVxuICAgICAgICAgICAgICAgIClcbiAgICAgICAgICAgICk7XG4gICAgICAgIH1cbiAgICB9XSk7XG5cbiAgICByZXR1cm4gVHlwZWRDb21taXRhYmxlRm9ybTtcbn0oX3JlYWN0Mi5kZWZhdWx0LkNvbXBvbmVudCk7XG5cblR5cGVkQ29tbWl0YWJsZUZvcm0ucHJvcFR5cGVzID0ge1xuICAgIGJhc2VUeXBlOiBfcmVhY3QyLmRlZmF1bHQuUHJvcFR5cGVzLmZ1bmMuaXNSZXF1aXJlZCxcbiAgICBuYW1lOiBfcmVhY3QyLmRlZmF1bHQuUHJvcFR5cGVzLnN0cmluZyxcbiAgICBzZXJpYWxpemU6IF9yZWFjdDIuZGVmYXVsdC5Qcm9wVHlwZXMuZnVuYy5pc1JlcXVpcmVkLFxuICAgIGNvbW1pdDogX3JlYWN0Mi5kZWZhdWx0LlByb3BUeXBlcy5mdW5jLmlzUmVxdWlyZWQsXG4gICAgb3B0aW9uczogX3JlYWN0Mi5kZWZhdWx0LlByb3BUeXBlcy5vYmplY3Rcbn07XG5leHBvcnRzLmRlZmF1bHQgPSBUeXBlZENvbW1pdGFibGVGb3JtO1xuXG5cbi8qKioqKioqKioqKioqKioqKlxuICoqIFdFQlBBQ0sgRk9PVEVSXG4gKiogLi9zcmMvcmVsYXRpb25hbC9jb21wb25lbnRzL1R5cGVkQ29tbWl0YWJsZUZvcm0uanN4XG4gKiogbW9kdWxlIGlkID0gMjJcbiAqKiBtb2R1bGUgY2h1bmtzID0gMFxuICoqLyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=");
 
 /***/ },
 /* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	exports.default = shadowParent;
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function shadowParent(_ref) {
-	    var Child = _ref.child;
-	    var shadowProps = _ref.props;
-	
-	    return function (props) {
-	        return _react2.default.createElement(Child, _extends({}, props, shadowProps));
-	    };
-	}
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nexports.default = shadowParent;\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction shadowParent(_ref) {\n    var Child = _ref.child;\n    var shadowProps = _ref.props;\n\n    return function (props) {\n        return _react2.default.createElement(Child, _extends({}, props, shadowProps));\n    };\n}\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcmVsYXRpb25hbC9jb21wb25lbnRzL3NoYWRvd1BhcmVudC5qc3g/MDEyMyJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG5cbk9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBcIl9fZXNNb2R1bGVcIiwge1xuICAgIHZhbHVlOiB0cnVlXG59KTtcblxudmFyIF9leHRlbmRzID0gT2JqZWN0LmFzc2lnbiB8fCBmdW5jdGlvbiAodGFyZ2V0KSB7IGZvciAodmFyIGkgPSAxOyBpIDwgYXJndW1lbnRzLmxlbmd0aDsgaSsrKSB7IHZhciBzb3VyY2UgPSBhcmd1bWVudHNbaV07IGZvciAodmFyIGtleSBpbiBzb3VyY2UpIHsgaWYgKE9iamVjdC5wcm90b3R5cGUuaGFzT3duUHJvcGVydHkuY2FsbChzb3VyY2UsIGtleSkpIHsgdGFyZ2V0W2tleV0gPSBzb3VyY2Vba2V5XTsgfSB9IH0gcmV0dXJuIHRhcmdldDsgfTtcblxuZXhwb3J0cy5kZWZhdWx0ID0gc2hhZG93UGFyZW50O1xuXG52YXIgX3JlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcblxudmFyIF9yZWFjdDIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9yZWFjdCk7XG5cbmZ1bmN0aW9uIF9pbnRlcm9wUmVxdWlyZURlZmF1bHQob2JqKSB7IHJldHVybiBvYmogJiYgb2JqLl9fZXNNb2R1bGUgPyBvYmogOiB7IGRlZmF1bHQ6IG9iaiB9OyB9XG5cbmZ1bmN0aW9uIHNoYWRvd1BhcmVudChfcmVmKSB7XG4gICAgdmFyIENoaWxkID0gX3JlZi5jaGlsZDtcbiAgICB2YXIgc2hhZG93UHJvcHMgPSBfcmVmLnByb3BzO1xuXG4gICAgcmV0dXJuIGZ1bmN0aW9uIChwcm9wcykge1xuICAgICAgICByZXR1cm4gX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoQ2hpbGQsIF9leHRlbmRzKHt9LCBwcm9wcywgc2hhZG93UHJvcHMpKTtcbiAgICB9O1xufVxuXG5cbi8qKioqKioqKioqKioqKioqKlxuICoqIFdFQlBBQ0sgRk9PVEVSXG4gKiogLi9zcmMvcmVsYXRpb25hbC9jb21wb25lbnRzL3NoYWRvd1BhcmVudC5qc3hcbiAqKiBtb2R1bGUgaWQgPSAyM1xuICoqIG1vZHVsZSBjaHVua3MgPSAwXG4gKiovIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=");
 
 /***/ },
 /* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.RelationDomain = undefined;
-	
-	var _RelationDomain2 = __webpack_require__(18);
-	
-	var _RelationDomain3 = _interopRequireDefault(_RelationDomain2);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.RelationDomain = _RelationDomain3.default;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.RelationDomain = undefined;\n\nvar _RelationDomain2 = __webpack_require__(18);\n\nvar _RelationDomain3 = _interopRequireDefault(_RelationDomain2);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.RelationDomain = _RelationDomain3.default;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjQuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcmVsYXRpb25hbC9pbmRleC5qcz9hYmY5Il0sInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFwiX19lc01vZHVsZVwiLCB7XG4gIHZhbHVlOiB0cnVlXG59KTtcbmV4cG9ydHMuUmVsYXRpb25Eb21haW4gPSB1bmRlZmluZWQ7XG5cbnZhciBfUmVsYXRpb25Eb21haW4yID0gcmVxdWlyZSgnLi9SZWxhdGlvbkRvbWFpbicpO1xuXG52YXIgX1JlbGF0aW9uRG9tYWluMyA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX1JlbGF0aW9uRG9tYWluMik7XG5cbmZ1bmN0aW9uIF9pbnRlcm9wUmVxdWlyZURlZmF1bHQob2JqKSB7IHJldHVybiBvYmogJiYgb2JqLl9fZXNNb2R1bGUgPyBvYmogOiB7IGRlZmF1bHQ6IG9iaiB9OyB9XG5cbmV4cG9ydHMuUmVsYXRpb25Eb21haW4gPSBfUmVsYXRpb25Eb21haW4zLmRlZmF1bHQ7XG5cblxuLyoqKioqKioqKioqKioqKioqXG4gKiogV0VCUEFDSyBGT09URVJcbiAqKiAuL3NyYy9yZWxhdGlvbmFsL2luZGV4LmpzXG4gKiogbW9kdWxlIGlkID0gMjRcbiAqKiBtb2R1bGUgY2h1bmtzID0gMFxuICoqLyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==");
 
 /***/ },
 /* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-	
-	exports.default = relationRoute;
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRouter = __webpack_require__(8);
-	
-	var _components = __webpack_require__(4);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-	
-	function defaultSingularPropSelector(_ref) {
-	    var singular = _ref.singular;
-	
-	    function select(_ref2) {
-	        var items = _ref2.items;
-	        var singularId = _ref2.singularId;
-	
-	        var props = _objectWithoutProperties(_ref2, ['items', 'singularId']);
-	
-	        var _items$filter = items.filter(function (item) {
-	            return item._id == singular + '/' + singularId;
-	        });
-	
-	        var _items$filter2 = _slicedToArray(_items$filter, 1);
-	
-	        var _items$filter2$ = _items$filter2[0];
-	        var value = _items$filter2$ === undefined ? undefined : _items$filter2$;
-	
-	        return _extends({ value: value }, props);
-	    }
-	    return select;
-	}
-	
-	function relationRoute(_ref3) {
-	    var type = _ref3.type;
-	    var singular = _ref3.singular;
-	    var plural = _ref3.plural;
-	    var ItemView = _ref3.ItemView;
-	    var ItemWrapper = _ref3.ItemWrapper;
-	    var SetView = _ref3.SetView;
-	    var SetWrapper = _ref3.SetWrapper;
-	    var singularPropSelector = _ref3.singularPropSelector;
-	
-	    singularPropSelector = singularPropSelector || defaultSingularPropSelector({ singular: singular });
-	    var pluralComponent = (0, _components.shadowParent)({
-	        child: SetWrapper,
-	        props: { type: type, plural: plural, singular: singular, singularPropSelector: singularPropSelector, ItemView: SetView }
-	    });
-	
-	    var singularComponent = (0, _components.shadowParent)({
-	        child: ItemWrapper,
-	        props: { type: type, singular: singular, plural: plural, Template: ItemView }
-	    });
-	    return {
-	        path: plural,
-	        route: _react2.default.createElement(
-	            _reactRouter.Route,
-	            { path: '' + plural, component: pluralComponent },
-	            _react2.default.createElement(_reactRouter.Route, { path: '/' + singular + '/:singularId', component: singularComponent })
-	        )
-	    };
-	}
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\nexports.default = relationRoute;\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = __webpack_require__(3);\n\nvar _components = __webpack_require__(5);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }\n\nfunction defaultSingularPropSelector(_ref) {\n    var singular = _ref.singular;\n\n    function select(_ref2) {\n        var items = _ref2.items;\n        var singularId = _ref2.singularId;\n\n        var props = _objectWithoutProperties(_ref2, ['items', 'singularId']);\n\n        var _items$filter = items.filter(function (item) {\n            return item._id == singular + '/' + singularId;\n        });\n\n        var _items$filter2 = _slicedToArray(_items$filter, 1);\n\n        var _items$filter2$ = _items$filter2[0];\n        var value = _items$filter2$ === undefined ? undefined : _items$filter2$;\n\n        return _extends({ value: value }, props);\n    }\n    return select;\n}\n\nfunction relationRoute(_ref3) {\n    var type = _ref3.type;\n    var singular = _ref3.singular;\n    var plural = _ref3.plural;\n    var ItemView = _ref3.ItemView;\n    var ItemWrapper = _ref3.ItemWrapper;\n    var SetView = _ref3.SetView;\n    var SetWrapper = _ref3.SetWrapper;\n    var singularPropSelector = _ref3.singularPropSelector;\n\n    singularPropSelector = singularPropSelector || defaultSingularPropSelector({ singular: singular });\n    var pluralComponent = (0, _components.shadowParent)({\n        child: SetWrapper,\n        props: { type: type, plural: plural, singular: singular, singularPropSelector: singularPropSelector, ItemView: SetView }\n    });\n\n    var singularComponent = (0, _components.shadowParent)({\n        child: ItemWrapper,\n        props: { type: type, singular: singular, plural: plural, Template: ItemView }\n    });\n    return {\n        path: plural,\n        route: _react2.default.createElement(\n            _reactRouter.Route,\n            { path: '' + plural, component: pluralComponent },\n            _react2.default.createElement(_reactRouter.Route, { path: '/' + singular + '/:singularId', component: singularComponent })\n        )\n    };\n}\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjUuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcmVsYXRpb25hbC9yZWxhdGlvblJvdXRlLmpzeD82ZDJhIl0sInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFwiX19lc01vZHVsZVwiLCB7XG4gICAgdmFsdWU6IHRydWVcbn0pO1xuXG52YXIgX2V4dGVuZHMgPSBPYmplY3QuYXNzaWduIHx8IGZ1bmN0aW9uICh0YXJnZXQpIHsgZm9yICh2YXIgaSA9IDE7IGkgPCBhcmd1bWVudHMubGVuZ3RoOyBpKyspIHsgdmFyIHNvdXJjZSA9IGFyZ3VtZW50c1tpXTsgZm9yICh2YXIga2V5IGluIHNvdXJjZSkgeyBpZiAoT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKHNvdXJjZSwga2V5KSkgeyB0YXJnZXRba2V5XSA9IHNvdXJjZVtrZXldOyB9IH0gfSByZXR1cm4gdGFyZ2V0OyB9O1xuXG52YXIgX3NsaWNlZFRvQXJyYXkgPSBmdW5jdGlvbiAoKSB7IGZ1bmN0aW9uIHNsaWNlSXRlcmF0b3IoYXJyLCBpKSB7IHZhciBfYXJyID0gW107IHZhciBfbiA9IHRydWU7IHZhciBfZCA9IGZhbHNlOyB2YXIgX2UgPSB1bmRlZmluZWQ7IHRyeSB7IGZvciAodmFyIF9pID0gYXJyW1N5bWJvbC5pdGVyYXRvcl0oKSwgX3M7ICEoX24gPSAoX3MgPSBfaS5uZXh0KCkpLmRvbmUpOyBfbiA9IHRydWUpIHsgX2Fyci5wdXNoKF9zLnZhbHVlKTsgaWYgKGkgJiYgX2Fyci5sZW5ndGggPT09IGkpIGJyZWFrOyB9IH0gY2F0Y2ggKGVycikgeyBfZCA9IHRydWU7IF9lID0gZXJyOyB9IGZpbmFsbHkgeyB0cnkgeyBpZiAoIV9uICYmIF9pW1wicmV0dXJuXCJdKSBfaVtcInJldHVyblwiXSgpOyB9IGZpbmFsbHkgeyBpZiAoX2QpIHRocm93IF9lOyB9IH0gcmV0dXJuIF9hcnI7IH0gcmV0dXJuIGZ1bmN0aW9uIChhcnIsIGkpIHsgaWYgKEFycmF5LmlzQXJyYXkoYXJyKSkgeyByZXR1cm4gYXJyOyB9IGVsc2UgaWYgKFN5bWJvbC5pdGVyYXRvciBpbiBPYmplY3QoYXJyKSkgeyByZXR1cm4gc2xpY2VJdGVyYXRvcihhcnIsIGkpOyB9IGVsc2UgeyB0aHJvdyBuZXcgVHlwZUVycm9yKFwiSW52YWxpZCBhdHRlbXB0IHRvIGRlc3RydWN0dXJlIG5vbi1pdGVyYWJsZSBpbnN0YW5jZVwiKTsgfSB9OyB9KCk7XG5cbmV4cG9ydHMuZGVmYXVsdCA9IHJlbGF0aW9uUm91dGU7XG5cbnZhciBfcmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuXG52YXIgX3JlYWN0MiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX3JlYWN0KTtcblxudmFyIF9yZWFjdFJvdXRlciA9IHJlcXVpcmUoJ3JlYWN0LXJvdXRlcicpO1xuXG52YXIgX2NvbXBvbmVudHMgPSByZXF1aXJlKCcuL2NvbXBvbmVudHMnKTtcblxuZnVuY3Rpb24gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChvYmopIHsgcmV0dXJuIG9iaiAmJiBvYmouX19lc01vZHVsZSA/IG9iaiA6IHsgZGVmYXVsdDogb2JqIH07IH1cblxuZnVuY3Rpb24gX29iamVjdFdpdGhvdXRQcm9wZXJ0aWVzKG9iaiwga2V5cykgeyB2YXIgdGFyZ2V0ID0ge307IGZvciAodmFyIGkgaW4gb2JqKSB7IGlmIChrZXlzLmluZGV4T2YoaSkgPj0gMCkgY29udGludWU7IGlmICghT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iaiwgaSkpIGNvbnRpbnVlOyB0YXJnZXRbaV0gPSBvYmpbaV07IH0gcmV0dXJuIHRhcmdldDsgfVxuXG5mdW5jdGlvbiBkZWZhdWx0U2luZ3VsYXJQcm9wU2VsZWN0b3IoX3JlZikge1xuICAgIHZhciBzaW5ndWxhciA9IF9yZWYuc2luZ3VsYXI7XG5cbiAgICBmdW5jdGlvbiBzZWxlY3QoX3JlZjIpIHtcbiAgICAgICAgdmFyIGl0ZW1zID0gX3JlZjIuaXRlbXM7XG4gICAgICAgIHZhciBzaW5ndWxhcklkID0gX3JlZjIuc2luZ3VsYXJJZDtcblxuICAgICAgICB2YXIgcHJvcHMgPSBfb2JqZWN0V2l0aG91dFByb3BlcnRpZXMoX3JlZjIsIFsnaXRlbXMnLCAnc2luZ3VsYXJJZCddKTtcblxuICAgICAgICB2YXIgX2l0ZW1zJGZpbHRlciA9IGl0ZW1zLmZpbHRlcihmdW5jdGlvbiAoaXRlbSkge1xuICAgICAgICAgICAgcmV0dXJuIGl0ZW0uX2lkID09IHNpbmd1bGFyICsgJy8nICsgc2luZ3VsYXJJZDtcbiAgICAgICAgfSk7XG5cbiAgICAgICAgdmFyIF9pdGVtcyRmaWx0ZXIyID0gX3NsaWNlZFRvQXJyYXkoX2l0ZW1zJGZpbHRlciwgMSk7XG5cbiAgICAgICAgdmFyIF9pdGVtcyRmaWx0ZXIyJCA9IF9pdGVtcyRmaWx0ZXIyWzBdO1xuICAgICAgICB2YXIgdmFsdWUgPSBfaXRlbXMkZmlsdGVyMiQgPT09IHVuZGVmaW5lZCA/IHVuZGVmaW5lZCA6IF9pdGVtcyRmaWx0ZXIyJDtcblxuICAgICAgICByZXR1cm4gX2V4dGVuZHMoeyB2YWx1ZTogdmFsdWUgfSwgcHJvcHMpO1xuICAgIH1cbiAgICByZXR1cm4gc2VsZWN0O1xufVxuXG5mdW5jdGlvbiByZWxhdGlvblJvdXRlKF9yZWYzKSB7XG4gICAgdmFyIHR5cGUgPSBfcmVmMy50eXBlO1xuICAgIHZhciBzaW5ndWxhciA9IF9yZWYzLnNpbmd1bGFyO1xuICAgIHZhciBwbHVyYWwgPSBfcmVmMy5wbHVyYWw7XG4gICAgdmFyIEl0ZW1WaWV3ID0gX3JlZjMuSXRlbVZpZXc7XG4gICAgdmFyIEl0ZW1XcmFwcGVyID0gX3JlZjMuSXRlbVdyYXBwZXI7XG4gICAgdmFyIFNldFZpZXcgPSBfcmVmMy5TZXRWaWV3O1xuICAgIHZhciBTZXRXcmFwcGVyID0gX3JlZjMuU2V0V3JhcHBlcjtcbiAgICB2YXIgc2luZ3VsYXJQcm9wU2VsZWN0b3IgPSBfcmVmMy5zaW5ndWxhclByb3BTZWxlY3RvcjtcblxuICAgIHNpbmd1bGFyUHJvcFNlbGVjdG9yID0gc2luZ3VsYXJQcm9wU2VsZWN0b3IgfHwgZGVmYXVsdFNpbmd1bGFyUHJvcFNlbGVjdG9yKHsgc2luZ3VsYXI6IHNpbmd1bGFyIH0pO1xuICAgIHZhciBwbHVyYWxDb21wb25lbnQgPSAoMCwgX2NvbXBvbmVudHMuc2hhZG93UGFyZW50KSh7XG4gICAgICAgIGNoaWxkOiBTZXRXcmFwcGVyLFxuICAgICAgICBwcm9wczogeyB0eXBlOiB0eXBlLCBwbHVyYWw6IHBsdXJhbCwgc2luZ3VsYXI6IHNpbmd1bGFyLCBzaW5ndWxhclByb3BTZWxlY3Rvcjogc2luZ3VsYXJQcm9wU2VsZWN0b3IsIEl0ZW1WaWV3OiBTZXRWaWV3IH1cbiAgICB9KTtcblxuICAgIHZhciBzaW5ndWxhckNvbXBvbmVudCA9ICgwLCBfY29tcG9uZW50cy5zaGFkb3dQYXJlbnQpKHtcbiAgICAgICAgY2hpbGQ6IEl0ZW1XcmFwcGVyLFxuICAgICAgICBwcm9wczogeyB0eXBlOiB0eXBlLCBzaW5ndWxhcjogc2luZ3VsYXIsIHBsdXJhbDogcGx1cmFsLCBUZW1wbGF0ZTogSXRlbVZpZXcgfVxuICAgIH0pO1xuICAgIHJldHVybiB7XG4gICAgICAgIHBhdGg6IHBsdXJhbCxcbiAgICAgICAgcm91dGU6IF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgX3JlYWN0Um91dGVyLlJvdXRlLFxuICAgICAgICAgICAgeyBwYXRoOiAnJyArIHBsdXJhbCwgY29tcG9uZW50OiBwbHVyYWxDb21wb25lbnQgfSxcbiAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KF9yZWFjdFJvdXRlci5Sb3V0ZSwgeyBwYXRoOiAnLycgKyBzaW5ndWxhciArICcvOnNpbmd1bGFySWQnLCBjb21wb25lbnQ6IHNpbmd1bGFyQ29tcG9uZW50IH0pXG4gICAgICAgIClcbiAgICB9O1xufVxuXG5cbi8qKioqKioqKioqKioqKioqKlxuICoqIFdFQlBBQ0sgRk9PVEVSXG4gKiogLi9zcmMvcmVsYXRpb25hbC9yZWxhdGlvblJvdXRlLmpzeFxuICoqIG1vZHVsZSBpZCA9IDI1XG4gKiogbW9kdWxlIGNodW5rcyA9IDBcbiAqKi8iXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ },
 /* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	function toTitle(str) {
-	    return str.replace(/([a-z][A-Z])/g, function (g) {
-	        return g[0] + ' ' + g[1];
-	    }).replace(/^\//, function (g) {
-	        return '';
-	    }).replace(/^([a-zA-Z])| ([a-zA-Z])/g, function (g) {
-	        return g.toUpperCase();
-	    });
-	}
-	
-	var Nav = function (_React$Component) {
-	    _inherits(Nav, _React$Component);
-	
-	    function Nav() {
-	        _classCallCheck(this, Nav);
-	
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Nav).apply(this, arguments));
-	    }
-	
-	    _createClass(Nav, [{
-	        key: 'render',
-	        value: function render() {
-	            var _props = this.props;
-	            var brand = _props.brand;
-	            var paths = _props.paths;
-	
-	            var props = _objectWithoutProperties(_props, ['brand', 'paths']);
-	
-	            return _react2.default.createElement(
-	                'nav',
-	                props,
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'container' },
-	                    _react2.default.createElement(
-	                        'a',
-	                        { className: 'brand', href: '/' },
-	                        ' ',
-	                        brand,
-	                        ' '
-	                    ),
-	                    _react2.default.createElement(
-	                        'ul',
-	                        { className: 'nav items' },
-	                        paths.map(function (path) {
-	                            return _react2.default.createElement(
-	                                'li',
-	                                { key: path },
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: path },
-	                                    toTitle(path)
-	                                )
-	                            );
-	                        })
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return Nav;
-	}(_react2.default.Component);
-	
-	exports.default = Nav;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = __webpack_require__(3);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nfunction toTitle(str) {\n    return str.replace(/([a-z][A-Z])/g, function (g) {\n        return g[0] + ' ' + g[1];\n    }).replace(/^\\//, function (g) {\n        return '';\n    }).replace(/^([a-zA-Z])| ([a-zA-Z])/g, function (g) {\n        return g.toUpperCase();\n    });\n}\n\nvar Nav = function (_React$Component) {\n    _inherits(Nav, _React$Component);\n\n    function Nav() {\n        _classCallCheck(this, Nav);\n\n        return _possibleConstructorReturn(this, Object.getPrototypeOf(Nav).apply(this, arguments));\n    }\n\n    _createClass(Nav, [{\n        key: 'render',\n        value: function render() {\n            var _props = this.props;\n            var brand = _props.brand;\n            var paths = _props.paths;\n\n            var props = _objectWithoutProperties(_props, ['brand', 'paths']);\n\n            return _react2.default.createElement(\n                'nav',\n                props,\n                _react2.default.createElement(\n                    'div',\n                    { className: 'container' },\n                    _react2.default.createElement(\n                        _reactRouter.Link,\n                        { className: 'brand', to: '/' },\n                        ' ',\n                        brand,\n                        ' '\n                    ),\n                    _react2.default.createElement(\n                        'ul',\n                        { className: 'nav items' },\n                        paths.map(function (path) {\n                            return _react2.default.createElement(\n                                'li',\n                                { key: path },\n                                _react2.default.createElement(\n                                    _reactRouter.Link,\n                                    { to: path },\n                                    toTitle(path)\n                                )\n                            );\n                        })\n                    )\n                )\n            );\n        }\n    }]);\n\n    return Nav;\n}(_react2.default.Component);\n\nexports.default = Nav;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjYuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcm9vdC9OYXYuanN4P2IyNTIiXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJfX2VzTW9kdWxlXCIsIHtcbiAgICB2YWx1ZTogdHJ1ZVxufSk7XG5cbnZhciBfY3JlYXRlQ2xhc3MgPSBmdW5jdGlvbiAoKSB7IGZ1bmN0aW9uIGRlZmluZVByb3BlcnRpZXModGFyZ2V0LCBwcm9wcykgeyBmb3IgKHZhciBpID0gMDsgaSA8IHByb3BzLmxlbmd0aDsgaSsrKSB7IHZhciBkZXNjcmlwdG9yID0gcHJvcHNbaV07IGRlc2NyaXB0b3IuZW51bWVyYWJsZSA9IGRlc2NyaXB0b3IuZW51bWVyYWJsZSB8fCBmYWxzZTsgZGVzY3JpcHRvci5jb25maWd1cmFibGUgPSB0cnVlOyBpZiAoXCJ2YWx1ZVwiIGluIGRlc2NyaXB0b3IpIGRlc2NyaXB0b3Iud3JpdGFibGUgPSB0cnVlOyBPYmplY3QuZGVmaW5lUHJvcGVydHkodGFyZ2V0LCBkZXNjcmlwdG9yLmtleSwgZGVzY3JpcHRvcik7IH0gfSByZXR1cm4gZnVuY3Rpb24gKENvbnN0cnVjdG9yLCBwcm90b1Byb3BzLCBzdGF0aWNQcm9wcykgeyBpZiAocHJvdG9Qcm9wcykgZGVmaW5lUHJvcGVydGllcyhDb25zdHJ1Y3Rvci5wcm90b3R5cGUsIHByb3RvUHJvcHMpOyBpZiAoc3RhdGljUHJvcHMpIGRlZmluZVByb3BlcnRpZXMoQ29uc3RydWN0b3IsIHN0YXRpY1Byb3BzKTsgcmV0dXJuIENvbnN0cnVjdG9yOyB9OyB9KCk7XG5cbnZhciBfcmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuXG52YXIgX3JlYWN0MiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX3JlYWN0KTtcblxudmFyIF9yZWFjdFJvdXRlciA9IHJlcXVpcmUoJ3JlYWN0LXJvdXRlcicpO1xuXG5mdW5jdGlvbiBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KG9iaikgeyByZXR1cm4gb2JqICYmIG9iai5fX2VzTW9kdWxlID8gb2JqIDogeyBkZWZhdWx0OiBvYmogfTsgfVxuXG5mdW5jdGlvbiBfb2JqZWN0V2l0aG91dFByb3BlcnRpZXMob2JqLCBrZXlzKSB7IHZhciB0YXJnZXQgPSB7fTsgZm9yICh2YXIgaSBpbiBvYmopIHsgaWYgKGtleXMuaW5kZXhPZihpKSA+PSAwKSBjb250aW51ZTsgaWYgKCFPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqLCBpKSkgY29udGludWU7IHRhcmdldFtpXSA9IG9ialtpXTsgfSByZXR1cm4gdGFyZ2V0OyB9XG5cbmZ1bmN0aW9uIF9jbGFzc0NhbGxDaGVjayhpbnN0YW5jZSwgQ29uc3RydWN0b3IpIHsgaWYgKCEoaW5zdGFuY2UgaW5zdGFuY2VvZiBDb25zdHJ1Y3RvcikpIHsgdGhyb3cgbmV3IFR5cGVFcnJvcihcIkNhbm5vdCBjYWxsIGEgY2xhc3MgYXMgYSBmdW5jdGlvblwiKTsgfSB9XG5cbmZ1bmN0aW9uIF9wb3NzaWJsZUNvbnN0cnVjdG9yUmV0dXJuKHNlbGYsIGNhbGwpIHsgaWYgKCFzZWxmKSB7IHRocm93IG5ldyBSZWZlcmVuY2VFcnJvcihcInRoaXMgaGFzbid0IGJlZW4gaW5pdGlhbGlzZWQgLSBzdXBlcigpIGhhc24ndCBiZWVuIGNhbGxlZFwiKTsgfSByZXR1cm4gY2FsbCAmJiAodHlwZW9mIGNhbGwgPT09IFwib2JqZWN0XCIgfHwgdHlwZW9mIGNhbGwgPT09IFwiZnVuY3Rpb25cIikgPyBjYWxsIDogc2VsZjsgfVxuXG5mdW5jdGlvbiBfaW5oZXJpdHMoc3ViQ2xhc3MsIHN1cGVyQ2xhc3MpIHsgaWYgKHR5cGVvZiBzdXBlckNsYXNzICE9PSBcImZ1bmN0aW9uXCIgJiYgc3VwZXJDbGFzcyAhPT0gbnVsbCkgeyB0aHJvdyBuZXcgVHlwZUVycm9yKFwiU3VwZXIgZXhwcmVzc2lvbiBtdXN0IGVpdGhlciBiZSBudWxsIG9yIGEgZnVuY3Rpb24sIG5vdCBcIiArIHR5cGVvZiBzdXBlckNsYXNzKTsgfSBzdWJDbGFzcy5wcm90b3R5cGUgPSBPYmplY3QuY3JlYXRlKHN1cGVyQ2xhc3MgJiYgc3VwZXJDbGFzcy5wcm90b3R5cGUsIHsgY29uc3RydWN0b3I6IHsgdmFsdWU6IHN1YkNsYXNzLCBlbnVtZXJhYmxlOiBmYWxzZSwgd3JpdGFibGU6IHRydWUsIGNvbmZpZ3VyYWJsZTogdHJ1ZSB9IH0pOyBpZiAoc3VwZXJDbGFzcykgT2JqZWN0LnNldFByb3RvdHlwZU9mID8gT2JqZWN0LnNldFByb3RvdHlwZU9mKHN1YkNsYXNzLCBzdXBlckNsYXNzKSA6IHN1YkNsYXNzLl9fcHJvdG9fXyA9IHN1cGVyQ2xhc3M7IH1cblxuZnVuY3Rpb24gdG9UaXRsZShzdHIpIHtcbiAgICByZXR1cm4gc3RyLnJlcGxhY2UoLyhbYS16XVtBLVpdKS9nLCBmdW5jdGlvbiAoZykge1xuICAgICAgICByZXR1cm4gZ1swXSArICcgJyArIGdbMV07XG4gICAgfSkucmVwbGFjZSgvXlxcLy8sIGZ1bmN0aW9uIChnKSB7XG4gICAgICAgIHJldHVybiAnJztcbiAgICB9KS5yZXBsYWNlKC9eKFthLXpBLVpdKXwgKFthLXpBLVpdKS9nLCBmdW5jdGlvbiAoZykge1xuICAgICAgICByZXR1cm4gZy50b1VwcGVyQ2FzZSgpO1xuICAgIH0pO1xufVxuXG52YXIgTmF2ID0gZnVuY3Rpb24gKF9SZWFjdCRDb21wb25lbnQpIHtcbiAgICBfaW5oZXJpdHMoTmF2LCBfUmVhY3QkQ29tcG9uZW50KTtcblxuICAgIGZ1bmN0aW9uIE5hdigpIHtcbiAgICAgICAgX2NsYXNzQ2FsbENoZWNrKHRoaXMsIE5hdik7XG5cbiAgICAgICAgcmV0dXJuIF9wb3NzaWJsZUNvbnN0cnVjdG9yUmV0dXJuKHRoaXMsIE9iamVjdC5nZXRQcm90b3R5cGVPZihOYXYpLmFwcGx5KHRoaXMsIGFyZ3VtZW50cykpO1xuICAgIH1cblxuICAgIF9jcmVhdGVDbGFzcyhOYXYsIFt7XG4gICAgICAgIGtleTogJ3JlbmRlcicsXG4gICAgICAgIHZhbHVlOiBmdW5jdGlvbiByZW5kZXIoKSB7XG4gICAgICAgICAgICB2YXIgX3Byb3BzID0gdGhpcy5wcm9wcztcbiAgICAgICAgICAgIHZhciBicmFuZCA9IF9wcm9wcy5icmFuZDtcbiAgICAgICAgICAgIHZhciBwYXRocyA9IF9wcm9wcy5wYXRocztcblxuICAgICAgICAgICAgdmFyIHByb3BzID0gX29iamVjdFdpdGhvdXRQcm9wZXJ0aWVzKF9wcm9wcywgWydicmFuZCcsICdwYXRocyddKTtcblxuICAgICAgICAgICAgcmV0dXJuIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICduYXYnLFxuICAgICAgICAgICAgICAgIHByb3BzLFxuICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAnZGl2JyxcbiAgICAgICAgICAgICAgICAgICAgeyBjbGFzc05hbWU6ICdjb250YWluZXInIH0sXG4gICAgICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAgICAgX3JlYWN0Um91dGVyLkxpbmssXG4gICAgICAgICAgICAgICAgICAgICAgICB7IGNsYXNzTmFtZTogJ2JyYW5kJywgdG86ICcvJyB9LFxuICAgICAgICAgICAgICAgICAgICAgICAgJyAnLFxuICAgICAgICAgICAgICAgICAgICAgICAgYnJhbmQsXG4gICAgICAgICAgICAgICAgICAgICAgICAnICdcbiAgICAgICAgICAgICAgICAgICAgKSxcbiAgICAgICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICAgICAndWwnLFxuICAgICAgICAgICAgICAgICAgICAgICAgeyBjbGFzc05hbWU6ICduYXYgaXRlbXMnIH0sXG4gICAgICAgICAgICAgICAgICAgICAgICBwYXRocy5tYXAoZnVuY3Rpb24gKHBhdGgpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICdsaScsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsga2V5OiBwYXRoIH0sXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgX3JlYWN0Um91dGVyLkxpbmssXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7IHRvOiBwYXRoIH0sXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0b1RpdGxlKHBhdGgpXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIClcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICApO1xuICAgICAgICAgICAgICAgICAgICAgICAgfSlcbiAgICAgICAgICAgICAgICAgICAgKVxuICAgICAgICAgICAgICAgIClcbiAgICAgICAgICAgICk7XG4gICAgICAgIH1cbiAgICB9XSk7XG5cbiAgICByZXR1cm4gTmF2O1xufShfcmVhY3QyLmRlZmF1bHQuQ29tcG9uZW50KTtcblxuZXhwb3J0cy5kZWZhdWx0ID0gTmF2O1xuXG5cbi8qKioqKioqKioqKioqKioqKlxuICoqIFdFQlBBQ0sgRk9PVEVSXG4gKiogLi9zcmMvcm9vdC9OYXYuanN4XG4gKiogbW9kdWxlIGlkID0gMjZcbiAqKiBtb2R1bGUgY2h1bmtzID0gMFxuICoqLyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==");
 
 /***/ },
 /* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = generateDomain;
-	
-	var _polypackBufflehead = __webpack_require__(2);
-	
-	var _polypackDomainDrivenReduxReact = __webpack_require__(31);
-	
-	var _generateRoot = __webpack_require__(28);
-	
-	var _generateRoot2 = _interopRequireDefault(_generateRoot);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function generateDomain(domains) {
-	    return new _polypackBufflehead.Domain({
-	        name: 'root',
-	        route: {
-	            path: '/',
-	            component: (0, _generateRoot2.default)({ paths: _polypackDomainDrivenReduxReact.utils.filterDomainsForType(domains, 'route').map(_polypackDomainDrivenReduxReact.utils.extractPath) })
-	        }
-	    });
-	}
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.default = generateDomain;\n\nvar _polypackBufflehead = __webpack_require__(2);\n\nvar _polypackDomainDrivenReduxReact = __webpack_require__(31);\n\nvar _generateRoot = __webpack_require__(28);\n\nvar _generateRoot2 = _interopRequireDefault(_generateRoot);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction generateDomain(domains) {\n    return new _polypackBufflehead.Domain({\n        name: 'root',\n        route: {\n            path: '/',\n            component: (0, _generateRoot2.default)({ paths: _polypackDomainDrivenReduxReact.utils.filterDomainsForType(domains, 'route').map(_polypackDomainDrivenReduxReact.utils.extractPath) })\n        }\n    });\n}\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjcuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcm9vdC9nZW5lcmF0ZURvbWFpbi5qcz8yMzgzIl0sInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFwiX19lc01vZHVsZVwiLCB7XG4gICAgdmFsdWU6IHRydWVcbn0pO1xuZXhwb3J0cy5kZWZhdWx0ID0gZ2VuZXJhdGVEb21haW47XG5cbnZhciBfcG9seXBhY2tCdWZmbGVoZWFkID0gcmVxdWlyZSgncG9seXBhY2shYnVmZmxlaGVhZCcpO1xuXG52YXIgX3BvbHlwYWNrRG9tYWluRHJpdmVuUmVkdXhSZWFjdCA9IHJlcXVpcmUoJ3BvbHlwYWNrIWRvbWFpbi1kcml2ZW4tcmVkdXgtcmVhY3QnKTtcblxudmFyIF9nZW5lcmF0ZVJvb3QgPSByZXF1aXJlKCcuL2dlbmVyYXRlUm9vdCcpO1xuXG52YXIgX2dlbmVyYXRlUm9vdDIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9nZW5lcmF0ZVJvb3QpO1xuXG5mdW5jdGlvbiBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KG9iaikgeyByZXR1cm4gb2JqICYmIG9iai5fX2VzTW9kdWxlID8gb2JqIDogeyBkZWZhdWx0OiBvYmogfTsgfVxuXG5mdW5jdGlvbiBnZW5lcmF0ZURvbWFpbihkb21haW5zKSB7XG4gICAgcmV0dXJuIG5ldyBfcG9seXBhY2tCdWZmbGVoZWFkLkRvbWFpbih7XG4gICAgICAgIG5hbWU6ICdyb290JyxcbiAgICAgICAgcm91dGU6IHtcbiAgICAgICAgICAgIHBhdGg6ICcvJyxcbiAgICAgICAgICAgIGNvbXBvbmVudDogKDAsIF9nZW5lcmF0ZVJvb3QyLmRlZmF1bHQpKHsgcGF0aHM6IF9wb2x5cGFja0RvbWFpbkRyaXZlblJlZHV4UmVhY3QudXRpbHMuZmlsdGVyRG9tYWluc0ZvclR5cGUoZG9tYWlucywgJ3JvdXRlJykubWFwKF9wb2x5cGFja0RvbWFpbkRyaXZlblJlZHV4UmVhY3QudXRpbHMuZXh0cmFjdFBhdGgpIH0pXG4gICAgICAgIH1cbiAgICB9KTtcbn1cblxuXG4vKioqKioqKioqKioqKioqKipcbiAqKiBXRUJQQUNLIEZPT1RFUlxuICoqIC4vc3JjL3Jvb3QvZ2VuZXJhdGVEb21haW4uanNcbiAqKiBtb2R1bGUgaWQgPSAyN1xuICoqIG1vZHVsZSBjaHVua3MgPSAwXG4gKiovIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ },
 /* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	exports.default = generateRoot;
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _Nav = __webpack_require__(26);
-	
-	var _Nav2 = _interopRequireDefault(_Nav);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	if (false) require('./root.scss');
-	
-	function generateRoot(_ref) {
-	    var paths = _ref.paths;
-	
-	    return function (_React$Component) {
-	        _inherits(Root, _React$Component);
-	
-	        function Root() {
-	            _classCallCheck(this, Root);
-	
-	            return _possibleConstructorReturn(this, Object.getPrototypeOf(Root).apply(this, arguments));
-	        }
-	
-	        _createClass(Root, [{
-	            key: 'render',
-	            value: function render() {
-	                return _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    _react2.default.createElement(_Nav2.default, { paths: paths }),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'container' },
-	                        this.props.children
-	                    )
-	                );
-	            }
-	        }]);
-	
-	        return Root;
-	    }(_react2.default.Component);
-	}
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nexports.default = generateRoot;\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _Nav = __webpack_require__(26);\n\nvar _Nav2 = _interopRequireDefault(_Nav);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nif (false) require('./root.scss');\n\nfunction generateRoot(_ref) {\n    var paths = _ref.paths;\n\n    return function (_React$Component) {\n        _inherits(Root, _React$Component);\n\n        function Root() {\n            _classCallCheck(this, Root);\n\n            return _possibleConstructorReturn(this, Object.getPrototypeOf(Root).apply(this, arguments));\n        }\n\n        _createClass(Root, [{\n            key: 'render',\n            value: function render() {\n                return _react2.default.createElement(\n                    'div',\n                    null,\n                    _react2.default.createElement(_Nav2.default, { paths: paths }),\n                    _react2.default.createElement(\n                        'div',\n                        { className: 'container' },\n                        this.props.children\n                    )\n                );\n            }\n        }]);\n\n        return Root;\n    }(_react2.default.Component);\n}\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjguanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcm9vdC9nZW5lcmF0ZVJvb3QuanN4Pzc3MTAiXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJfX2VzTW9kdWxlXCIsIHtcbiAgICB2YWx1ZTogdHJ1ZVxufSk7XG5cbnZhciBfY3JlYXRlQ2xhc3MgPSBmdW5jdGlvbiAoKSB7IGZ1bmN0aW9uIGRlZmluZVByb3BlcnRpZXModGFyZ2V0LCBwcm9wcykgeyBmb3IgKHZhciBpID0gMDsgaSA8IHByb3BzLmxlbmd0aDsgaSsrKSB7IHZhciBkZXNjcmlwdG9yID0gcHJvcHNbaV07IGRlc2NyaXB0b3IuZW51bWVyYWJsZSA9IGRlc2NyaXB0b3IuZW51bWVyYWJsZSB8fCBmYWxzZTsgZGVzY3JpcHRvci5jb25maWd1cmFibGUgPSB0cnVlOyBpZiAoXCJ2YWx1ZVwiIGluIGRlc2NyaXB0b3IpIGRlc2NyaXB0b3Iud3JpdGFibGUgPSB0cnVlOyBPYmplY3QuZGVmaW5lUHJvcGVydHkodGFyZ2V0LCBkZXNjcmlwdG9yLmtleSwgZGVzY3JpcHRvcik7IH0gfSByZXR1cm4gZnVuY3Rpb24gKENvbnN0cnVjdG9yLCBwcm90b1Byb3BzLCBzdGF0aWNQcm9wcykgeyBpZiAocHJvdG9Qcm9wcykgZGVmaW5lUHJvcGVydGllcyhDb25zdHJ1Y3Rvci5wcm90b3R5cGUsIHByb3RvUHJvcHMpOyBpZiAoc3RhdGljUHJvcHMpIGRlZmluZVByb3BlcnRpZXMoQ29uc3RydWN0b3IsIHN0YXRpY1Byb3BzKTsgcmV0dXJuIENvbnN0cnVjdG9yOyB9OyB9KCk7XG5cbmV4cG9ydHMuZGVmYXVsdCA9IGdlbmVyYXRlUm9vdDtcblxudmFyIF9yZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG5cbnZhciBfcmVhY3QyID0gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChfcmVhY3QpO1xuXG52YXIgX05hdiA9IHJlcXVpcmUoJy4vTmF2Jyk7XG5cbnZhciBfTmF2MiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX05hdik7XG5cbmZ1bmN0aW9uIF9pbnRlcm9wUmVxdWlyZURlZmF1bHQob2JqKSB7IHJldHVybiBvYmogJiYgb2JqLl9fZXNNb2R1bGUgPyBvYmogOiB7IGRlZmF1bHQ6IG9iaiB9OyB9XG5cbmZ1bmN0aW9uIF9jbGFzc0NhbGxDaGVjayhpbnN0YW5jZSwgQ29uc3RydWN0b3IpIHsgaWYgKCEoaW5zdGFuY2UgaW5zdGFuY2VvZiBDb25zdHJ1Y3RvcikpIHsgdGhyb3cgbmV3IFR5cGVFcnJvcihcIkNhbm5vdCBjYWxsIGEgY2xhc3MgYXMgYSBmdW5jdGlvblwiKTsgfSB9XG5cbmZ1bmN0aW9uIF9wb3NzaWJsZUNvbnN0cnVjdG9yUmV0dXJuKHNlbGYsIGNhbGwpIHsgaWYgKCFzZWxmKSB7IHRocm93IG5ldyBSZWZlcmVuY2VFcnJvcihcInRoaXMgaGFzbid0IGJlZW4gaW5pdGlhbGlzZWQgLSBzdXBlcigpIGhhc24ndCBiZWVuIGNhbGxlZFwiKTsgfSByZXR1cm4gY2FsbCAmJiAodHlwZW9mIGNhbGwgPT09IFwib2JqZWN0XCIgfHwgdHlwZW9mIGNhbGwgPT09IFwiZnVuY3Rpb25cIikgPyBjYWxsIDogc2VsZjsgfVxuXG5mdW5jdGlvbiBfaW5oZXJpdHMoc3ViQ2xhc3MsIHN1cGVyQ2xhc3MpIHsgaWYgKHR5cGVvZiBzdXBlckNsYXNzICE9PSBcImZ1bmN0aW9uXCIgJiYgc3VwZXJDbGFzcyAhPT0gbnVsbCkgeyB0aHJvdyBuZXcgVHlwZUVycm9yKFwiU3VwZXIgZXhwcmVzc2lvbiBtdXN0IGVpdGhlciBiZSBudWxsIG9yIGEgZnVuY3Rpb24sIG5vdCBcIiArIHR5cGVvZiBzdXBlckNsYXNzKTsgfSBzdWJDbGFzcy5wcm90b3R5cGUgPSBPYmplY3QuY3JlYXRlKHN1cGVyQ2xhc3MgJiYgc3VwZXJDbGFzcy5wcm90b3R5cGUsIHsgY29uc3RydWN0b3I6IHsgdmFsdWU6IHN1YkNsYXNzLCBlbnVtZXJhYmxlOiBmYWxzZSwgd3JpdGFibGU6IHRydWUsIGNvbmZpZ3VyYWJsZTogdHJ1ZSB9IH0pOyBpZiAoc3VwZXJDbGFzcykgT2JqZWN0LnNldFByb3RvdHlwZU9mID8gT2JqZWN0LnNldFByb3RvdHlwZU9mKHN1YkNsYXNzLCBzdXBlckNsYXNzKSA6IHN1YkNsYXNzLl9fcHJvdG9fXyA9IHN1cGVyQ2xhc3M7IH1cblxuaWYgKCRFUy5DT05URVhUID09ICdCUk9XU0VSJykgcmVxdWlyZSgnLi9yb290LnNjc3MnKTtcblxuZnVuY3Rpb24gZ2VuZXJhdGVSb290KF9yZWYpIHtcbiAgICB2YXIgcGF0aHMgPSBfcmVmLnBhdGhzO1xuXG4gICAgcmV0dXJuIGZ1bmN0aW9uIChfUmVhY3QkQ29tcG9uZW50KSB7XG4gICAgICAgIF9pbmhlcml0cyhSb290LCBfUmVhY3QkQ29tcG9uZW50KTtcblxuICAgICAgICBmdW5jdGlvbiBSb290KCkge1xuICAgICAgICAgICAgX2NsYXNzQ2FsbENoZWNrKHRoaXMsIFJvb3QpO1xuXG4gICAgICAgICAgICByZXR1cm4gX3Bvc3NpYmxlQ29uc3RydWN0b3JSZXR1cm4odGhpcywgT2JqZWN0LmdldFByb3RvdHlwZU9mKFJvb3QpLmFwcGx5KHRoaXMsIGFyZ3VtZW50cykpO1xuICAgICAgICB9XG5cbiAgICAgICAgX2NyZWF0ZUNsYXNzKFJvb3QsIFt7XG4gICAgICAgICAgICBrZXk6ICdyZW5kZXInLFxuICAgICAgICAgICAgdmFsdWU6IGZ1bmN0aW9uIHJlbmRlcigpIHtcbiAgICAgICAgICAgICAgICByZXR1cm4gX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICdkaXYnLFxuICAgICAgICAgICAgICAgICAgICBudWxsLFxuICAgICAgICAgICAgICAgICAgICBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChfTmF2Mi5kZWZhdWx0LCB7IHBhdGhzOiBwYXRocyB9KSxcbiAgICAgICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICAgICAnZGl2JyxcbiAgICAgICAgICAgICAgICAgICAgICAgIHsgY2xhc3NOYW1lOiAnY29udGFpbmVyJyB9LFxuICAgICAgICAgICAgICAgICAgICAgICAgdGhpcy5wcm9wcy5jaGlsZHJlblxuICAgICAgICAgICAgICAgICAgICApXG4gICAgICAgICAgICAgICAgKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfV0pO1xuXG4gICAgICAgIHJldHVybiBSb290O1xuICAgIH0oX3JlYWN0Mi5kZWZhdWx0LkNvbXBvbmVudCk7XG59XG5cblxuLyoqKioqKioqKioqKioqKioqXG4gKiogV0VCUEFDSyBGT09URVJcbiAqKiAuL3NyYy9yb290L2dlbmVyYXRlUm9vdC5qc3hcbiAqKiBtb2R1bGUgaWQgPSAyOFxuICoqIG1vZHVsZSBjaHVua3MgPSAwXG4gKiovIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ },
 /* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = undefined;
-	
-	var _generateDomain = __webpack_require__(27);
-	
-	var _generateDomain2 = _interopRequireDefault(_generateDomain);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _generateDomain2.default;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = undefined;\n\nvar _generateDomain = __webpack_require__(27);\n\nvar _generateDomain2 = _interopRequireDefault(_generateDomain);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = _generateDomain2.default;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjkuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcm9vdC9pbmRleC5qcz80YjMzIl0sInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFwiX19lc01vZHVsZVwiLCB7XG4gIHZhbHVlOiB0cnVlXG59KTtcbmV4cG9ydHMuZGVmYXVsdCA9IHVuZGVmaW5lZDtcblxudmFyIF9nZW5lcmF0ZURvbWFpbiA9IHJlcXVpcmUoJy4vZ2VuZXJhdGVEb21haW4nKTtcblxudmFyIF9nZW5lcmF0ZURvbWFpbjIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9nZW5lcmF0ZURvbWFpbik7XG5cbmZ1bmN0aW9uIF9pbnRlcm9wUmVxdWlyZURlZmF1bHQob2JqKSB7IHJldHVybiBvYmogJiYgb2JqLl9fZXNNb2R1bGUgPyBvYmogOiB7IGRlZmF1bHQ6IG9iaiB9OyB9XG5cbmV4cG9ydHMuZGVmYXVsdCA9IF9nZW5lcmF0ZURvbWFpbjIuZGVmYXVsdDtcblxuXG4vKioqKioqKioqKioqKioqKipcbiAqKiBXRUJQQUNLIEZPT1RFUlxuICoqIC4vc3JjL3Jvb3QvaW5kZXguanNcbiAqKiBtb2R1bGUgaWQgPSAyOVxuICoqIG1vZHVsZSBjaHVua3MgPSAwXG4gKiovIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ },
 /* 30 */
@@ -1579,26 +238,31 @@ module.exports =
 /* 32 */
 /***/ function(module, exports) {
 
-	module.exports = require("react-textarea-autosize");
+	module.exports = require("marked");
 
 /***/ },
 /* 33 */
 /***/ function(module, exports) {
 
-	module.exports = require("slug");
+	module.exports = require("react-textarea-autosize");
 
 /***/ },
 /* 34 */
 /***/ function(module, exports) {
 
-	module.exports = require("tcomb-form");
+	module.exports = require("slug");
 
 /***/ },
 /* 35 */
+/***/ function(module, exports) {
+
+	module.exports = require("tcomb-form");
+
+/***/ },
+/* 36 */
 /***/ function(module, exports) {
 
 	module.exports = require("tcomb-form-templates-bootstrap");
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=index.js.map

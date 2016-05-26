@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 function toTitle(str){
     return str
@@ -13,10 +14,10 @@ export default class Nav extends React.Component {
         return (
             <nav {...props}>
                 <div className="container">
-                    <a className="brand" href="/"> { brand } </a>
+                    <Link className="brand" to="/"> { brand } </Link>
                     <ul className="nav items">
                         {paths.map(path => (
-                            <li key={path}><a href={path}>{toTitle(path)}</a></li>
+                            <li key={path}><Link to={path}>{toTitle(path)}</Link></li>
                             ))}
                     </ul>
                 </div>

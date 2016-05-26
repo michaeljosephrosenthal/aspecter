@@ -29,7 +29,10 @@ function generateSubtleOptions(type){
             .reduce((fields, prop) => {
                 fields[prop] = {
                     factory: EditableFieldGenerator
-                };
+                }
+                if(type.meta.props[prop].meta.editor){
+                    fields[prop].editor = type.meta.props[prop].meta.editor
+                }
                 return fields
             }, {})
     }

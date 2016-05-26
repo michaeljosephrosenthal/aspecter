@@ -13,9 +13,11 @@ const textbox = templates.textbox.clone({
         if (locals.type === 'static') {
             return textbox.renderStatic(locals)
         }
-        let ret = locals.type !== 'input' ?
-            textbox.renderTextarea(locals) :
-            textbox.renderInput(locals)
+        let ret = textbox.renderTextarea(locals)
+
+        if(locals.type == 'input')
+            textbox.renderInput(locals);
+
         if (locals.config.addonBefore || locals.config.addonAfter || locals.config.buttonBefore || locals.config.buttonAfter) {
             ret = textbox.renderInputGroup(ret, locals)
         }

@@ -1,8 +1,12 @@
 import React from 'react'
 import { toTitle } from '../utils'
+import { Link } from 'react-router'
+
+if($ES.CONTEXT == 'BROWSER')
+    require('./list.scss');
 
 function AddButton({singular}){
-    return ( <a className='add-new' href={`/${singular}/new?editing=true`}> Add </a>)
+    return ( <Link className='add-new' to={`/${singular}/new?editing=true`}> Add </Link>)
 }
 
 export default class List extends React.Component {
@@ -31,9 +35,9 @@ export default class List extends React.Component {
                 </div>
                 <div className="items">
                     {items.map(i => (
-                        <a key={i._id} className={`${singular.toLowerCase()} item`} href={`/${i._id}`}>
+                        <Link key={i._id} className={`${singular.toLowerCase()} item`} to={`/${i._id}`}>
                             <ItemView {...i}/>
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </div>

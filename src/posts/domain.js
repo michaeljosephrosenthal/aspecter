@@ -1,8 +1,7 @@
 import { RelationDomain, Typed } from '../relational'
 import Type from './type'
-import Post from './components'
+import * as components from './components'
 import { Domain, persister } from 'polypack!bufflehead'
-
 
 export default new RelationDomain({
     plural: 'posts',
@@ -13,7 +12,5 @@ export default new RelationDomain({
             fields: ['title']
         }
     },
-    components: {
-        ItemView: Post,
-    }
+    components
 })

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class Profile extends React.Component {
+export default class EditableItem extends React.Component {
     static propTypes = {
         Form: React.PropTypes.func.isRequired,
         ItemView: React.PropTypes.func.isRequired,
