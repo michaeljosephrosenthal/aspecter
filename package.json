@@ -1,5 +1,5 @@
 {
-  "name": "aspecter",
+  "name": "blaggard",
   "version": "0.1.0",
   "description": "blogging for the attribute-aware",
   "scripts": {
@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/michaeljosephrosenthal/aspecter.git"
+    "url": "https://github.com/michaeljosephrosenthal/blaggard.git"
   },
   "license": "MIT",
-  "homepage": "https://github.com/michaeljosephrosenthal/aspecter",
+  "homepage": "https://github.com/michaeljosephrosenthal/blaggard",
   "dependencies": {
     "babel-polyfill": "^6.8.0",
     "babel-preset-react": "^6.5.0",
@@ -32,7 +32,8 @@
     "sass-loader": "^3.2.0",
     "slug": "^0.9.1",
     "tcomb": "^3.0.0",
-    "tcomb-form": "^0.9.4"
+    "tcomb-form": "^0.9.4",
+    "tcomb-react": "^0.9.0"
   },
   "devDependencies": {
     "polypacker": "0.1.8"

@@ -6,7 +6,7 @@ if($ES.CONTEXT == 'BROWSER')
     require('./list.scss');
 
 function AddButton({singular}){
-    return ( <Link className='add-new' to={`/${singular}/new?editing=true`}> Add </Link>)
+    return ( <Link className='add text' to={`/${singular}/new?editing=true`}> <i/> New {toTitle(singular)} </Link>)
 }
 
 export default class List extends React.Component {

@@ -4,16 +4,35 @@ import marked from 'marked'
 if($ES.CONTEXT == 'BROWSER')
     require('./post.scss');
 
+function Markdown({text}){
+    return typeof(text) == 'string' ?
+        <div className="markdown" dangerouslySetInnerHTML={{__html: marked(text)}} /> :
+        text 
+}
+
+function Snippets({snippets = []}){
+    return <div className="snippets">
+        {React.isValidElement(snippets) ? snippets :
+            snippets.map(({summary, markdown}) => (
+                <div>
+                    <div className='summary'>{summary}</div>
+                    <Markdown text={markdown} />
+                </div>
+                ))
+        }
+    </div>
+}
+
 export class ItemView extends React.Component {
     render(){
-        let {title, markdown=''} = this.props
+        let {title, hook, snippets, views, markdown=''} = this.props
         return (
             <div className="post">
                 <h4>{title}</h4>
+                <div className='hook'>{hook}</div>
+                <Snippets {...{snippets}}/>
                 <div className="content">
-                    {typeof(markdown) == 'string' ?
-                        <div className="markdown" dangerouslySetInnerHTML={{__html: marked(markdown)}} />
-                        : markdown }
+                    <Markdown text={markdown} />
                 </div>
             </div>
         )
@@ -22,10 +41,11 @@ export class ItemView extends React.Component {
 
 export class SetView extends React.Component {
     render(){
-        let {title, markdown=''} = this.props
+        let { title, hook, views } = this.props
         return (
             <div className="post">
                 <h4>{title}</h4>
+                <div className='hook'>{hook}</div>
             </div>
         )
     }

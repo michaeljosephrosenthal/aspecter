@@ -25,5 +25,25 @@ const textbox = templates.textbox.clone({
     }
 })
 
-export default Object.assign({}, templates, {textbox})
+const list = templates.list.clone({
+    renderRowButton({type, click, label}) {
+        return (
+            <button key={type} type="button" className={type + (label ? ' text' : '')} onClick={click}>
+                <i/> {label}
+            </button>
+        )
+    },
+    renderButtonGroup(buttons) {
+        return <div className="right actions">{buttons.map(list.renderRowButton)}</div>
+    },
+    renderAddButton({add}){
+        return (
+            <div className="top right actions">
+                {this.renderRowButton(add)}
+            </div>
+        )
+    }
+})
+
+export default Object.assign({}, templates, {textbox, list})
 

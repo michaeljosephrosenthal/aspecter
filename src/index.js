@@ -11,7 +11,7 @@ import { Route } from 'react-router'
 import React from 'react'
 
 const settings = bufflehead.settings({
-    "title": 'Bufflehead • Aspecter',
+    "title": 'Bufflehead • Blaggard',
     "server": {
         "host": "localhost",
         "port": "3000",

@@ -4,11 +4,33 @@ import en from 'tcomb-form/lib/i18n/en'
 import templates from './subtleTcombTemplates'
 import EditButton from './EditButton'
 
-t.form.Form.i18n = en
 t.form.Form.templates = templates
 
 if($ES.CONTEXT == 'BROWSER')
     require('./subtleFormTemplates.scss');
+
+function genericStaticView(value){
+    if(Array.isArray(value)){
+        if(value.length){
+            return (
+                <ul>
+                    {value.map((v, key) => <li key={key}>{genericStaticView(v)}</li>)}
+                </ul>
+            )
+        } else { return undefined }
+    }
+    if(typeof(value) == 'object'){
+        return (
+            <dl>
+                {Object.keys(value).map(k => [
+                    <dt>{k}</dt>,
+                    <dd>{genericStaticView(value[k])}</dd>
+                ])}
+            </dl>
+        ) 
+    }
+    return value
+}
 
 export default class EditableFieldGenerator {
 
@@ -32,14 +54,20 @@ export default class EditableFieldGenerator {
         this.forceUpdate(); // overrides the default shouldComponentUpdate
       }
 
-      editButton = ({attrs: {placeholder, name}}) => (
+      editButton = _ => (
           <div className='actions'>
               <EditButton onClick={this.toggle.bind(this)}
                   editing={this.state.editing != false} />
           </div>
       )
 
-      defaultPlaceholder = ({attrs: {placeholder, name}}) => (placeholder || (name + '...'))
+      valueIsDisplayable = ({value}) => genericStaticView(value)
+
+      defaultDisplayValue = ({locals, props}) => this.valueIsDisplayable(locals) || this.valueIsDisplayable(props)
+
+      defaultPlaceholder = ({attrs: {placeholder, name} = {}, path: [path = undefined]}) => (
+          placeholder || (name && name + '...') || (path && path + '...')
+      )
 
       getTemplate(){
           let template = super.getTemplate()
@@ -48,8 +76,7 @@ export default class EditableFieldGenerator {
                   {this.editButton(locals)}
                   { this.state.editing ?
                       template(locals) : (
-                          (locals.value != undefined && locals.value) ||
-                          this.props.value ||
+                          this.defaultDisplayValue({locals, props: this.props}) ||
                           this.defaultPlaceholder(locals)
                       )
                   }

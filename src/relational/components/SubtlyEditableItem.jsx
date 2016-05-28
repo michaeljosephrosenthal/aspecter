@@ -8,7 +8,14 @@ import t from 'tcomb-form/lib'
 import en from 'tcomb-form/lib/i18n/en'
 import templates from './subtleTcombTemplates'
 
-t.form.Form.i18n = en
+t.form.Form.i18n = Object.assign({}, en, {
+    optional: '' ,
+    required: '' ,
+    add: '',
+    remove: '',
+    up: '',
+    down: '',
+})
 t.form.Form.templates = templates
 
 if($ES.CONTEXT == 'BROWSER')
@@ -40,8 +47,8 @@ function generateSubtleOptions(type){
 
 function optionsFromProps({type: {BaseType}, Template}){
     return {
-        template: toTcombFormTemplate(Template),
-        auto: 'none',
+        //template: toTcombFormTemplate(Template),
+        auto: 'labels',
         ...generateSubtleOptions(BaseType)
     }
 }
@@ -49,12 +56,25 @@ function optionsFromProps({type: {BaseType}, Template}){
 export default class ToggleableEditableSubtleForm extends React.Component {
     constructor(props) {
         super(props)
-        let { location: { query: {editing = false} = {} } = {} } = props
+        let { location: { query: {editing = false} = {} } = {}, value } = this.props
         this.state = {
             editing,
-            value: this.props.value,
+            value: this.typedValue(value),
             options: optionsFromProps(this.props)
         }
+    }
+
+    typedValue(value){
+        let { BaseType } = this.props.type
+        return (BaseType.defaults) ?
+            BaseType(BaseType.defaults(value)) :
+            BaseType(value)
+    }
+
+    setValue(value){
+        value = this.typedValue(value)
+        if(!equal(value, this.state.value))
+            this.setState({value});
     }
 
     static propTypes = {
@@ -63,10 +83,7 @@ export default class ToggleableEditableSubtleForm extends React.Component {
         value: React.PropTypes.object
     }
 
-    componentWillReceiveProps = ({value}) => {
-        if(!equal(value, this.state.value))
-            this.setState({value});
-    }
+    componentWillReceiveProps = ({value}) => this.setValue(value)
 
     save = _ => {
         let {value, type: {serialize, ...rest}, actions: {insert, update} = {}} = this.props
@@ -86,8 +103,6 @@ export default class ToggleableEditableSubtleForm extends React.Component {
         event.preventDefault()
         this.state.editing ? this.save() : this.setState({editing: true})
     }
-
-    onChange = value => this.setState({value})
 
     render(){
         let {type: {name, Type, BaseType, serialize}, Template, actions: {remove} = {}} = this.props
@@ -110,7 +125,7 @@ export default class ToggleableEditableSubtleForm extends React.Component {
                 {
                     editing ? (
                         <t.form.Form ref="form"
-                            onChange={this.onChange}
+                            onChange={this.setValue}
                             type={BaseType}
                             options={options}
                             value={value} />

@@ -1,0 +1,61 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+.subtleGlyphiconButtons {
+    padding-left: 0;
+    float: left;
+    margin-right: 0.5em;
+    font-size: 1.25rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 0%;
+    border: none;
+    background: transparent;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    i {
+        @extend .glyphicon;
+        transition: transform 0.1s cubic-bezier(0, 1.5, 1, 1.5);
+    }
+    &:hover i {
+        transform: scale(2);
+    }
+
+    &.edit:not(.editing) {
+        color: $gray;
+        i { @extend .glyphicon-pencil; }
+    }
+    &.edit.editing {
+        color: $brand-success;
+        i { @extend .glyphicon-ok; }
+    }
+    &.cancel {
+        color: $brand-warning;
+        i { @extend .glyphicon-remove; }
+    }
+    &.delete, &.remove {
+        color: $brand-danger;
+        i { @extend .glyphicon-trash; }
+    }
+    &.add {
+        color: $brand-success;
+        i { @extend .glyphicon-plus; }
+    }
+    &.move-up, &.move-down {
+        color: lighten($gray-light, 30);
+        transition: color 0.2s ease-in;
+        &:hover {
+            color: $brand-warning;
+        }
+    }
+    &.move-up {
+        i { @extend .glyphicon-arrow-up; }
+    }
+    &.move-down {
+        i { @extend .glyphicon-arrow-down; }
+    }
+    &.text { width: auto; }
+}

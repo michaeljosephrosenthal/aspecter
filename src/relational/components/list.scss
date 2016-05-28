@@ -1,7 +1,19 @@
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "./subtleGlyphiconButtons";
 
 .relational.list {
+    .title {
+        margin-top: 0;
+        display: inline-block;
+    }
+
+    .controls {
+        float: right;
+        a {
+            @extend .subtleGlyphiconButtons;
+        }
+    }
     .item {
         display: inline-block;
         width: 100%;
