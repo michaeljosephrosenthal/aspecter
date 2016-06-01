@@ -10,17 +10,20 @@ function Markdown({text}){
         text 
 }
 
-function Snippets({snippets = []}){
-    return <div className="snippets">
-        {React.isValidElement(snippets) ? snippets :
-            snippets.map(({summary, markdown}) => (
-                <div>
-                    <div className='summary'>{summary}</div>
-                    <Markdown text={markdown} />
-                </div>
+export class Snippets extends React.Component {
+    render(){
+        let { snippets } = this.props
+        return <div className="snippets">
+            {React.isValidElement(snippets) ? snippets :
+                snippets.map(({summary, markdown, tags}, index) => (
+                    <div key={index}>
+                        <div className='summary'>{summary}</div>
+                        <Markdown text={markdown} />
+                    </div>
                 ))
-        }
-    </div>
+            }
+        </div>
+    }
 }
 
 export class ItemView extends React.Component {

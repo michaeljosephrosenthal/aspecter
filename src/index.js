@@ -4,8 +4,11 @@ import DomainDrivenFullstackApplication, * as bufflehead from 'polypack!bufflehe
 import postsOriginal from './posts'
 let posts = postsOriginal
 
+import editorOriginal from './editor'
+let editor = editorOriginal
+
 import generateRoot from './root'
-const root = generateRoot({posts})
+const root = generateRoot({posts, editor})
 
 import { Route } from 'react-router'
 import React from 'react'
@@ -29,7 +32,7 @@ const settings = bufflehead.settings({
 })
 
 let app = new DomainDrivenFullstackApplication({
-    domains: { root, posts, settings }
+    domains: { root, posts, editor, settings }
 })
 
 app.main()
@@ -41,7 +44,16 @@ if (module.hot) {
         console.log("reimporting posts and rerunning main");
         posts = require("./posts").default;
         app = new DomainDrivenFullstackApplication({
-            domains: { root, posts, settings }
+            domains: { root, posts, editor, settings }
+        })
+        app.main()
+    });
+
+    module.hot.accept("./editor", () => {
+        console.log("reimporting editor and rerunning main");
+        posts = require("./editor").default;
+        app = new DomainDrivenFullstackApplication({
+            domains: { root, posts, editor, settings }
         })
         app.main()
     });

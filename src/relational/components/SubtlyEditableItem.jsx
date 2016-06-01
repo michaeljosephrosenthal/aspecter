@@ -53,25 +53,28 @@ function optionsFromProps({type: {BaseType}, Template}){
     }
 }
 
+function typedValue({value, type: { BaseType } }){
+    return (BaseType.defaults) ?
+        BaseType(BaseType.defaults(value)) :
+        BaseType(value)
+}
 export default class ToggleableEditableSubtleForm extends React.Component {
     constructor(props) {
         super(props)
-        let { location: { query: {editing = false} = {} } = {}, value } = this.props
+        let { location: { query: {editing = false} = {} } = {} } = this.props
         this.state = {
             editing,
-            value: this.typedValue(value),
+            value: typedValue(this.props),
             options: optionsFromProps(this.props)
         }
     }
 
     typedValue(value){
-        let { BaseType } = this.props.type
-        return (BaseType.defaults) ?
-            BaseType(BaseType.defaults(value)) :
-            BaseType(value)
+        let { type } = this.props
+        return typedValue({value, type})
     }
 
-    setValue(value){
+    setValue = (value) => {
         value = this.typedValue(value)
         if(!equal(value, this.state.value))
             this.setState({value});
@@ -88,6 +91,7 @@ export default class ToggleableEditableSubtleForm extends React.Component {
     save = _ => {
         let {value, type: {serialize, ...rest}, actions: {insert, update} = {}} = this.props
         const formValue = this.refs.form.getValue()
+        console.log('val', formValue)
         if (formValue){ 
             let serialized = serialize(Object.assign({}, value, formValue)) 
             if (serialized._rev){
@@ -105,10 +109,16 @@ export default class ToggleableEditableSubtleForm extends React.Component {
     }
 
     render(){
-        let {type: {name, Type, BaseType, serialize}, Template, actions: {remove} = {}} = this.props
+        let {
+            type: {
+                name, Type, BaseType, serialize
+            },
+            Template,
+            actions: {remove} = {}
+        } = this.props
         let {editing, options, deleting, value } = this.state
         return (
-            <div className={`${name.toLowerCase()} item-view inline-editable ${deleting ? 'deleting' : ''} ${editing ? 'editing' : ''}`}>
+            <div className={`${name.toLowerCase()} top-level item-view inline-editable ${deleting ? 'deleting' : ''} ${editing ? 'editing' : ''}`}>
                 { deleting && remove ? (
                     <div className="deleting top actions">
                         <div className="alert deleting" role="alert">Are you sure you want to delete this {name}?</div>

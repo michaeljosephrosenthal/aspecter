@@ -65,6 +65,8 @@ export default class EditableFieldGenerator {
 
       defaultDisplayValue = ({locals, props}) => this.valueIsDisplayable(locals) || this.valueIsDisplayable(props)
 
+      descriptor = ({attrs: {placeholder, name} = {}, path: [path = undefined]}) => ( placeholder || name || path)
+
       defaultPlaceholder = ({attrs: {placeholder, name} = {}, path: [path = undefined]}) => (
           placeholder || (name && name + '...') || (path && path + '...')
       )
@@ -72,14 +74,17 @@ export default class EditableFieldGenerator {
       getTemplate(){
           let template = super.getTemplate()
           return locals => (
-              <div className={`inline-editable ${this.state.editing ? 'editing' : ''}`}>
+              <div className={`inline-editable ${this.state.editing ? 'editing' : ''} ${this.descriptor(locals)}`}>
                   {this.editButton(locals)}
-                  { this.state.editing ?
-                      template(locals) : (
+                  <div style={{display: this.state.editing ? 'inherit' : 'none'}}> 
+                      {template(locals)}
+                  </div>
+                  <div style={{display: this.state.editing ? 'none' : 'inherit' }}> 
+                      {
                           this.defaultDisplayValue({locals, props: this.props}) ||
                           this.defaultPlaceholder(locals)
-                      )
-                  }
+                      }
+                  </div>
               </div>
           )
       }

@@ -2,11 +2,9 @@ $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 .post {
     position: relative;
-    padding: 15px;
-    h4 {
+    h4, .title {
         color: $gray-light;
         text-transform: uppercase;
-        margin: -0.3em 0em;
         margin-bottom: 0.2em;
         font-size: 1.285em;
     }
