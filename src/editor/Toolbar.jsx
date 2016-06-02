@@ -2,15 +2,15 @@ import React from 'react'
 export default _ => (
     <div id="toolbar" className="toolbar">
         <span className="ql-formats">
-            <select className="ql-header">
-                <option defaultValue="1">Heading</option>
-                <option defaultValue="2">Subheading</option>
-                <option selected={true}>Normal</option>
+            <select defaultValue="0" className="ql-header">
+                <option value="1">Heading</option>
+                <option value="2">Subheading</option>
+                <option value="0">Normal</option>
             </select>
-            <select className="ql-font">
-                <option selected={true}>Sans Serif</option>
-                <option defaultValue="serif">Serif</option>
-                <option defaultValue="monospace">Monospace</option>
+            <select defaultValue="0" className="ql-font">
+                <option value="0">Sans Serif</option>
+                <option value="serif">Serif</option>
+                <option value="monospace">Monospace</option>
             </select>
         </span>
         <span className="ql-formats">
@@ -23,19 +23,24 @@ export default _ => (
             <select className="ql-background"></select>
         </span>
         <span className="ql-formats">
-            <button className="ql-list" defaultValue="ordered"></button>
-            <button className="ql-list" defaultValue="bullet"></button>
-            <select className="ql-align">
-                <option selected={true}></option>
-                <option defaultValue="center"></option>
-                <option defaultValue="right"></option>
-                <option defaultValue="justify"></option>
+            <button className="ql-list" value="ordered"></button>
+            <button className="ql-list" value="bullet"></button>
+            <select defaultValue="" className="ql-align">
+                <option value=""></option>
+                <option value="center"></option>
+                <option value="right"></option>
+                <option value="justify"></option>
             </select>
         </span>
         <span className="ql-formats">
             <button className="ql-link"></button>
             <button className="ql-image"></button>
-            <button className="ql-code-block"></button>
+            <button className="ql-code-block" value="markdown"></button>
+            {/*<select defaultValue="" className="ql-code-block">
+                <option value=""></option>
+                <option value="javascript">js</option>
+                <option value="markdown">md</option>
+                </select>*/}
         </span>
         <span className="ql-formats">
             <button className="ql-clean"></button>

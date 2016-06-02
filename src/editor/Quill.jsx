@@ -2,7 +2,6 @@ import React from 'react'
 import Quill from 'quill'
 import Toolbar from './Toolbar'
 
-
 export default class QuillComponent extends React.Component {
 
     constructor(props) {
@@ -26,11 +25,6 @@ export default class QuillComponent extends React.Component {
             : editor.editor.enable();
     }
 
-    /*
-       Replace the contents of the editor, but keep
-       the previous selection hanging around so that
-       the cursor won't move.
-       */
     setEditorContents(editor, value) {
         var sel = editor.getSelection();
         editor.pasteHTML(value || '');
@@ -76,7 +70,8 @@ export default class QuillComponent extends React.Component {
         )
         this.setState({ editor })
         window.editor = editor
-        editor.format('code-block', true, 'user');
+        window.Quill = Quill
+        editor.format('code-block', 'markdown', 'user');
     }
 
     shouldComponentUpdate() { return false; }

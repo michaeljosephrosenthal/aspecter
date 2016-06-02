@@ -1,14 +1,12 @@
 import React from 'react'
-//import ReactQuill from 'react-quill'
-//
 import Quill from './Quill'
-import hljs from '../../node_modules/highlightjs/highlight.pack.js'
+
+import { highlightBlock as highlight } from '../../node_modules/highlightjs/highlight.pack.js'
+window.highlightBlock = highlight
+
+
 require('../../node_modules/highlightjs/styles/default.css')
-
 import '../../node_modules/quill/dist/quill.snow.css'
-
-window.hljs = hljs
-const { highlightBlock: highlight } = hljs
 
 export default class MarkdownEditor extends React.Component {
     constructor(props) {
@@ -23,7 +21,7 @@ export default class MarkdownEditor extends React.Component {
                 config={{
                     modules: {
                         toolbar: '#toolbar',
-                        syntax: {highlight}
+                        syntax: {highlight, language: 'markdown'}
                     },
                     theme: 'snow'
                 }}
