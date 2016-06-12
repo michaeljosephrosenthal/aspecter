@@ -7,6 +7,7 @@ import EditableFieldGenerator from './EditableFieldGenerator'
 import t from 'tcomb-form/lib'
 import en from 'tcomb-form/lib/i18n/en'
 import templates from './subtleTcombTemplates'
+import recursivelyConfigureFieldsFromTypes from './typeSelfConfigure'
 
 t.form.Form.i18n = Object.assign({}, en, {
     optional: '' ,
@@ -29,16 +30,7 @@ function toTcombFormTemplate(Template){
         return locals => Template(locals.inputs)
     }
 }
-function hasChildren({meta: { props = false } = {}}){
-    return props != false
-}
 
-function configureChild({meta: { props = {} , editor = {}}} = {}){
-    return Object.keys(props).reduce((config, key) => {
-        config[key] = configureChild(props[key])
-        return config
-    }, editor || {}) || {}
-}
 
 function generateSubtleOptions(type){
     return {
@@ -46,7 +38,7 @@ function generateSubtleOptions(type){
             .reduce((fields, prop) => {
                 fields[prop] = {
                     factory: EditableFieldGenerator,
-                    ...configureChild(type.meta.props[prop])
+                    ...recursivelyConfigureFieldsFromTypes(type.meta.props[prop])
                 }
                 return fields
             }, {})
@@ -54,7 +46,6 @@ function generateSubtleOptions(type){
 }
 
 function optionsFromProps({type: {BaseType}, Template}){
-    let options = generateSubtleOptions(BaseType)
     return {
         //template: toTcombFormTemplate(Template),
         auto: 'labels',

@@ -21,11 +21,10 @@ let View = t.struct({
 
 let Type = t.struct({
     title: t.String,
-    hook: Markdown, //t.String,
+    hook: t.String,
     snippets: t.list(Snippet),
     views: t.list(View),
     tags: t.list(t.String),
-    //meta: t.dict(t.String, t.String),
 }, 'Post')
 
 Type.defaults = (value, defaults = {
