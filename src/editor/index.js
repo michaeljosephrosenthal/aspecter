@@ -1,5 +1,8 @@
 import { Domain } from 'polypack!bufflehead'
-const MarkdownEditor = ($ES.CONTEXT == 'BROWSER') ? require('./MarkdownEditor').default : () => (<div/>)
+
+export const MarkdownEditor = ($ES.CONTEXT == 'BROWSER') ? require('./MarkdownEditor').default : () => (<div/>)
+
+export Type from './type.jsx'
 
 export default new Domain({
     name: 'editor',

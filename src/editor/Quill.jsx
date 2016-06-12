@@ -69,9 +69,7 @@ export default class QuillComponent extends React.Component {
             this.props.config
         )
         this.setState({ editor })
-        window.editor = editor
-        window.Quill = Quill
-        editor.format('code-block', 'markdown', 'user');
+        editor.formatLine(0, 10, 'code-block', 'markdown')
     }
 
     shouldComponentUpdate() { return false; }
@@ -79,7 +77,7 @@ export default class QuillComponent extends React.Component {
     render(){
         return (
             <div className="quill-wrapper">
-                <Toolbar/>
+                { this.props.config.modules.toolbar && (<Toolbar/>) }
                 <div ref="editor"/>
             </div>
         )

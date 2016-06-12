@@ -1,12 +1,14 @@
 import React from 'react'
 import Quill from './Quill'
 
-import { highlightBlock as highlight } from '../../node_modules/highlightjs/highlight.pack.js'
-window.highlightBlock = highlight
+import hljs from '../../node_modules/highlightjs/highlight.pack.js'
+import markdown from './markdownHljsDefinition'
 
+hljs.registerLanguage('markdown', markdown)
 
-require('../../node_modules/highlightjs/styles/default.css')
-import '../../node_modules/quill/dist/quill.snow.css'
+import './markdownHighlight.scss'
+
+const highlight = hljs.highlightBlock
 
 export default class MarkdownEditor extends React.Component {
     constructor(props) {
@@ -16,14 +18,13 @@ export default class MarkdownEditor extends React.Component {
         }
     }
     render() {
+        let { config: {modules, ...config} = {}, theme = 'snow' } = this.props
+        modules = Object.assign({syntax: {highlight, language: 'markdown'}}, modules)
         return (
-            <Quill theme='snow' value={this.state.value} 
+            <Quill theme={theme} value={this.state.value} 
                 config={{
-                    modules: {
-                        toolbar: '#toolbar',
-                        syntax: {highlight, language: 'markdown'}
-                    },
-                    theme: 'snow'
+                    modules,
+                    ...config
                 }}
             />
         );

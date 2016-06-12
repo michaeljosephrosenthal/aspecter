@@ -1,9 +1,11 @@
 import t from 'tcomb'
 import React from 'react'
 
+import { Type as Markdown } from '../editor'
+
 let Snippet = t.struct({
     summary: t.String,
-    markdown: t.String,
+    markdown: Markdown,
     tags: t.list(t.String),
 }, 'Snippet')
 
@@ -19,7 +21,7 @@ let View = t.struct({
 
 let Type = t.struct({
     title: t.String,
-    hook: t.String,
+    hook: Markdown, //t.String,
     snippets: t.list(Snippet),
     views: t.list(View),
     tags: t.list(t.String),

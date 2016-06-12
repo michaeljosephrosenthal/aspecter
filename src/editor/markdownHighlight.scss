@@ -1,0 +1,24 @@
+@import '../../node_modules/highlightjs/styles/default.css';
+//@import '../../node_modules/highlightjs/styles/solarized_dark.css';
+@import '../../node_modules/quill/dist/quill.snow.css';
+
+pre.hljs.markdown {
+    background: none;
+    border-radius: 3px;
+    border-left: 3px solid #f0f0f0;
+    border-right: 3px solid #f0f0f0;
+    border-top: none;
+    border-bottom: none;
+    &:first-of-type {
+        border-top: 3px solid #f0f0f0;
+    }
+    &:last-of-type {
+        border-bottom: 3px solid #f0f0f0;
+    }
+}
+
+.hljs-code {
+    background-color: #f0f0f0;
+    border-radius: 3px;
+}
+

@@ -39,7 +39,7 @@ export default class EditableFieldGenerator {
     const props = args[0];
     const options = {
       ...props.options,
-      factory: null // avoid circular reference
+      factory: props.options.baseFactory || null // avoid circular reference
     };
 
     class Inliner extends t.form.getComponent(props.type, options) {
