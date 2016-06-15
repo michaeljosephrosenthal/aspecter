@@ -43,11 +43,10 @@ export default class QuillComponent extends React.Component {
 
 
     onEditorChange = (value, delta, source, editor) => {
-        console.log(value)
         if (value !== this.state.value) {
             this.setState({ value });
             if (this.props.onChange) {
-                this.props.onChange(value, delta, source, editor);
+                this.props.onChange({target: {value}});
             }
         }
     }
@@ -68,6 +67,12 @@ export default class QuillComponent extends React.Component {
             this.refs.editor,
             this.props.config
         )
+        editor.on('text-change', (delta, source) => {
+            this.onEditorChange( editor.getText(), delta, source, editor)
+        })
+        editor.on('selection-change', (range, source) => {
+            this.onEditorChangeSelection( range, source, editor )
+        })
         this.setState({ editor })
         editor.formatLine(0, 10, 'code-block', 'markdown')
     }

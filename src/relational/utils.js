@@ -8,8 +8,8 @@ export function toTitle(str){
 }
 
 export function Persistable(BaseType, name){
-    let Identified = BaseType.extend([t.struct({ _id: t.String })])
-    let Persisted = Identified.extend([t.struct({ _rev: t.String })])
+    let Identified =  t.struct.extend([BaseType, t.struct({ _id: t.String })])
+    let Persisted = t.struct.extend([Identified, t.struct({ _rev: t.String })])
     let Type = t.union([BaseType, Identified, Persisted], name)
     Type.dispatch = function dispatch(doc) {
         return doc._rev && doc._id ? Persisted :
@@ -21,7 +21,12 @@ export function Persistable(BaseType, name){
 
 export function serializer(Type, type, fields, sluggify){
     sluggify = sluggify || (doc => `${type.toLowerCase()}/${fields.map(f => slug(doc[f].toString().toLowerCase())).join('&')}`)
-    return (doc) => Type(Object.assign({}, doc, {_id: sluggify(doc)}))
+    return (doc) => {
+        let typed = Type(Object.assign({}, doc, {_id: sluggify(doc)}))
+        if(typed.serialize)
+            return typed.serialize()
+        return typed
+    }
 }
 
 export function expandType({Type, name, serialize: { fields = ['id'], sluggify } = {}}){

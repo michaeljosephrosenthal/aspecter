@@ -18,14 +18,14 @@ export default class MarkdownEditor extends React.Component {
         }
     }
     render() {
-        let { config: {modules, ...config} = {}, theme = 'snow' } = this.props
+        let { config: {modules, ...config} = {}, theme = 'snow', ...props } = this.props
         modules = Object.assign({syntax: {highlight, language: 'markdown'}}, modules)
         return (
             <Quill theme={theme} value={this.state.value} 
                 config={{
                     modules,
                     ...config
-                }}
+                }} {...props}
             />
         );
     }

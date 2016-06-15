@@ -1,11 +1,11 @@
-export default function recursivelyConfigureFieldsFromTypes (
+export default function configureFormFromType (
     { meta: { props = {} , editor = {}, kind, type } } = {}
 ){
     if(kind == 'list')
-        Object.assign(editor, {'item': configureChild(type)});
+        Object.assign(editor, {'item': configureFormFromType(type)});
 
     const fields = Object.keys(props).reduce((config, key) => {
-        config[key] = configureChild(props[key])
+        config[key] = configureFormFromType(props[key])
         return config
     }, {}) || {}
 

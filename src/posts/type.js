@@ -1,7 +1,10 @@
 import t from 'tcomb'
+if($ES.CONTEXT == 'BROWSER')
+    window.t = t;
 import React from 'react'
 
 import { Type as Markdown } from '../editor'
+import { types as relational } from '../relational'
 
 let Snippet = t.struct({
     summary: t.String,
@@ -9,17 +12,19 @@ let Snippet = t.struct({
     tags: t.list(t.String),
 }, 'Snippet')
 
-let View = t.struct({
+let ViewStruct = t.struct({
     key: t.String,
     tags: t.list(t.String),
-    snippets: t.list(Snippet),
+    snippets: relational.ChildRelationList(Snippet, 'snippets'),
 }, 'View')
 
-/*function validSnippets({views, snippets}){
-    Object.keys(views).map(k => views[k].snippets)
-}, t.refinement(_=>true)*/
+let View = relational.RelationContainer(ViewStruct, 'snippets')
 
-let Type = t.struct({
+function listContainsMatch(list, predicate){
+  return list.filter(element => predicate(element)).length > 0
+}
+
+let PostStruct = t.struct({
     title: t.String,
     hook: t.String,
     snippets: t.list(Snippet),
@@ -27,17 +32,26 @@ let Type = t.struct({
     tags: t.list(t.String),
 }, 'Post')
 
+
+let Post = relational.ParentRelation(PostStruct, {views: 'snippets'})
+
+let Type = t.refinement(Post, ({snippets, views}) => {
+    return !listContainsMatch(
+        views, ({snippets: snipRefList}) => listContainsMatch(
+            snipRefList, (ref) => (ref > snippets.length -1)
+        )
+    )
+}, 'Post')
+
 Type.defaults = (value, defaults = {
     title: '',
     hook: '',
     snippets: [],
-    views: [
-        View({
-            key: 'default',
-            snippets: [],
-            tags: [],
-        })
-    ],
+    views: [{
+        key: 'default',
+        snippets: [],
+        tags: [],
+    }],
     tags: [],
 }) => Object.assign(defaults, value)
 

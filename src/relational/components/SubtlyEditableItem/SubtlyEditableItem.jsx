@@ -7,7 +7,7 @@ import EditableFieldGenerator from './EditableFieldGenerator'
 import t from 'tcomb-form/lib'
 import en from 'tcomb-form/lib/i18n/en'
 import templates from './subtleTcombTemplates'
-import recursivelyConfigureFieldsFromTypes from './typeSelfConfigure'
+import configureFormFromType from './typeSelfConfigure'
 
 t.form.Form.i18n = Object.assign({}, en, {
     optional: '' ,
@@ -31,14 +31,18 @@ function toTcombFormTemplate(Template){
     }
 }
 
+function resolveStructProps({meta: {props, kind, type}}){
+    return (kind == 'subtype') ? resolveStructProps(type) : props
+}
 
 function generateSubtleOptions(type){
+    let props = resolveStructProps(type)
     return {
-        fields: Object.keys(type.meta.props)
+        fields: Object.keys(props)
             .reduce((fields, prop) => {
                 fields[prop] = {
                     factory: EditableFieldGenerator,
-                    ...recursivelyConfigureFieldsFromTypes(type.meta.props[prop])
+                    ...configureFormFromType(props[prop])
                 }
                 return fields
             }, {})
@@ -54,9 +58,12 @@ function optionsFromProps({type: {BaseType}, Template}){
 }
 
 function typedValue({value, type: { BaseType } }){
-    return (BaseType.defaults) ?
+    let typed = (BaseType.defaults) ?
         BaseType(BaseType.defaults(value)) :
         BaseType(value)
+    if(typed.materialize)
+        return typed.materialize()
+    return typed
 }
 export default class ToggleableEditableSubtleForm extends React.Component {
     constructor(props) {
@@ -75,9 +82,14 @@ export default class ToggleableEditableSubtleForm extends React.Component {
     }
 
     setValue = (value) => {
-        value = this.typedValue(value)
-        if(!equal(value, this.state.value))
-            this.setState({value});
+        try {
+            value = this.typedValue(value)
+            if(!equal(value, this.state.value))
+                this.setState({value});
+        } catch (err){
+            if (!err instanceof TypeError)
+                throw err;
+        }
     }
 
     static propTypes = {
@@ -89,9 +101,12 @@ export default class ToggleableEditableSubtleForm extends React.Component {
     componentWillReceiveProps = ({value}) => this.setValue(value)
 
     save = _ => {
-        let {value, type: {serialize, ...rest}, actions: {insert, update} = {}} = this.props
+        let {
+            value,
+            type: {serialize, ...rest},
+            actions: {insert, update} = {}
+        } = this.props
         const formValue = this.refs.form.getValue()
-        console.log('val', formValue)
         if (formValue){ 
             let serialized = serialize(Object.assign({}, value, formValue)) 
             if (serialized._rev){

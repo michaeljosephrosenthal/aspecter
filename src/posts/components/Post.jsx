@@ -1,30 +1,9 @@
 import React from 'react'
 import marked from 'marked'
+import { Snippets } from './Snippets'
 
 if($ES.CONTEXT == 'BROWSER')
     require('./post.scss');
-
-function Markdown({text}){
-    return typeof(text) == 'string' ?
-        <div className="markdown" dangerouslySetInnerHTML={{__html: marked(text)}} /> :
-        text 
-}
-
-export class Snippets extends React.Component {
-    render(){
-        let { snippets } = this.props
-        return <div className="snippets">
-            {React.isValidElement(snippets) ? snippets :
-                snippets.map(({summary, markdown, tags}, index) => (
-                    <div key={index}>
-                        <div className='summary'>{summary}</div>
-                        <Markdown text={markdown} />
-                    </div>
-                ))
-            }
-        </div>
-    }
-}
 
 export class ItemView extends React.Component {
     render(){

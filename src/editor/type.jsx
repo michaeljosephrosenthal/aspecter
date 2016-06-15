@@ -28,6 +28,8 @@ const template = templates.textbox.clone({
 
 const Markdown = t.refinement(t.String, s => true, 'Markdown');
 
-Markdown.meta.editor = { template }
+Markdown.meta.editor = {
+    template
+}
 
 export default Markdown
