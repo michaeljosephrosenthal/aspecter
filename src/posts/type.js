@@ -5,12 +5,17 @@ import React from 'react'
 
 import { Type as Markdown } from '../editor'
 import { types as relational } from '../relational'
+import { Snippet as SnippetView } from './components'
 
 let Snippet = t.struct({
     summary: t.String,
     markdown: Markdown,
     tags: t.list(t.String),
 }, 'Snippet')
+
+Snippet.meta.editor = {
+    staticTemplate: ({value}) => <SnippetView {...value}/>
+}
 
 let ViewStruct = t.struct({
     key: t.String,

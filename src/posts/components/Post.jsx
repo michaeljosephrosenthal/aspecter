@@ -7,15 +7,12 @@ if($ES.CONTEXT == 'BROWSER')
 
 export class ItemView extends React.Component {
     render(){
-        let {title, hook, snippets, views, markdown=''} = this.props
+        let {title, hook, snippets, views} = this.props
         return (
             <div className="post">
                 <h4>{title}</h4>
                 <div className='hook'>{hook}</div>
                 <Snippets {...{snippets}}/>
-                <div className="content">
-                    <Markdown text={markdown} />
-                </div>
             </div>
         )
     }

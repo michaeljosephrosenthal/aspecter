@@ -9,27 +9,57 @@ t.form.Form.templates = templates
 if($ES.CONTEXT == 'BROWSER')
     require('./subtleFormTemplates.scss');
 
-function genericStaticView(value){
-    if(Array.isArray(value)){
-        if(value.length){
-            return (
-                <ul>
-                    {value.map((v, key) => <li key={key}>{genericStaticView(v)}</li>)}
-                </ul>
-            )
-        } else { return undefined }
-    }
-    if(typeof(value) == 'object'){
+function GenericList({value, options: {item: {staticTemplate: Template=GenericStaticView, ...itemOpts}={}}}){
+    if(value.length){
         return (
-            <dl>
-                {Object.keys(value).map(k => [
+            <ul>
+                {value.map((v, key) => <li key={key}><Template value={v} options={itemOpts}/></li>)}
+            </ul>
+        )
+    } else { return <span/> }
+}
+
+function GenericObj({value, options: {staticTemplate, fields={}, ...options} = {}}){
+    return (
+        <dl>
+            {Object.keys(value).map(k => {
+                let { staticTemplate: Template = GenericStaticView, ...options } = fields[k] || {}
+                return [
                     <dt>{k}</dt>,
-                    <dd>{genericStaticView(value[k])}</dd>
-                ])}
-            </dl>
-        ) 
+                    <dd><Template value={value[k]} options={options}/></dd>
+                ]
+            })}
+        </dl>
+    ) 
+}
+
+function genericLocalsPlaceholder({attrs: {placeholder, name} = {}, path: [path = undefined] = []}){
+    return placeholder || (name && name + '...') || (path && path + '...')
+}
+
+function displayable(value){
+    return value && (
+        (Array.isArray(value) && value.length) || (
+            !Array.isArray(value) && (
+                (typeof(value) == 'object' && Object.keys(value).length) || (
+                    typeof(value) != 'object' ))))
+}
+
+function GenericStaticView({value, options: {staticTemplate: Template, ...options}}){
+
+    if(Template){
+        return <Template value={value} options={options}/>
     }
-    return value
+
+    if(Array.isArray(value)){
+        return <GenericList value={value} options={options}/>
+    }
+
+    if(value && typeof(value) == 'object'){
+        return <GenericObj value={value} options={options}/>
+    }
+
+    return (<span>{value}</span>)
 }
 
 export default class EditableFieldGenerator {
@@ -61,15 +91,11 @@ export default class EditableFieldGenerator {
           </div>
       )
 
-      valueIsDisplayable = ({value}) => genericStaticView(value)
+      genericDisplay = ({value}) => displayable(value) && (<GenericStaticView value={value} options={options}/>)
 
-      defaultDisplayValue = ({locals, props}) => this.valueIsDisplayable(locals) || this.valueIsDisplayable(props)
+      staticDisplay = ({locals, props}) => this.genericDisplay(locals) || this.genericDisplay(props) || genericLocalsPlaceholder(locals)
 
       descriptor = ({attrs: {placeholder, name} = {}, path: [path = undefined]}) => ( placeholder || name || path)
-
-      defaultPlaceholder = ({attrs: {placeholder, name} = {}, path: [path = undefined]}) => (
-          placeholder || (name && name + '...') || (path && path + '...')
-      )
 
       getTemplate(){
           let template = super.getTemplate()
@@ -80,11 +106,7 @@ export default class EditableFieldGenerator {
                       {template(locals)}
                   </div>
                   <div style={{display: this.state.editing ? 'none' : 'inherit' }}> 
-                      {
-                          (options && options.staticTemplate && options.staticTemplate(this.props.value)) ||
-                          this.defaultDisplayValue({locals, props: this.props}) ||
-                          this.defaultPlaceholder(locals)
-                      }
+                      { this.staticDisplay({locals, props: this.props}) }
                   </div>
               </div>
           )
