@@ -32,7 +32,7 @@ function listContainsMatch(list, predicate){
 let PostStruct = t.struct({
     title: t.String,
     hook: t.String,
-    snippets: t.list(Snippet),
+    snippets: relational.SourceList(Snippet, 'snippets'),
     views: t.list(View),
     tags: t.list(t.String),
 }, 'Post')

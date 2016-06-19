@@ -21,7 +21,7 @@ export default class QuillComponent extends React.Component {
     }
 
     setEditorReadOnly(editor, value) {
-        value? editor.editor.disable()
+        value ? editor.editor.disable()
             : editor.editor.enable();
     }
 
@@ -83,7 +83,7 @@ export default class QuillComponent extends React.Component {
         return (
             <div className="quill-wrapper">
                 { this.props.config.modules.toolbar && (<Toolbar/>) }
-                <div ref="editor"/>
+                <div ref="editor">{ this.state.value }</div>
             </div>
         )
     }

@@ -1,9 +1,17 @@
 import t from 'tcomb'
+import buildRelationalSourceList from './components/RelationalSourceList'
+import buildRelationalTargetList from './components/RelationalTargetList'
 
 const Integer = t.refinement(t.Number, (n) => n % 1 === 0, 'Integer');
 
 function listContainsMatch(list, predicate){
   return list.filter(element => predicate(element)).length > 0
+}
+
+export function SourceList(structLike, key){
+    let List = t.list(structLike, 'RelationSource')
+    List.meta.editor = { staticTemplate : buildRelationalSourceList(key) }
+    return List
 }
 
 export function ChildRelationList(structLike, key){
@@ -22,7 +30,9 @@ export function ChildRelationList(structLike, key){
         return Integer.is(this) ? this : Integer(this.index)
     }
 
-    return t.list(Child, 'RelationList')
+    let List = t.list(Child, 'RelationList')
+    List.meta.editor = { template : buildRelationalTargetList(List, key) }
+    return List
 }
 
 function materializeList(list, ...args){

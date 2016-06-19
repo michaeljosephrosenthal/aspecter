@@ -9,6 +9,9 @@ import en from 'tcomb-form/lib/i18n/en'
 import templates from './subtleTcombTemplates'
 import configureFormFromType from './typeSelfConfigure'
 
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContext } from 'react-dnd';
+
 t.form.Form.i18n = Object.assign({}, en, {
     optional: '' ,
     required: '' ,
@@ -65,7 +68,8 @@ function typedValue({value, type: { BaseType } }){
         return typed.materialize()
     return typed
 }
-export default class ToggleableEditableSubtleForm extends React.Component {
+
+class ToggleableEditableSubtleForm extends React.Component {
     constructor(props) {
         super(props)
         let { location: { query: {editing = false} = {} } = {} } = this.props
@@ -162,3 +166,4 @@ export default class ToggleableEditableSubtleForm extends React.Component {
     }
 }
 
+export default DragDropContext(HTML5Backend)(ToggleableEditableSubtleForm)

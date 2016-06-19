@@ -3,39 +3,12 @@ import t from 'tcomb-form/lib'
 import en from 'tcomb-form/lib/i18n/en'
 import templates from './subtleTcombTemplates'
 import EditButton from './EditButton'
+import GenericStaticView, { GenericList, GenericObj, genericLocalsPlaceholder } from './staticViews'
 
 t.form.Form.templates = templates
 
 if($ES.CONTEXT == 'BROWSER')
     require('./subtleFormTemplates.scss');
-
-function GenericList({value, options: {item: {staticTemplate: Template=GenericStaticView, ...itemOpts}={}}}){
-    if(value.length){
-        return (
-            <ul>
-                {value.map((v, key) => <li key={key}><Template value={v} options={itemOpts}/></li>)}
-            </ul>
-        )
-    } else { return <span/> }
-}
-
-function GenericObj({value, options: {staticTemplate, fields={}, ...options} = {}}){
-    return (
-        <dl>
-            {Object.keys(value).map(k => {
-                let { staticTemplate: Template = GenericStaticView, ...options } = fields[k] || {}
-                return [
-                    <dt>{k}</dt>,
-                    <dd><Template value={value[k]} options={options}/></dd>
-                ]
-            })}
-        </dl>
-    ) 
-}
-
-function genericLocalsPlaceholder({attrs: {placeholder, name} = {}, path: [path = undefined] = []}){
-    return placeholder || (name && name + '...') || (path && path + '...')
-}
 
 function displayable(value){
     return value && (
@@ -43,23 +16,6 @@ function displayable(value){
             !Array.isArray(value) && (
                 (typeof(value) == 'object' && Object.keys(value).length) || (
                     typeof(value) != 'object' ))))
-}
-
-function GenericStaticView({value, options: {staticTemplate: Template, ...options}}){
-
-    if(Template){
-        return <Template value={value} options={options}/>
-    }
-
-    if(Array.isArray(value)){
-        return <GenericList value={value} options={options}/>
-    }
-
-    if(value && typeof(value) == 'object'){
-        return <GenericObj value={value} options={options}/>
-    }
-
-    return (<span>{value}</span>)
 }
 
 export default class EditableFieldGenerator {
