@@ -3,23 +3,27 @@ import buildRelationalSourceList from './components/RelationalSourceList'
 import buildRelationalTargetList from './components/RelationalTargetList'
 
 const Integer = t.refinement(t.Number, (n) => n % 1 === 0, 'Integer');
+const Reference = t.struct({ index: Integer }, 'Reference')
 
 function listContainsMatch(list, predicate){
   return list.filter(element => predicate(element)).length > 0
 }
 
 export function SourceList(structLike, key){
-    let List = t.list(structLike, 'RelationSource')
-    List.meta.editor = { staticTemplate : buildRelationalSourceList(key) }
-    return List
+    let SourceList = t.list(structLike, `${structLike.displayName}RelationSourceList`)
+    SourceList.meta.editor = { staticTemplate : buildRelationalSourceList(key) }
+    return SourceList
 }
 
 export function ChildRelationList(structLike, key){
-    let MaterializedChild = t.struct.extend([structLike, { index: Integer }], 'MaterializedChild')
-    let Child = t.union([MaterializedChild, Integer], 'Child')
+    let MaterializedChild = t.struct.extend([structLike, {index: Integer}], `Materialized${structLike.displayName}`)
+    let Child = t.union([MaterializedChild, Reference, Integer], `${structLike.displayName}ReferenceUnion`)
 
     Child.dispatch = function dispatch(item){
-        return Integer.is(item) ? Integer : MaterializedChild
+        let type = Integer.is(item) ? Integer :
+            Object.keys(item).length == 1 ? Reference :
+                MaterializedChild
+        return type
     }
 
     Child.prototype.materialize = function({[key]: relation}){
@@ -30,12 +34,18 @@ export function ChildRelationList(structLike, key){
         return Integer.is(this) ? this : Integer(this.index)
     }
 
-    let List = t.list(Child, 'RelationList')
-    List.meta.editor = { template : buildRelationalTargetList(List, key) }
-    return List
+    let listName = `${structLike.displayName}RelationTargetList`
+    let TargetList = t.refinement(t.list(Child, listName), _=>true, listName)
+
+    TargetList.meta.editor = {
+        template: buildRelationalTargetList(Child, key)
+    }
+
+    return TargetList
 }
 
 function materializeList(list, ...args){
+    debugger;
     return list.map(item => item.materialize(...args))
 }
 

@@ -51,10 +51,10 @@ let Type = t.refinement(Post, ({snippets, views}) => {
 Type.defaults = (value, defaults = {
     title: '',
     hook: '',
-    snippets: [],
+    snippets: [{markdown: '', summary: '', tags: []}],
     views: [{
         key: 'default',
-        snippets: [],
+        snippets: [0],
         tags: [],
     }],
     tags: [],

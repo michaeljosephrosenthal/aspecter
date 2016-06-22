@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { DropTarget } from 'react-dnd';
 import GenericStaticView from './SubtlyEditableItem/staticViews'
+import templates from 'tcomb-form-templates-bootstrap';
 
 function collect(connect, monitor){
     return {
@@ -48,9 +49,10 @@ const targetActions = {
     }
 
     // Time to actually perform the action
-    props.addReference({reference: dragIndex, targetIndex: hoverIndex});
+    debugger;
+    props.addItem({reference: dragIndex, targetIndex: hoverIndex});
   }
-};
+}
 
 class ListItemWrapper extends React.Component{
   static propTypes = {
@@ -62,38 +64,23 @@ class ListItemWrapper extends React.Component{
   render() {
     const { children, canDrop, isOver, connectDropTarget } = this.props
     const isActive = canDrop && isOver
+    debugger;
 
-    return connectDropTarget(<li>{children}</li>)
+    return connectDropTarget(<li>{children || (<div>Add new item</div>)}</li>)
   }
 }
 
 function buildTargetListTemplate(ItemTemplate){
-    class TargetList extends Component {
-      static propTypes = { ItemTemplate }
-      addReference({reference, targetIndex}) {
-          this.setState(update(this.state, {
-              cards: {
-                  $splice: [
-                      [targetIndex, 0, reference]
-                  ]
-              }
-          }));
-      }
-
-      render() {
-        const { value=[], options: {item: {staticTemplate: Template=GenericStaticView, ...itemOpts} = {}} = {} } = this.props
-        return (
-            <ul>
-                {value.map((v, key) => (
-                    <ItemTemplate index={key}>
-                        <Template value={v} options={itemOpts}/>
-                    </ItemTemplate>
-                ))}
-            </ul>
-        )
-      }
-  }
-  return props => <TargetList {...props}/>
+    return ({value=[]}) => (
+        <ul>
+            {value.map((v, key) => (
+                <ItemTemplate index={key}>
+                    <Template value={v} options={itemOpts}/>
+                </ItemTemplate>
+            ))}
+        </ul>
+    )
+    //<ItemTemplate index={value.length}/>
 }
 
 export default function buildRelationalTargetList(dragKey){
