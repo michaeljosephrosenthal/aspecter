@@ -17,13 +17,11 @@ Snippet.meta.editor = {
     staticTemplate: ({value}) => <SnippetView {...value}/>
 }
 
-let ViewStruct = t.struct({
+let View = t.struct({
     key: t.String,
     tags: t.list(t.String),
     snippets: relational.ChildRelationList(Snippet, 'snippets'),
 }, 'View')
-
-let View = relational.RelationContainer(ViewStruct, 'snippets')
 
 function listContainsMatch(list, predicate){
   return list.filter(element => predicate(element)).length > 0
@@ -33,7 +31,7 @@ let PostStruct = t.struct({
     title: t.String,
     hook: t.String,
     snippets: relational.SourceList(Snippet, 'snippets'),
-    views: t.list(View),
+    views: relational.RelationContainerList(View, 'snippets'),
     tags: t.list(t.String),
 }, 'Post')
 

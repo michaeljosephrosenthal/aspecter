@@ -21,59 +21,77 @@ export function ChildRelationList(structLike, key){
 
     Child.dispatch = function dispatch(item){
         let type = Integer.is(item) ? Integer :
-            Object.keys(item).length == 1 ? Reference :
-                MaterializedChild
+            MaterializedChild.is(item) ? MaterializedChild :
+            Reference
         return type
     }
 
-    Child.prototype.materialize = function({[key]: relation}){
-        let index = Integer.is(this) ? this : this.index
+    Child.materialize = function({reference, [key]: relation}){
+        let index = Integer.is(reference) ? reference : reference.index
         return MaterializedChild({index, ...relation[index]})
     }
-    Child.prototype.serialize = function(){
-        return Integer.is(this) ? this : Integer(this.index)
+
+    Child.serialize = function({reference}){
+        return Integer.is(reference) ? reference : Integer(reference.index)
     }
 
-    let listName = `${structLike.displayName}RelationTargetList`
-    let TargetList = t.refinement(t.list(Child, listName), _=>true, listName)
+    let TargetList = t.list(Child, `${structLike.displayName}RelationTargetList`)
+
+    TargetList.materialize = function({reference: list, ...args}){
+        return list.map(reference => Child.materialize({reference, ...args}))
+    }
+
+    TargetList.serialize = function({reference: list}){
+        return list.map(reference => Child.serialize({reference}))
+    }
 
     TargetList.meta.editor = {
-        template: buildRelationalTargetList(Child, key)
+        template: buildRelationalTargetList(key)
     }
 
     return TargetList
 }
 
-function materializeList(list, ...args){
-    debugger;
-    return list.map(item => item.materialize(...args))
-}
-
-function serializeList(list, ...args){
-    return list.map(item => item.serialize(...args))
-}
-
 export function RelationContainer(structLike, key){
-    structLike.prototype.materialize = function({[key]: relation}){
-        return structLike.update(this, {[key]: {
-            $set: materializeList(this[key], {[key]: relation})
+    let containedRelationType = structLike.meta.props[key]
+    structLike.materialize = function({reference: container, [key]: relation}){
+        return structLike.update(container, {[key]: {
+            $set: containedRelationType.materialize({reference: container[key], [key]: relation})
         }})
     }
-    structLike.prototype.serialize = function(){
-        return structLike.update(this, {[key]: {
-            $set: serializeList(this[key])
+    structLike.serialize = function({reference: container}){
+        return structLike.update(container, {[key]: {
+            $set: containedRelationType.serialize({reference: container[key], [key]: relation})
         }})
     }
     return structLike
 }
+
+export function RelationContainerList(structLike, key){
+    let Child = RelationContainer(structLike, key)
+
+    let TargetList = t.list(Child, `${structLike.displayName}RelationContainerList`)
+
+    TargetList.materialize = function({reference: list, ...args}){
+        return list.map(reference => Child.materialize({reference, ...args}))
+    }
+
+    TargetList.serialize = function({reference: list}){
+        return list.map(reference => Child.serialize({reference}))
+    }
+
+    return TargetList
+}
+
 
 export function ParentRelation(structLike, internalRelations={}){
     structLike.prototype.materialize = function(){
         let self = this
         Object.keys(internalRelations).forEach(destination => {
             let source = {[internalRelations[destination]]: this[internalRelations[destination]]}
+            let destType = structLike.meta.props[destination]
             self = structLike.update(this, {
-                [destination]: {$set: materializeList(this[destination], source)}
+                [destination]: {$set: destType.materialize({reference: this[destination], ...source})}
             })
         })
         return self
@@ -81,8 +99,9 @@ export function ParentRelation(structLike, internalRelations={}){
     structLike.prototype.serialize = function(){
         let self = this
         Object.keys(internalRelations).forEach(destination => {
+            let destType = structLike.meta.props[destination]
             self = structLike.update(this, {
-                [destination]: {$set: serializeList(this[destination])}
+                [destination]: {$set: destType.serialize({reference: this[destination]})}
             })
         })
         return self
