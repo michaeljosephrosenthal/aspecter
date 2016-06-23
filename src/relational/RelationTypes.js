@@ -1,6 +1,7 @@
 import t from 'tcomb'
 import buildRelationalSourceList from './components/RelationalSourceList'
-import buildRelationalTargetList from './components/RelationalTargetList'
+import buildRelationalTargetList, { childTemplate } from './components/RelationalTargetList'
+import GenericStaticView from './components/SubtlyEditableItem/staticViews'
 
 const Integer = t.refinement(t.Number, (n) => n % 1 === 0, 'Integer');
 const Reference = t.struct({ index: Integer }, 'Reference')
@@ -35,6 +36,9 @@ export function ChildRelationList(structLike, key){
         return Integer.is(reference) ? reference : Integer(reference.index)
     }
 
+    let { staticTemplate = GenericStaticView } = structLike.meta.editor
+    Child.meta.editor = { staticTemplate, template: childTemplate(staticTemplate) }
+
     let TargetList = t.list(Child, `${structLike.displayName}RelationTargetList`)
 
     TargetList.materialize = function({reference: list, ...args}){
@@ -46,7 +50,7 @@ export function ChildRelationList(structLike, key){
     }
 
     TargetList.meta.editor = {
-        template: buildRelationalTargetList(key)
+        template: buildRelationalTargetList(key),
     }
 
     return TargetList
@@ -61,7 +65,7 @@ export function RelationContainer(structLike, key){
     }
     structLike.serialize = function({reference: container}){
         return structLike.update(container, {[key]: {
-            $set: containedRelationType.serialize({reference: container[key], [key]: relation})
+            $set: containedRelationType.serialize({reference: container[key]})
         }})
     }
     return structLike

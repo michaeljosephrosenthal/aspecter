@@ -14,9 +14,9 @@ function collect(connect, monitor){
 
 
 const targetActions = {
-  hover(props, monitor, component) {
+  drop({insertReference, ordering}, monitor, component) {
     const dragIndex = monitor.getItem().index;
-    const hoverIndex = props.targetIndex;
+    const hoverKey = ordering;
 
     /* Don't replace items with themselves
     if (dragIndex === hoverIndex) {
@@ -35,7 +35,7 @@ const targetActions = {
     // Get pixels to the top
     const hoverClientY = clientOffset.y - hoverBoundingRect.top;
 
-    // Only perform the move when the mouse has crossed half of the items height
+    /* Only perform the move when the mouse has crossed half of the items height
     // When dragging downwards, only move when the cursor is below 50%
     // When dragging upwards, only move when the cursor is above 50%
 
@@ -47,11 +47,11 @@ const targetActions = {
     // Dragging upwards
     if (hoverClientY > hoverMiddleY) {
       return;
-    }
+      }*/
+    ordering = hoverKey + (hoverClientY > hoverMiddleY ? 1 : 0)
 
     // Time to actually perform the action
-    debugger;
-    props.addItem({reference: dragIndex, targetIndex: hoverIndex});
+    insertReference({reference: dragIndex, ordering});
   }
 }
 
@@ -70,16 +70,46 @@ class ListItemWrapper extends React.Component{
 
 }
 
+function referenceInserter({ value, items, onChange, path, typeInfo: {type: {meta: kind}}}){
+    let keys = items.map(i => i.key)
+    function insertReference({reference, ordering}){
+        let change = value.slice(0)
+        change.splice(ordering, 0, reference)
+        onChange(change, keys, path, kind)
+    }
+    return insertReference
+}
+
 function buildTargetListTemplate(ItemTemplate){
-    return ({ value=[], options: {item: {staticTemplate: Template=GenericStaticView, ...itemOpts} = {}} = {}, ...rest }) => (
-        <ul>
-            {value.map((v, key) => (
-                <ItemTemplate key={key} index={v.index}>
-                    <Template value={v} options={itemOpts}/>
+    let TargetList = templates.list.clone({
+        renderRow(row, locals){
+            let { index } = row.input.props.value
+            let { ref } = row.input
+            return (
+                <ItemTemplate key={ref} ordering={ref} index={index} insertReference={referenceInserter(locals)}>
+                    {row.input}
                 </ItemTemplate>
-            ))}
-        </ul>
-    )
+            )
+        },
+        renderAddButton: locals => (
+            <ItemTemplate ordering={locals.value.length} insertReference={referenceInserter(locals)}/>
+        )
+    })
+    return TargetList
+}
+
+export function childTemplate(template){
+    return (...args) => {
+        let { inputs } = args[0]
+        return (
+            <div>
+                <div style={{display: 'none'}}>
+                    { Object.keys(inputs).map(k => inputs[k]) }
+                </div>
+                {template(...args)}
+            </div>
+        )
+    }
 }
 
 export default function buildRelationalTargetList(dragKey){
